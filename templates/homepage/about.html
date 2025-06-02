@@ -1,0 +1,48 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+<!-- footer start -->
+
+{% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for languages as languages_info %}
+
+
+
+<section class="ftco-section" id="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-stretch">
+                <div class="about-wrap img w-100" style="background-image: url({% static 'images/jinoo_about.jpg' %});">
+                    <div class="icon d-flex align-items-center justify-content-center">{% comment %}icon{% endcomment %}
+                        <span class=""> {% comment %}flaticon-crane{% endcomment %}
+                            <img src="{% static 'images/jinooca.svg' %}" alt="Jinoo Inc" width="100" height="100">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 py-5 pl-md-5">
+                <div class="row justify-content-center mb-4 pt-md-4">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <span class="subheading">{% trans 'Welcome to Jinoo Inc' %}< </span>
+                        <h2 class="mb-4">{% trans 'Jinoo Inc A Specialized services provider' %}</h2>
+                        <div class="d-flex about">
+                            <div class="icon"><span class="flaticon-hammer"></span></div>
+                            <h3>{% trans "We're in this business since 2022 and We provide the best personal and business services" %} </h3>
+                        </div>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+
+                        </p>
+                        <div class="d-flex video-image align-items-center mt-md-4">
+                            <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url(images/about-2.jpg);">
+                                <span class="fa fa-play-circle"></span>
+                            </a>
+                            <h4 class="ml-4">This is how we work on our clients, Watch video</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

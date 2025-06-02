@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+{% spaceless %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {%comment%} 
+    {% include 'includes/_metas.html' %}
+    {%endcomment%}
+
+
+    <title>Wilcon - Free Bootstrap 4 Template by Colorlib</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{% static 'css/animate.css' %} ">
+
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} ">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %} ">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
+
+<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %} ">
+<link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %} ">
+
+<link rel="stylesheet" href="{% static 'css/flaticon.css' %} ">
+<link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+
+</head>
+
+<body>
+{% include 'includes/_header.html' %}
+{% include 'includes/_menu.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+{% include 'includes/_footer.html' %}
+{% include 'includes/_jsfile.html' %}
+
+</body>
+</html>
+{% endspaceless %}

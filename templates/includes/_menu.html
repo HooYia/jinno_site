@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% load widget_tweaks %}
+
+
+{% get_available_languages as languages %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container d-flex align-items-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'main_app:home' %}" class="nav-link">{% trans 'Home' %}</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">{% trans 'About' %}</a></li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'services' %}active{% endif %}"><a href="{% url 'main_app:services' %}" class="nav-link">{% trans 'Services' %}</a></li>
+                <li class="nav-item"><a href="project.html" class="nav-link">{% trans 'Projects' %}</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">{% trans 'Blog' %}</a></li>
+                <li class="nav-item"><a href="" class="nav-link">{% trans 'Ressources' %} </a></li>
+                <li class="nav-item"><a href="" class="nav-link">{% trans 'Join-Us' %} </a></li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a href="{% url 'main_app:contact' %}" class="nav-link">{% trans 'Contact' %} </a></li>
+            </ul>
+            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">{% trans 'Inquire Now' %} </a>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->

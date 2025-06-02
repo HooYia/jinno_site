@@ -1,0 +1,24 @@
+{% extends "prep/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+
+{% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for languages as languages_info %}
+
+
+
+{% block content %}
+
+{% include "homepage/hero.html" %}
+{% include "homepage/about.html" %}
+{% include "homepage/intro.html" %}
+{% include "homepage/services.html" %}
+{% include "homepage/project.html" %}
+
+
+{% include "homepage/latest_blog.html" %}
+
+{% endblock %}

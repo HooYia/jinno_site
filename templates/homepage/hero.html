@@ -1,0 +1,74 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+<!-- footer start -->
+
+{% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for languages as languages_info %}
+
+
+
+<section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/jinoo_bg_2.jpg'%});" data-stellar-background-ratio="0.1">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+            <div class="col-lg-6 ftco-animate">
+                <div class="mt-5">
+                    <h1 class="mb-4">{% trans 'Taxation, Accounting, Bookkeeping, Payroll,' %} <br> {% trans 'Management' %}</h1>
+                    <p class="mb-4">
+                        {% blocktrans%}
+                            Our services are designed to offer to our customers the best possible experience in terms of satisfaction: quality of service, price, compliance with schedules.
+                        {% endblocktrans%}
+                    </p>
+                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}  </a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Request A Quote</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2">
+    <div class="container">
+        <div class="row no-gutters d-flex">
+            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer-1"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading mb-3">{% trans 'Quality' %} </h3>
+                        <p>
+                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
+
+                        </p>
+                    </div>
+                </div>      
+            </div>
+            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services services-2 d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-worker-1"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading mb-3">{% trans 'Professional Liability' %}</h3>
+                        <p>
+                            {% blocktrans%}
+                                We are accountable for any errors, negligence, or omissions in our work that may cause harm to clients or third parties. 
+                            {% endblocktrans%}
+                        </p>
+                    </div>
+                </div>      
+            </div>
+            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading mb-3">{% trans 'Dedicated To Our Clients' %}</h3>
+                        <p>
+                            {% blocktrans%}
+                            Committed to Excellence, Devoted to You. Your success is our priority.  
+                            {% endblocktrans%}
+                        </p>                    </div>
+                </div>      
+            </div>
+        </div>
+    </div>
+</section>

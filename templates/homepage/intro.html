@@ -1,0 +1,28 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+
+{% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for languages as languages_info %}
+
+
+<section class="ftco-intro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="img"  style="background-image: url({% static 'images/jinoo_bg_1.jpg' %});">
+                    <div class="overlay"></div>
+                    <h2>{% trans 'Providing Personalized and High Quality Services' %}</h2>
+                    <p>
+                        {% blocktrans%}
+                            We can manage your dream building A small competitive firm that offers a wide range of services to its clients.
+                        {% endblocktrans%}
+                    </p>
+                    <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">{% trans 'Request A Quote' %}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

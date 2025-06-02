@@ -1,0 +1,101 @@
+
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+<!-- footer start -->
+
+{% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for languages as languages_info %}
+
+
+<section class="ftco-section bg-half-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading"> {% trans 'Our Services' %} </span>
+                <h2 class="mb-4">{% trans 'We Offer Services' %} </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="services-wrap ftco-animate">
+                    <div class="img" style="background-image: url({% static 'images/jinoo_bookkeeping_1.jpg'%});"></div>
+                    <div class="text">
+                        <div class="icon"><span class="flaticon-architect"></span></div>
+                        <h2>{% trans 'Bookkeeping' %} </h2>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+                        </p>
+                        <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="services-wrap ftco-animate">
+                    <div class="img" style="background-image: url({% static 'images/jinoo_bg_1.jpg'%});"></div>
+                    <div class="text">
+                        <div class="icon"><span class="flaticon-worker"></span></div>
+                        <h2>{% trans 'Accounting' %} </h2>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+                        </p>
+                        <a href="#" class="btn-custom">{% trans 'Read more' %}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="services-wrap ftco-animate">
+                    <div class="img" style="background-image: url({% static 'images/jinoo_tax_1.jpg'%});"></div>
+                    <div class="text">
+                        <div class="icon"><span class="flaticon-hammer"></span></div>
+                        <h2>{% trans 'Taxation' %}</h2>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+                        </p>
+                        <a href="#" class="btn-custom">{% trans 'Read more' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter">
+    <div class="img image-overlay" style="background-image: url({% static 'images/about-3.jpg'%});"></div>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-6 py-5 bg-secondary aside-stretch">
+                <div class="heading-section heading-section-white p-4 pl-md-0 py-md-5 pr-md-5">
+                    <span class="subheading">Jinoo Inc A Services Company</span>
+                    <h2 class="mb-4">Best Provider for personal and business Services</h2>
+                    <h4>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h4>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="row">
+                    <div class="col-md-12 d-flex counter-wrap ftco-animate">
+                        <div class="block-18 bg-primary d-flex align-items-center justify-content-between">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-engineer"></span></div>
+                            <div class="text">
+                                <strong class="number" data-number="48">0</strong>
+                                <span>Project Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex counter-wrap ftco-animate">
+                        <div class="block-18 d-flex align-items-center justify-content-between">
+                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-worker-1"></span></div>
+                            <div class="text">
+                                <strong class="number" data-number="12">0</strong>
+                                <span>Happy Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
