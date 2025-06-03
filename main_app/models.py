@@ -451,3 +451,18 @@ class ContactUs(models.Model):
         return f"{self.name} - {self.email} - {self.subject} - {self.message} "
 
 
+
+class Service(models.Model):
+    name = models.CharField(
+        max_length=100,
+        null=False,
+        blank=False,
+        help_text=_("The name of the service"),
+    )
+
+    class Meta:
+        verbose_name = _("Service")
+        verbose_name_plural = _("Services")
+
+    def __str__(self) -> str:
+        return self.name

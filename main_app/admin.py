@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
-    Project, Testimony, Blog, SectionSettings, ContactUs
+    Project, Testimony, Blog, SectionSettings, ContactUs, Service
 )
 
 @admin.register(JinnoSetting)
@@ -24,6 +24,14 @@ class JinnoSettingAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
         return not JinnoSetting.objects.exists()
 
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+    fields = ('name',)
+    
+    
 @admin.register(HeroSection)
 class HeroSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'welcome_title', 'service_title')
