@@ -44,16 +44,18 @@
 
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">{% trans 'Services' %}</h2>
                     <ul class="list-unstyled">
-                       
+                        {% for service in site_settings.services|slice:":6" %}
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{{ service }}</a></li>
+                        {% empty %}
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Accounting' %}</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Bookkeeping' %}</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Taxation' %}</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Payroll' %}</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Management' %}</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Research and study' %}</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Our Digital platform' %}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

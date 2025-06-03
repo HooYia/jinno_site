@@ -79,6 +79,22 @@ TEMPLATES = [
 WSGI_APPLICATION = 'jinno_site.wsgi.application'
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'main_app.admin': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 

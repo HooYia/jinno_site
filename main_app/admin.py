@@ -1,9 +1,16 @@
+
+import logging
+
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
     Project, Testimony, Blog, SectionSettings, ContactUs, Service, QuoteRequest
 )
+
+
+logger = logging.getLogger(__name__)
+
 
 @admin.register(JinnoSetting)
 class JinnoSettingAdmin(admin.ModelAdmin):
@@ -171,3 +178,10 @@ class QuoteRequestAdmin(admin.ModelAdmin):
     )
 
     ordering = ('-created_at',)
+    
+    
+    
+    
+admin.site.site_header = _("JINOO ADMIN")
+admin.site.site_title = _("JINOO ADMIN PORTAL")
+admin.site.index_title = _("WELCOME TO JINOO ADMIN PORTAL")
