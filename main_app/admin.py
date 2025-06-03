@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 class JinnoSettingAdmin(admin.ModelAdmin):
     list_display = ('company_name', 'email', 'phone_number', 'location', 'google_maps_url')
     search_fields = ('company_name', 'email', 'phone_number', 'location', 'google_maps_url')
+    list_filter = ('company_name', 'location')
     fieldsets = (
         (None, {
             'fields': ('company_name', 'slogan', 'company_logo')
@@ -31,18 +32,18 @@ class JinnoSettingAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
         return not JinnoSetting.objects.exists()
 
-
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
+    list_filter = ('name',)
     fields = ('name',)
-    
-    
+
 @admin.register(HeroSection)
 class HeroSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'welcome_title', 'service_title')
     search_fields = ('title', 'welcome_title', 'service_title', 'short_description')
+    list_filter = ('title', 'welcome_title')
     fieldsets = (
         (_('Main Hero Content'), {
             'fields': ('title', 'short_description', 'background_image')
@@ -68,7 +69,7 @@ class HeroSectionAdmin(admin.ModelAdmin):
 class ServicesSectionAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title', 'short_description', 'description')
-    list_filter = ('title',)
+    list_filter = ('title', 'icon')
     fieldsets = (
         (None, {
             'fields': ('title', 'short_description', 'description', 'image', 'icon')
@@ -76,7 +77,7 @@ class ServicesSectionAdmin(admin.ModelAdmin):
     )
 
 @admin.register(ServicesSectionTwo)
-class ServicesSectionTwoAdmin(admin.ModelAdmin):
+class ServicesSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'projects_completed', 'happy_customers')
     search_fields = ('title', 'short_description', 'description')
     list_filter = ('projects_completed', 'happy_customers')
@@ -90,7 +91,7 @@ class ServicesSectionTwoAdmin(admin.ModelAdmin):
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'location')
     search_fields = ('title', 'category', 'location', 'description')
-    list_filter = ('category',)
+    list_filter = ('category', 'location')
     fieldsets = (
         (None, {
             'fields': ('title', 'category', 'location', 'description', 'image')
@@ -101,6 +102,7 @@ class ProjectAdmin(admin.ModelAdmin):
 class TestimonyAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'post')
     search_fields = ('full_name', 'post', 'description')
+    list_filter = ('post',)
     fieldsets = (
         (None, {
             'fields': ('full_name', 'post', 'description', 'image')
@@ -111,7 +113,7 @@ class TestimonyAdmin(admin.ModelAdmin):
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'author_name', 'date')
     search_fields = ('title', 'author_name', 'description')
-    list_filter = ('date',)
+    list_filter = ('date', 'author_name')
     date_hierarchy = 'date'
     fieldsets = (
         (None, {
@@ -122,6 +124,18 @@ class BlogAdmin(admin.ModelAdmin):
 @admin.register(SectionSettings)
 class SectionSettingsAdmin(admin.ModelAdmin):
     list_display = ('__str__',)
+    search_fields = (
+        'blog_hero_section_image__url',
+        'project_hero_section_image__url',
+        'service_hero_section_image__url',
+        'contact_hero_section_image__url',
+    )
+    list_filter = (
+        'blog_hero_section_image',
+        'project_hero_section_image',
+        'service_hero_section_image',
+        'contact_hero_section_image',
+    )
     fieldsets = (
         (None, {
             'fields': (
@@ -132,14 +146,13 @@ class SectionSettingsAdmin(admin.ModelAdmin):
             )
         }),
     )
-    
+
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'subject', 'is_read', 'is_answered', 'create_at', 'is_deleted')
     list_filter = ('is_read', 'is_answered', 'is_deleted', 'create_at')
     search_fields = ('name', 'email', 'subject', 'message', 'answer')
     readonly_fields = ('create_at',)
-    
     fieldsets = (
         (None, {
             'fields': ('name', 'email', 'subject', 'message')
@@ -154,16 +167,14 @@ class ContactUsAdmin(admin.ModelAdmin):
     )
 
     def has_delete_permission(self, request, obj=None):
-        return False  # Optional: prevents deletion from admin
-    
-    
+        return False
+
 @admin.register(QuoteRequest)
 class QuoteRequestAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'service', 'phone', 'created_at')
     list_filter = ('service', 'created_at')
     search_fields = ('first_name', 'last_name', 'service', 'phone', 'message')
     readonly_fields = ('created_at',)
-
     fieldsets = (
         ("Client Information", {
             'fields': ('first_name', 'last_name', 'phone')
@@ -176,12 +187,9 @@ class QuoteRequestAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
         }),
     )
-
     ordering = ('-created_at',)
-    
-    
-    
-    
+
+
 admin.site.site_header = _("JINOO ADMIN")
 admin.site.site_title = _("JINOO ADMIN PORTAL")
 admin.site.index_title = _("WELCOME TO JINOO ADMIN PORTAL")
