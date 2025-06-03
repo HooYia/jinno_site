@@ -1,0 +1,266 @@
+{% extends "prep/index.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% if section_settings.blog_hero_section_image %}{{ section_settings.blog_hero_section_image.url }}{% else %}{% static 'images/image_1.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'main_app:home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">Blog</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">Our Blog</span>
+                <h2 class="mb-4">Latest Blog Updates</h2>
+            </div>
+        </div>
+
+        <!-- Pagination Top -->
+        {% if blogs.has_other_pages %}
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Blog pagination">
+                        <ul class="pagination justify-content-center mb-4">
+                            {% if blogs.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.previous_page_number }}">{% trans 'Previous' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Previous' %}</span>
+                                </li>
+                            {% endif %}
+                            {% for num in blogs.paginator.page_range %}
+                                {% if blogs.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > blogs.number|add:-3 and num < blogs.number|add:3 %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if blogs.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.next_page_number }}">{% trans 'Next' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Next' %}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row d-flex">
+            {% for blog in blogs %}
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="#" class="block-20" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');" data-toggle="modal" data-target="#blogModal{{ blog.id }}">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    <a href="#"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
+                                    <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                </p>
+                            </div>
+                            <h3 class="heading"><a href="#">{{ blog.title|default:"Best for any industrial & business solution" }}</a></h3>
+                            <p>{{ blog.description|truncatewords:20|default:"Far far away, behind the word mountains, far from the countries Vokalia..." }}</p>
+                            <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal{{ blog.id }}">{% trans 'Read more' %}</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="#" class="block-20" style="background-image: url({% static 'images/image_1.jpg' %});" data-toggle="modal" data-target="#blogModal1">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                </p>
+                            </div>
+                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal1">{% trans 'Read more' %}</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="#" class="block-20" style="background-image: url({% static 'images/image_2.jpg' %});" data-toggle="modal" data-target="#blogModal2">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                </p>
+                            </div>
+                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal2">{% trans 'Read more' %}</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="#" class="block-20" style="background-image: url({% static 'images/image_3.jpg' %});" data-toggle="modal" data-target="#blogModal3">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                </p>
+                            </div>
+                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal3">{% trans 'Read more' %}</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination Bottom -->
+        {% if blogs.has_other_pages %}
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Blog pagination">
+                        <ul class="pagination justify-content-center mt-4">
+                            {% if blogs.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.previous_page_number }}">{% trans 'Previous' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Previous' %}</span>
+                                </li>
+                            {% endif %}
+                            {% for num in blogs.paginator.page_range %}
+                                {% if blogs.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > blogs.number|add:-3 and num < blogs.number|add:3 %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if blogs.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ blogs.next_page_number }}">{% trans 'Next' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Next' %}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Modals for Blog Descriptions -->
+{% for blog in blogs %}
+    <div class="modal fade" id="blogModal{{ blog.id }}" tabindex="-1" role="dialog" aria-labelledby="blogModal{{ blog.id }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blogModal{{ blog.id }}Label">{{ blog.title|default:"Blog Post" }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ blog.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% empty %}
+    <div class="modal fade" id="blogModal1" tabindex="-1" role="dialog" aria-labelledby="blogModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blogModal1Label">Best for any industrial & business solution</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="blogModal2" tabindex="-1" role="dialog" aria-labelledby="blogModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blogModal2Label">Best for any industrial & business solution</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="blogModal3" tabindex="-1" role="dialog" aria-labelledby="blogModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blogModal3Label">Best for any industrial & business solution</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

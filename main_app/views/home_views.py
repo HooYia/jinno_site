@@ -6,7 +6,8 @@ from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from django.contrib import messages
-from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog
+from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomePageView(TemplateView):
     template_name = 'prep/index.html'
@@ -32,6 +33,20 @@ class ServicesView(TemplateView):
     def get_context_data(self, **kwargs: dict[str, any]) -> dict[str, any]:
         context = super().get_context_data(**kwargs)
         context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
+
+        # Fetch all services and paginate
+        services_list = ServicesSection.objects.all().order_by('-id')
+        paginator = Paginator(services_list, 6)  # 6 services per page
+        page = self.request.GET.get('page')
+        try:
+            services = paginator.page(page)
+        except PageNotAnInteger:
+            services = paginator.page(1)
+        except EmptyPage:
+            services = paginator.page(paginator.num_pages)
+        
+        context["services"] = services
         return context
     
 class ContactUsView(TemplateView):
@@ -125,3 +140,51 @@ def contact_us_view(request):
         return render(request, 'prep/contact.html')
     else:
         return render(request, 'prep/contact.html')
+    
+    
+    
+class BlogView(TemplateView):
+    template_name = "prep/blog.html"
+
+    def get_context_data(self, **kwargs: dict[str, any]) -> dict[str, any]:
+        context = super().get_context_data(**kwargs)
+        context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
+
+        # Fetch all blogs and paginate
+        blog_list = Blog.objects.all().order_by('-date')
+        paginator = Paginator(blog_list, 6)  # 6 blogs per page
+        page = self.request.GET.get('page')
+        try:
+            blogs = paginator.page(page)
+        except PageNotAnInteger:
+            blogs = paginator.page(1)
+        except EmptyPage:
+            blogs = paginator.page(paginator.num_pages)
+        
+        context["blogs"] = blogs
+        return context
+    
+    
+    
+class ProjectView(TemplateView):
+    template_name = "prep/project.html"
+
+    def get_context_data(self, **kwargs: dict[str, any]) -> dict[str, any]:
+        context = super().get_context_data(**kwargs)
+        context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
+
+        # Fetch all projects and paginate
+        project_list = Project.objects.all().order_by('-id')
+        paginator = Paginator(project_list, 6)  # 6 projects per page
+        page = self.request.GET.get('page')
+        try:
+            projects = paginator.page(page)
+        except PageNotAnInteger:
+            projects = paginator.page(1)
+        except EmptyPage:
+            projects = paginator.page(paginator.num_pages)
+        
+        context["projects"] = projects
+        return context

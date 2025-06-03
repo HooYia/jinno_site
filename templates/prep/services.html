@@ -3,210 +3,333 @@
 {% load i18n %}
 {% load l10n %}
 
-
 {% get_available_languages as languages %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info_list for languages as languages_info %}
 
-
-
 {% block content %}
-
-
-<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/jinoo_service_2.jpg' %});" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% if section_settings.service_hero_section_image %}{{ section_settings.service_hero_section_image.url }}{% else %}{% static 'images/jinoo_service_2.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row no-gutters slider-text align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
-         <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'main_app:home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
-         <h1 class="mb-3 bread">Services</h1>
-       </div>
-     </div>
-   </div>
-  </section>
-  
-  <section class="ftco-section bg-half-light">
-   <div class="container">
-    <div class="row justify-content-center mb-5 pb-2">
-      <div class="col-md-8 text-center heading-section ftco-animate">
-       <span class="subheading">{% trans 'Our Services' %} </span>
-       <h2 class="mb-4">{% trans 'We Offer Services' %} </h2>
-     </div>
-   </div>
-   <div class="row">
-     <div class="col-md-4">
-      <div class="services-wrap ftco-animate">
-       <div class="img" style="background-image: url({% static 'images/jinoo_bookkeeping_1.jpg' %});"></div>
-       <div class="text">
-        <div class="icon"><span class="flaticon-architect"></span></div>
-        <h2> {% trans 'Bookkeeping' %} </h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-        <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-2.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-worker"></span></div>
-            <h2>{% trans 'Accounting' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'main_app:home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">Services</h1>
+            </div>
         </div>
     </div>
-  </div>
-  
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/jinoo_tax_1.jpg' %});"></div>
-     <div class="text">
-      <div class="icon"><span class="flaticon-hammer"></span></div>
-      <h2>{% trans 'Taxation' %}</h2>
-      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-      <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
-    </div>
-  </div>
-  </div>
-  
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-        <div class="img" style="background-image: url({% static 'images/jinoo_budget_1.jpg' %});"></div>
-        <div class="text">
-        <div class="icon"><span class="flaticon-architect"></span></div>
-        <h2>{% trans 'Budgeting' %}  &amp; {% trans 'Variance analysis' %} </h2>
-        <p>
-            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
-        </p>
-        <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
-        </div>
-    </div>
-  </div>
+</section>
 
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-        <div class="img" style="background-image: url({% static 'images/services-5.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-worker"></span></div>
-            <h2>{% trans 'Payroll' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+<section class="ftco-section bg-half-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">{% trans 'Our Services' %}</span>
+                <h2 class="mb-4">{% trans 'We Offer Services' %}</h2>
+            </div>
         </div>
-    </div>
-  </div>
 
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/jinoo_forecasting_1.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Economic Forecasting' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
-        </div>
-    </div>
-  </div>
-  
-  
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Research' %} &amp; {% trans 'Study' %}</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
-        </div>
-    </div>
-  </div>
+        <!-- Pagination Top -->
+        {% if services.has_other_pages %}
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Service pagination">
+                        <ul class="pagination justify-content-center mb-4">
+                            {% if services.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ services.previous_page_number }}">{% trans 'Previous' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Previous' %}</span>
+                                </li>
+                            {% endif %}
+                            {% for num in services.paginator.page_range %}
+                                {% if services.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > services.number|add:-3 and num < services.number|add:3 %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if services.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ services.next_page_number }}">{% trans 'Next' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Next' %}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endif %}
 
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Training' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+        <div class="row">
+            {% for service in services %}
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url('{% if service.image %}{{ service.image.url }}{% else %}{% static 'images/services-6.jpg' %}{% endif %}');"></div>
+                        <div class="text">
+                            <div class="icon">
+                                {% if service.icon %}
+                                    <img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}" class="img-fluid">
+                                {% else %}
+                                    <span class="flaticon-hammer"></span>
+                                {% endif %}
+                            </div>
+                            <h2>{{ service.title|default:"Service" }}</h2>
+                            <p>{{ service.short_description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" }}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal{{ service.id }}">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/jinoo_bookkeeping_1.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-architect"></span></div>
+                            <h2>{% trans 'Bookkeeping' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal1">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/services-2.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-worker"></span></div>
+                            <h2>{% trans 'Accounting' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal2">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/jinoo_tax_1.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-hammer"></span></div>
+                            <h2>{% trans 'Taxation' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal3">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/jinoo_budget_1.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-architect"></span></div>
+                            <h2>{% trans 'Budgeting' %} & {% trans 'Variance analysis' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal4">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/services-5.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-worker"></span></div>
+                            <h2>{% trans 'Payroll' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal5">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({% static 'images/jinoo_forecasting_1.jpg' %});"></div>
+                        <div class="text">
+                            <div class="icon"><span class="flaticon-hammer"></span></div>
+                            <h2>{% trans 'Economic Forecasting' %}</h2>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal6">{% trans 'Read more' %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination Bottom -->
+        {% if services.has_other_pages %}
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Service pagination">
+                        <ul class="pagination justify-content-center mt-4">
+                            {% if services.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ services.previous_page_number }}">{% trans 'Previous' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Previous' %}</span>
+                                </li>
+                            {% endif %}
+                            {% for num in services.paginator.page_range %}
+                                {% if services.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > services.number|add:-3 and num < services.number|add:3 %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if services.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ services.next_page_number }}">{% trans 'Next' %}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">{% trans 'Next' %}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Modals for Service Descriptions -->
+{% for service in services %}
+    <div class="modal fade" id="serviceModal{{ service.id }}" tabindex="-1" role="dialog" aria-labelledby="serviceModal{{ service.id }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal{{ service.id }}Label">{{ service.title|default:"Service" }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ service.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Performance analysis' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+{% empty %}
+    <div class="modal fade" id="serviceModal1" tabindex="-1" role="dialog" aria-labelledby="serviceModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal1Label">{% trans 'Bookkeeping' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
- 
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Strategic' %} &amp; {% trans 'Financial planning' %}</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+    <div class="modal fade" id="serviceModal2" tabindex="-1" role="dialog" aria-labelledby="serviceModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal2Label">{% trans 'Accounting' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Project management' %} </h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+    <div class="modal fade" id="serviceModal3" tabindex="-1" role="dialog" aria-labelledby="serviceModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal3Label">{% trans 'Taxation' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/jinoo_monitoring_1.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Monitoring' %} &amp; {% trans 'evaluation' %}</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+    <div class="modal fade" id="serviceModal4" tabindex="-1" role="dialog" aria-labelledby="serviceModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal4Label">{% trans 'Budgeting' %} & {% trans 'Variance analysis' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div> 
-
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Impact evaluation' %}</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+    <div class="modal fade" id="serviceModal5" tabindex="-1" role="dialog" aria-labelledby="serviceModal5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal5Label">{% trans 'Payroll' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div> 
-
-  <div class="col-md-4">
-    <div class="services-wrap ftco-animate">
-     <div class="img" style="background-image: url({% static 'images/services-6.jpg' %});"></div>
-        <div class="text">
-            <div class="icon"><span class="flaticon-hammer"></span></div>
-            <h2>{% trans 'Information system' %}</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <a href="#" class="btn-custom">{% trans 'Read more' %} </a>
+    <div class="modal fade" id="serviceModal6" tabindex="-1" role="dialog" aria-labelledby="serviceModal6Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal6Label">{% trans 'Economic Forecasting' %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-  </div> 
-
-  </div>
-  </div>
-  </section>
-  
-
+{% endfor %}
 {% endblock %}
