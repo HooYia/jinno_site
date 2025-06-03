@@ -1,0 +1,408 @@
+
+{% extends 'prep/base.html' %}
+{% load static i18n l10n %}
+
+{% block title %}{% trans "About Us" %} | Jinoo{% endblock %}
+
+{% block extra_css %}
+<style>
+    .team-img-wrap img.rounded-circle {
+        max-width: 150px;
+        max-height: 150px;
+        object-fit: cover;
+    }
+    .team-social .social-icon {
+        margin: 0 8px;
+        font-size: 1.2rem;
+        color: #fff;
+        transition: color 0.3s;
+    }
+    .team-social .social-icon:hover {
+        color: #007bff;
+    }
+    .client-logo img {
+        filter: grayscale(100%);
+        transition: filter 0.3s;
+    }
+    .client-logo img:hover {
+        filter: grayscale(0);
+    }
+    .img-border-radius {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .img-shadow {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    .icon-box-lg {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+    }
+    .card-hover {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'images/image_2.jpg' %}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs">
+                    <span class="mr-2"><a href="{% url 'main_app:home' %}">{% trans "Home" %} <i class="fa fa-chevron-right"></i></a></span>
+                    <span>{% trans "About Us" %} <i class="fa fa-chevron-right"></i></span>
+                </p>
+                <h1 class="mb-3 bread">{% trans "About Us" %}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="ftco-section bg-half-light">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="img-border-radius img-shadow">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="{% trans 'Our Office' %}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6 pl-md-5">
+                <span class="subheading">{% trans "Our Story" %}</span>
+                <h2 class="mb-4">{% trans "Building The Future Together" %}</h2>
+                <p class="lead">{% trans "Founded in 2010, we've grown from a small startup to an industry leader with international recognition." %}</p>
+                <p>{% trans "Our journey began with a simple idea: to create innovative solutions that make a difference. Today, we serve clients across 15 countries with a team of passionate professionals." %}</p>
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="icon-box bg-primary mr-4">
+                                <i class="fa fa-lightbulb-o text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-2">{% trans "Innovation" %}</h5>
+                                <p class="mb-0">{% trans "Cutting-edge solutions tailored to your needs" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="icon-box bg-secondary mr-4">
+                                <i class="fa fa-diamond text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-2">{% trans "Quality" %}</h5>
+                                <p class="mb-0">{% trans "Uncompromising standards in all we do" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="ftco-section bg-half-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="card card-hover h-100">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box-lg bg-primary mb-4 mx-auto">
+                            <i class="fa fa-bullseye text-white"></i>
+                        </div>
+                        <h3>{% trans "Our Mission" %}</h3>
+                        <p>{% trans "To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="card card-hover h-100">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box-lg bg-secondary mb-4 mx-auto">
+                            <i class="fa fa-eye text-white"></i>
+                        </div>
+                        <h3>{% trans "Our Vision" %}</h3>
+                        <p>{% trans "To be the global leader in transformative business solutions, recognized for our innovation, integrity, and impact." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-hover h-100">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box-lg bg-dark mb-4 mx-auto">
+                            <i class="fa fa-heart text-white"></i>
+                        </div>
+                        <h3>{% trans "Our Values" %}</h3>
+                        <p>{% trans "Integrity, Excellence, Innovation, Collaboration, and Customer Focus guide everything we do." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <span class="subheading">{% trans "Our Experts" %}</span>
+                <h2 class="mb-4">{% trans "Meet The Team" %}</h2>
+                <p>{% trans "Our talented professionals bring diverse skills and experience to deliver exceptional results." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4 ftco-animate">
+                <div class="team-card text-center">
+                    <div class="team-img-wrap">
+                        <img src="{% static 'images/team-1.jpg' %}" alt="{% trans 'John Smith' %}" class="img-fluid rounded-circle">
+                        <div class="team-social">
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info pt-4">
+                        <h4 class="mb-1">{% trans "John Smith" %}</h4>
+                        <span class="badge badge-primary badge-pill mb-3">{% trans "CEO & Founder" %}</span>
+                        <p class="mb-0">{% trans "Visionary leader with 15+ years of industry experience driving strategic growth." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 ftco-animate">
+                <div class="team-card text-center">
+                    <div class="team-img-wrap">
+                        <img src="{% static 'images/team-2.jpg' %}" alt="{% trans 'Jane Wilson' %}" class="img-fluid rounded-circle">
+                        <div class="team-social">
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info pt-4">
+                        <h4 class="mb-1">{% trans "Jane Wilson" %}</h4>
+                        <span class="badge badge-success badge-pill mb-3">{% trans "CTO" %}</span>
+                        <p class="mb-0">{% trans "Technology innovator specializing in scalable architecture and digital transformation." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 ftco-animate">
+                <div class="team-card text-center">
+                    <div class="team-img-wrap">
+                        <img src="{% static 'images/team-3.jpg' %}" alt="{% trans 'David Anderson' %}" class="img-fluid rounded-circle">
+                        <div class="team-social">
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info pt-4">
+                        <h4 class="mb-1">{% trans "David Anderson" %}</h4>
+                        <span class="badge badge-info badge-pill mb-3">{% trans "Lead Developer" %}</span>
+                        <p class="mb-0">{% trans "Full-stack developer with expertise in modern web technologies." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 ftco-animate">
+                <div class="team-card text-center">
+                    <div class="team-img-wrap">
+                        <img src="{% static 'images/team-4.jpg' %}" alt="{% trans 'Sarah Johnson' %}" class="img-fluid rounded-circle">
+                        <div class="team-social">
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                        </div>
+            </div>
+            <div class="team-info pt-4">
+                <h4 class="mb-1">{% trans "Sarah Johnson" %}</h5>
+                <span class="badge badge-warning badge-pill mb-3">{% trans "Marketing Director" %}</span>
+                <p class="mb-0">{% trans "Creative strategist with a passion for brand storytelling." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4 ftco-animate">
+        <div class="team-card text-center">
+            <div class="team-img-wrap">
+                <img src="{% static 'images/team-5.jpg' %}" alt="{% trans 'Michael Brown' %}" class="img-fluid rounded-circle">
+                <div class="team-social">
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-info pt-4">
+                <h4 class="mb-1">{% trans "Michael Brown" %}</h4>
+                <span class="badge badge-danger badge-pill mb-3">{% trans "UX Designer" %}</span>
+                <p class="mb-0">{% trans "User experience expert focused on intuitive interfaces." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4 ftco-animate">
+        <div class="team-card text-center">
+            <div class="team-img-wrap">
+                <img src="{% static 'images/team-6.jpg' %}" alt="{% trans 'Emily Davis' %}" class="img-fluid rounded-circle">
+                <div class="team-social">
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-info pt-4">
+                <h4 class="mb-1">{% trans "Emily Davis" %}</h4>
+                <span class="badge badge-dark badge-pill mb-3">{% trans "Project Manager" %}</span>
+                <p class="mb-0">{% trans "Ensures projects are delivered on time and on budget." %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Stats Counter Section -->
+<section class="ftco-counter bg-dark" id="section-counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-5 mb-md-0 text-center text-md-left ftco-animate">
+                <h2 class="font-weight-bold text-white">{% trans "Our Impact in Numbers" %}</h2>
+                <p class="text-light">{% trans "The metrics that showcase our growth and success" %}</p>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center">
+                            <div class="text">
+                                <strong class="number display-4" data-number="250">0</strong>
+                                <span class="d-block">{% trans "Projects Completed" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center">
+                            <div class="text">
+                                <strong class="number display-4" data-number="98">0</strong>
+                                <span class="d-block">{% trans "Client Satisfaction" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center">
+                            <div class="text">
+                                <strong class="number display-4" data-number="45">0</strong>
+                                <span class="d-block">{% trans "Team Members" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18 text-center">
+                            <div class="text">
+                                <strong class="number display-4" data-number="15">0</strong>
+                                <span class="d-block">{% trans "Countries Served" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Logos Section -->
+<section class="ftco-section bg-half-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <span class="subheading">{% trans "Trusted By" %}</span>
+                <h2 class="mb-4">{% trans "Our Valued Clients" %}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="{% trans 'Microsoft Logo' %}" class="img-fluid" style="max-height: 50px;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="{% trans 'Google Logo' %}" class="img-fluid" style="max-height: 50px;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="{% trans 'Amazon Logo' %}" class="img-fluid" style="max-height: 50px;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="{% trans 'WhatsApp Logo' %}" class="img-fluid" style="max-height: 50px;">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="ftco-section bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-4 mb-md-0">
+                <h2 class="mb-3">{% trans "Ready to start your next project with us?" %}</h2>
+                <p class="mb-0">{% trans "Let's create something amazing together. Get in touch with our team today." %}</p>
+            </div>
+            <div class="col-md-4 text-md-right">
+                <a href="{% url 'main_app:contact' %}" class="btn btn-primary btn-lg">{% trans "Contact Us" %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.countup.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        $('.counter-wrap').waypoint(function(direction) {
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+                $('.number').each(function(){
+                    var $this = $(this),
+                        count_to = $this.attr('data-number');
+                    $({ countNum: $this.text() }).animate({
+                        countNum: count_to
+                    }, {
+                        duration: 2000,
+                        easing: 'linear',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+        }, { offset: '100%' });
+    });
+</script>
+{% endblock %}

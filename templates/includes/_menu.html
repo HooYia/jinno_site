@@ -16,7 +16,7 @@
             <ul class="navbar-nav mr-auto">
                 
                 <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'main_app:home' %}" class="nav-link">{% trans 'Home' %}</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">{% trans 'About' %}</a></li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}"><a href="{% url 'main_app:about' %}" class="nav-link">{% trans 'About' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'services' %}active{% endif %}"><a href="{% url 'main_app:services' %}" class="nav-link">{% trans 'Services' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'projects' %}active{% endif %}"><a href="{% url 'main_app:projects' %}" class="nav-link">{% trans 'Projects' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'blog' %}active{% endif %}"><a href="{% url 'main_app:blog' %}" class="nav-link">{% trans 'Blog' %}</a></li>

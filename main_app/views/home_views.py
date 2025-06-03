@@ -247,3 +247,15 @@ class RequestQuoteView(View):
             messages.error(request, _("An error occurred while sending your quote request. Please try again."))
 
         return redirect(request.META.get('HTTP_REFERER', 'main_app:home'))
+    
+    
+    
+class AboutView(TemplateView):
+    template_name = 'prep/about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['testimonies'] = Testimony.objects.all()[:3]  # Limit to 3 for display
+        context['services_section_two'] = ServicesSectionTwo.objects.first()  # For counters
+
+        return context
