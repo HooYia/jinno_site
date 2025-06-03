@@ -22,7 +22,7 @@ class JinnoSetting(models.Model):
         help_text=_("URL to the company's X profile"),
     )
     instagram_link = models.URLField(
-        max_length=200,
+        max_length=300,
         null=True,
         blank=True,
         help_text=_("URL to the company's Instagram profile"),
@@ -34,7 +34,7 @@ class JinnoSetting(models.Model):
         help_text=_("URL to the company's official website"),
     )
     company_name = models.CharField(
-        max_length=100,
+        max_length=1000,
         null=True,
         blank=True,
         help_text=_("The official name of the company"),
@@ -46,7 +46,7 @@ class JinnoSetting(models.Model):
         help_text=_("The company's logo image"),
     )
     slogan = models.CharField(
-        max_length=200,
+        max_length=1000,
         null=True,
         blank=True,
         help_text=_("The company's slogan or tagline"),
@@ -62,6 +62,12 @@ class JinnoSetting(models.Model):
         null=True,
         blank=True,
         help_text=_("The physical address or location of the company"),
+    )
+    google_maps_url = models.URLField(
+        max_length=600,
+        null=True,
+        blank=True,
+        help_text=_("URL for the Google Maps embed iframe"),
     )
 
     def clean(self):
@@ -418,3 +424,30 @@ class SectionSettings(models.Model):
 
     def __str__(self) -> str:
         return "Section Settings"
+    
+
+class ContactUs(models.Model):
+    """
+    Name: ContactUs  699133603
+    Description: This class help to create an abstract base user.
+
+    Author: 
+    """
+    name = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField(blank=False, null=False)
+    subject = models.CharField(max_length=100, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
+    is_read = models.BooleanField(default=False)
+    is_answered = models.BooleanField(default=False)
+    answer = models.TextField(null=True, blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    is_deleted = models.BooleanField(default=False) 
+    
+    class Meta:
+        verbose_name = "Contact Us"
+        verbose_name_plural = "Contact Us"
+
+    def __str__(self):
+        return f"{self.name} - {self.email} - {self.subject} - {self.message} "
+
+

@@ -2,19 +2,19 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
-    Project, Testimony, Blog, SectionSettings
+    Project, Testimony, Blog, SectionSettings, ContactUs
 )
 
 @admin.register(JinnoSetting)
 class JinnoSettingAdmin(admin.ModelAdmin):
-    list_display = ('company_name', 'email', 'phone_number', 'location')
-    search_fields = ('company_name', 'email', 'phone_number', 'location')
+    list_display = ('company_name', 'email', 'phone_number', 'location', 'google_maps_url')
+    search_fields = ('company_name', 'email', 'phone_number', 'location', 'google_maps_url')
     fieldsets = (
         (None, {
             'fields': ('company_name', 'slogan', 'company_logo')
         }),
         (_('Contact Information'), {
-            'fields': ('email', 'phone_number', 'location')
+            'fields': ('email', 'phone_number', 'location', 'google_maps_url')
         }),
         (_('Social Media'), {
             'fields': ('facebook_link', 'x_link', 'instagram_link', 'website_link')
@@ -22,7 +22,6 @@ class JinnoSettingAdmin(admin.ModelAdmin):
     )
 
     def has_add_permission(self, request):
-        # Prevent adding new instances if one already exists
         return not JinnoSetting.objects.exists()
 
 @admin.register(HeroSection)
@@ -118,3 +117,26 @@ class SectionSettingsAdmin(admin.ModelAdmin):
             )
         }),
     )
+    
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'is_read', 'is_answered', 'create_at', 'is_deleted')
+    list_filter = ('is_read', 'is_answered', 'is_deleted', 'create_at')
+    search_fields = ('name', 'email', 'subject', 'message', 'answer')
+    readonly_fields = ('create_at',)
+    
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'email', 'subject', 'message')
+        }),
+        ('Admin Actions', {
+            'fields': ('is_read', 'is_answered', 'answer', 'is_deleted'),
+        }),
+        ('Metadata', {
+            'fields': ('create_at',),
+            'classes': ('collapse',),
+        }),
+    )
+
+    def has_delete_permission(self, request, obj=None):
+        return False  # Optional: prevents deletion from admin

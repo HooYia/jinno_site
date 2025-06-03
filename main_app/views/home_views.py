@@ -6,7 +6,7 @@ from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from django.contrib import messages
-from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings
+from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomePageView(TemplateView):
@@ -50,43 +50,64 @@ class ServicesView(TemplateView):
         return context
     
 class ContactUsView(TemplateView):
-
     template_name = "prep/contact.html"
 
     def get_context_data(self, **kwargs: dict[str, any]) -> dict[str, any]:
         context = super().get_context_data(**kwargs)
         context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
         return context
     
     def post(self, request: HttpRequest, *args: any, **kwargs: dict[str, any]) -> HttpResponse:
         """
         Name: post
-
-        Description: This function help to create a contact us.
+        Description: This function handles contact form submissions with validation.
         """
         name = request.POST.get("name")
         email = request.POST.get("email")
         subject = request.POST.get("subject")
         message = request.POST.get("message")
 
-        contact_us = ContactUs.objects.create(
-            name=name,
-            email=email,
-            subject=subject,
-            message=message,
-        )
+        errors = {}
+        if not name:
+            errors["name"] = ("Name is required.")
+        if not email:
+            errors["email"] = ("Email is required.")
 
-        contact_us.save()
+        if errors:
+            for field, msg in errors.items():
+                messages.error(request, msg)
+            context = self.get_context_data(**kwargs)
+            context["errors"] = errors
+            context["form_data"] = {
+                "name": name,
+                "email": email,
+                "subject": subject,
+                "message": message,
+            }
+            return render(request, self.template_name, context)
 
-        # send_email_with_html()
-
-
-        messages.success(request, _("Your message has been sent successfully."))
-
-        # context = super().get_context_data(**kwargs)
-        # context["site"] = settings.SITE
-        return redirect('main_app:contact')
-        # return render(request, 'prep/contact.html')
+        try:
+            contact_us = ContactUs.objects.create(
+                name=name,
+                email=email,
+                subject=subject,
+                message=message,
+            )
+            contact_us.save()
+            messages.success(request, (_("Your message has been sent successfully.")))
+            return redirect('main_app:contact')
+        except Exception as e:
+            messages.error(request, (_("An error occurred while sending your message. Please try again.")))
+            context = self.get_context_data(**kwargs)
+            context["errors"] = errors
+            context["form_data"] = {
+                "name": name,
+                "email": email,
+                "subject": subject,
+                "message": message,
+            }
+            return render(request, self.template_name, context)
 
 
 
