@@ -9,19 +9,17 @@
 
 
 
-<section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/jinoo_bg_2.jpg'%});" data-stellar-background-ratio="0.1">
+<section class="hero-wrap js-fullheight" style="background-image: url('{% if hero_section.background_image %}{{ hero_section.background_image.url }}{% else %}{% static 'images/jinoo_bg_2.jpg' %}{% endif %}');" data-stellar-background-ratio="0.1">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-lg-6 ftco-animate">
                 <div class="mt-5">
-                    <h1 class="mb-4">{% trans 'Taxation, Accounting, Bookkeeping, Payroll,' %} <br> {% trans 'Management' %}</h1>
+                    <h1 class="mb-4">{{ hero_section.title|default:"Taxation, Accounting, Bookkeeping, Payroll, <br> Management"|safe }}</h1>
                     <p class="mb-4">
-                        {% blocktrans%}
-                            Our services are designed to offer to our customers the best possible experience in terms of satisfaction: quality of service, price, compliance with schedules.
-                        {% endblocktrans%}
+                        {{ hero_section.short_description|default:"Our services are designed to offer to our customers the best possible experience in terms of satisfaction: quality of service, price, compliance with schedules." }}
                     </p>
-                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}  </a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Request A Quote</a></p>
+                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Request A Quote</a></p>
                 </div>
             </div>
         </div>
@@ -36,10 +34,9 @@
                 <div class="media block-6 services d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer-1"></span></div>
                     <div class="media-body pl-4">
-                        <h3 class="heading mb-3">{% trans 'Quality' %} </h3>
+                        <h3 class="heading mb-3">{{ hero_section.card1_title|default:"Quality" }}</h3>
                         <p>
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-
+                            {{ hero_section.card1_description|default:"A small river named Duden flows by their place and supplies it with the necessary regelialia." }}
                         </p>
                     </div>
                 </div>      
@@ -48,11 +45,9 @@
                 <div class="media block-6 services services-2 d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-worker-1"></span></div>
                     <div class="media-body pl-4">
-                        <h3 class="heading mb-3">{% trans 'Professional Liability' %}</h3>
+                        <h3 class="heading mb-3">{{ hero_section.card2_title|default:"Professional Liability" }}</h3>
                         <p>
-                            {% blocktrans%}
-                                We are accountable for any errors, negligence, or omissions in our work that may cause harm to clients or third parties. 
-                            {% endblocktrans%}
+                            {{ hero_section.card2_description|default:"We are accountable for any errors, negligence, or omissions in our work that may cause harm to clients or third parties." }}
                         </p>
                     </div>
                 </div>      
@@ -61,12 +56,11 @@
                 <div class="media block-6 services d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer"></span></div>
                     <div class="media-body pl-4">
-                        <h3 class="heading mb-3">{% trans 'Dedicated To Our Clients' %}</h3>
+                        <h3 class="heading mb-3">{{ hero_section.card3_title|default:"Dedicated To Our Clients" }}</h3>
                         <p>
-                            {% blocktrans%}
-                            Committed to Excellence, Devoted to You. Your success is our priority.  
-                            {% endblocktrans%}
-                        </p>                    </div>
+                            {{ hero_section.card3_description|default:"Committed to Excellence, Devoted to You. Your success is our priority." }}
+                        </p>
+                    </div>
                 </div>      
             </div>
         </div>

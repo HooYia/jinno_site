@@ -64,13 +64,22 @@ class JinnoSetting(models.Model):
         help_text=_("The physical address or location of the company"),
     )
 
+    def clean(self):
+        # Check if another instance exists, excluding the current instance
+        if self.pk is None and JinnoSetting.objects.exists():
+            raise ValidationError(_("Only one JinnoSetting instance can exist."))
+
+    def save(self, *args, **kwargs):
+        # Run clean to enforce singleton
+        self.clean()
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = _("Jinno Setting")
         verbose_name_plural = _("Jinno Settings")
 
     def __str__(self) -> str:
         return self.company_name or "Jinno Setting"
-    
     
 
 class HeroSection(models.Model):

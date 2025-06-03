@@ -21,6 +21,10 @@ class JinnoSettingAdmin(admin.ModelAdmin):
         }),
     )
 
+    def has_add_permission(self, request):
+        # Prevent adding new instances if one already exists
+        return not JinnoSetting.objects.exists()
+
 @admin.register(HeroSection)
 class HeroSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'welcome_title', 'service_title')

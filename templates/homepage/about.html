@@ -13,10 +13,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 d-flex align-items-stretch">
-                <div class="about-wrap img w-100" style="background-image: url({% static 'images/jinoo_about.jpg' %});">
+                <div class="about-wrap img w-100" style="background-image: url({% if hero_section.welcome_image %}{{ hero_section.welcome_image.url }}{% else %}{% static 'images/jinoo_about.jpg' %}{% endif %});">
                     <div class="icon d-flex align-items-center justify-content-center">{% comment %}icon{% endcomment %}
                         <span class=""> {% comment %}flaticon-crane{% endcomment %}
-                            <img src="{% static 'images/jinooca.svg' %}" alt="Jinoo Inc" width="100" height="100">
+                            <img src="{% if site_settings.company_logo %}{{ site_settings.company_logo }}{% else %}{% static 'images/jinooca.svg' %}{% endif %}" alt="{{ site_settings.company_name|default:'Jinoo Inc' }}" width="100" height="100">
                         </span>
                     </div>
                 </div>
@@ -24,21 +24,20 @@
             <div class="col-md-6 py-5 pl-md-5">
                 <div class="row justify-content-center mb-4 pt-md-4">
                     <div class="col-md-12 heading-section ftco-animate">
-                        <span class="subheading">{% trans 'Welcome to Jinoo Inc' %}< </span>
-                        <h2 class="mb-4">{% trans 'Jinoo Inc A Specialized services provider' %}</h2>
+                        <span class="subheading">{% blocktrans with company_name=site_settings.company_name|default:"Jinoo Inc" %}Welcome to {{ company_name }}{% endblocktrans %}</span>
+                        <h2 class="mb-4">{% blocktrans with company_name=site_settings.company_name|default:"Jinoo Inc" %}{{ hero_section.welcome_title|default:company_name }} A Specialized services provider{% endblocktrans %}</h2>
                         <div class="d-flex about">
                             <div class="icon"><span class="flaticon-hammer"></span></div>
-                            <h3>{% trans "We're in this business since 2022 and We provide the best personal and business services" %} </h3>
+                            <h3>{% trans "We're in this business since 2022 and We provide the best personal and business services" %}</h3>
                         </div>
                         <p>
-                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-
+                            {{ hero_section.welcome_description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean." }}
                         </p>
                         <div class="d-flex video-image align-items-center mt-md-4">
-                            <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url(images/about-2.jpg);">
+                            <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url({% if hero_section.welcome_video %}{{ hero_section.welcome_video.url }}{% else %}images/about-2.jpg{% endif %});">
                                 <span class="fa fa-play-circle"></span>
                             </a>
-                            <h4 class="ml-4">This is how we work on our clients, Watch video</h4>
+                            <h4 class="ml-4">{{ hero_section.welcome_video_short_description|default:"This is how we work on our clients, Watch video" }}</h4>
                         </div>
                     </div>
                 </div>

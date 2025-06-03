@@ -6,12 +6,20 @@ from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from django.contrib import messages
+from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog
 
 class HomePageView(TemplateView):
     template_name = 'prep/index.html'
     #template_name = 'brut/index.html'
     def get_context_data(self, **kwargs: dict[str, any]) -> dict[str, any]:
         context = super().get_context_data(**kwargs)
+        context["hero_section"] = HeroSection.objects.first()
+        context["services"] = ServicesSection.objects.all()[:3]
+        context["services_two"] = ServicesSectionTwo.objects.first()
+        context["projects"] = Project.objects.all().order_by('-id')[:6]
+        context["testimonies"] = Testimony.objects.all().order_by('-id')[:5]
+        context["blogs"] = Blog.objects.all().order_by('-id')[:3]
+
         context["site"] = settings.SITE
         return context
     

@@ -12,13 +12,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-                <div class="img"  style="background-image: url({% static 'images/jinoo_bg_1.jpg' %});">
+                <div class="img" style="background-image: url({% static 'images/jinoo_bg_1.jpg' %});">
                     <div class="overlay"></div>
-                    <h2>{% trans 'Providing Personalized and High Quality Services' %}</h2>
+                    <h2>{{ hero_section.service_title|default:"Providing Personalized and High Quality Services" }}</h2>
                     <p>
-                        {% blocktrans%}
-                            We can manage your dream building A small competitive firm that offers a wide range of services to its clients.
-                        {% endblocktrans%}
+                        {{ hero_section.service_description|default:"We can manage your dream building A small competitive firm that offers a wide range of services to its clients." }}
                     </p>
                     <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">{% trans 'Request A Quote' %}</a></p>
                 </div>

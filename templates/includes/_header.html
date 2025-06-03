@@ -2,9 +2,6 @@
 {% load i18n %}
 {% load l10n %}
 
-{% load widget_tweaks %}
-
-
 {% get_available_languages as languages %}
 
 <div class="py-1 top">
@@ -13,16 +10,18 @@
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
                     <span class="fa fa-paper-plane"></span>
-                    <span class="text">{{ site.contact_email|default_if_none:'contact@jinoo.ca' }}</span>
+                    <span class="text">{{ site_settings.email|default:"contact@jinoo.ca" }}</span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                            <a href="{{ site_settings.facebook_link|default:'#' }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                            <a href="{{ site_settings.x_link|default:'#' }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                            <a href="{{ site_settings.instagram_link|default:'#' }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                            <a href="{{ site_settings.website_link|default:'#' }}" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+
+                        
                     </p>
                 </div>
             </div>
@@ -36,31 +35,34 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <!--<a><img src="{% static 'imgages/jinooca.svg' %}"  width="70" height="70"  alt="" class="img-fluid"></a>-->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <span class="">
-                        <img src="{% static 'images/jinooca.svg' %}" alt="Jinoo Inc" width="70" height="70">
+                        <img src="{% if site_settings.company_logo %}{{ site_settings.company_logo }}{% else %}{% static 'images/jinooca.svg' %}{% endif %}" alt="{{ site_settings.company_name|default:'Jinoo Inc' }}" width="70" height="70">
                     </span>
-                    <span class="ml-2">Jinoo Inc <small>Services Company</small></span>
+                    <span class="ml-2">{{ site_settings.company_name|default:"Jinoo Inc" }} <small>{{ site_settings.slogan|default:"Services Company" }}</small></span>
                 </a>
             </div>
+            {% if site_settings.phone_number or site.contact_number %}
             <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
                 <div class="icon d-flex justify-content-center align-items-center">
                     <span class="fa fa-map"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Free Call</span> <span>{{ site.contact_number }}</span></p>
+                    <p class="con"><span>Free Call</span> <span>{% if site_settings.phone_number %}{{ site_settings.phone_number }}{% else %}{{ site.contact_number|default:"" }}{% endif %}</span></p>
                     <p class="con">Call Us Now 24/7 Customer Support</p>
                 </div>
             </div>
+            {% endif %}
+            {% if site_settings.location or site.address %}
             <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
                 <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="text pl-3 pl-md-3">
                     <p class="hr"><span>Our Location</span></p>
-                    <p class="con">{{ site.address }}</p>
+                    <p class="con">{% if site_settings.location %}{{ site_settings.location }}{% else %}{{ site.address|default:"" }}{% endif %}</p>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

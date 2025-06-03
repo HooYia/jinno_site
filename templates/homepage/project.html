@@ -19,82 +19,227 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Taxation</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url('{% if project.image %}{{ project.image.url }}{% else %}{% static 'images/project-1.jpg' %}{% endif %}');" data-toggle="modal" data-target="#projectModal{{ forloop.counter }}">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">{{ project.category|default:"Taxation" }}</span>
+                            <h3>{{ project.title|default:"Building A Condominium" }}</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> {{ project.location|default:"Montreal, Quebec, Canada" }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Policy</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+            {% empty %}
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal1">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Taxation</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Accounting</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Sherbrooke, Quebec, Canada</p>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal2">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Policy</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Strategic plan</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Sherbrooke, Quebec, Canada</p>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal3">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Accounting</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Sherbrooke, Quebec, Canada</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Accounting</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal4">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Strategic plan</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Sherbrooke, Quebec, Canada</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg'%});">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">Bookkeeping</span>
-                        <h3>Building A Condominium</h3>
-                        <p><span class="fa fa-map-marker mr-1"></span> Trois riviere, Quebec, Canada</p>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal5">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Accounting</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Montreal, Quebec, Canada</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="#" class="img d-flex align-items-center" style="background-image: url({% static 'images/project-1.jpg' %});" data-toggle="modal" data-target="#projectModal6">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">Bookkeeping</span>
+                            <h3>Building A Condominium</h3>
+                            <p><span class="fa fa-map-marker mr-1"></span> Trois riviere, Quebec, Canada</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+
+<!-- Modals for Project Descriptions -->
+{% for project in projects %}
+<div class="modal fade" id="projectModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="projectModal{{ forloop.counter }}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal{{ forloop.counter }}Label">{{ project.title|default:"Project" }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ project.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% empty %}
+<div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal1Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal2Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal3Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="projectModal4" tabindex="-1" role="dialog" aria-labelledby="projectModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal4Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="projectModal5" tabindex="-1" role="dialog" aria-labelledby="projectModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal5Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="projectModal6" tabindex="-1" role="dialog" aria-labelledby="projectModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModal6Label">Building A Condominium</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 <section class="ftco-section ftco-no-pt ftco-no-pb testimony-section img">
     <div class="overlay"></div>
@@ -108,76 +253,93 @@
             </div>
             <div class="col-md-6 pl-md-5 py-4 py-md-5 aside-stretch-right">
                 <div class="carousel-testimony owl-carousel ftco-owl">
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({% static 'images/person_1.jpg'%})">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({% static 'images/person_2.jpg'%})">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                    {% for testimony in testimonies %}
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url('{% if testimony.image %}{{ testimony.image.url }}{% else %}{% static 'images/person_'|add:forloop.counter|slice:':-4'|add:'.jpg' %}{% endif %}')">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">{{ testimony.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean" }}</p>
+                                    <p class="name">{{ testimony.full_name|default:"Jeff Freshman" }}</p>
+                                    <span class="position">{{ testimony.post|default:"Guests" }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({% static 'images/person_3.jpg'%})">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({% static 'images/person_1.jpg'%})">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                    {% empty %}
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                    <p class="name">Jeff Freshman</p>
+                                    <span class="position">Guests</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({% static 'images/person_3.jpg'%})">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-quote-left"></i>
-                                </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                    <p class="name">Jeff Freshman</p>
+                                    <span class="position">Guests</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url({% static 'images/person_3.jpg' %})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                    <p class="name">Jeff Freshman</p>
+                                    <span class="position">Guests</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                    <p class="name">Jeff Freshman</p>
+                                    <span class="position">Guests</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
+                                <div class="user-img" style="background-image: url({% static 'images/person_3.jpg' %})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="fa fa-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                    <p class="name">Jeff Freshman</p>
+                                    <span class="position">Guests</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
