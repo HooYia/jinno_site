@@ -466,3 +466,19 @@ class Service(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+    
+class QuoteRequest(models.Model):
+    first_name = models.CharField(max_length=100, null=False, blank=False)
+    last_name = models.CharField(max_length=100, null=False, blank=False)
+    phone = models.CharField(max_length=20, null=False, blank=False)
+    service = models.CharField(max_length=100, null=False, blank=False)
+    message = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Quote Request")
+        verbose_name_plural = _("Quote Requests")
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name} - {self.service}"

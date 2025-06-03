@@ -4,9 +4,9 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 from django.contrib import messages
-from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs
+from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs, QuoteRequest
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomePageView(TemplateView):
@@ -209,3 +209,41 @@ class ProjectView(TemplateView):
         
         context["projects"] = projects
         return context
+    
+    
+class RequestQuoteView(View):
+    def post(self, request):
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        phone = request.POST.get('phone')
+        service = request.POST.get('service')
+        message = request.POST.get('message')
+
+        errors = {}
+        if not first_name:
+            errors['first_name'] = _("First Name is required.")
+        if not last_name:
+            errors['last_name'] = _("Last Name is required.")
+        if not phone:
+            errors['phone'] = _("Phone is required.")
+        if not service:
+            errors['service'] = _("Service is required.")
+
+        if errors:
+            for msg in errors.values():
+                messages.error(request, msg)
+            return redirect(request.META.get('HTTP_REFERER', 'main_app:home'))
+
+        try:
+            QuoteRequest.objects.create(
+                first_name=first_name,
+                last_name=last_name,
+                phone=phone,
+                service=service,
+                message=message,
+            )
+            messages.success(request, _("Your quote request has been sent successfully."))
+        except Exception:
+            messages.error(request, _("An error occurred while sending your quote request. Please try again."))
+
+        return redirect(request.META.get('HTTP_REFERER', 'main_app:home'))

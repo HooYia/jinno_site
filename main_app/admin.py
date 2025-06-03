@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
-    Project, Testimony, Blog, SectionSettings, ContactUs, Service
+    Project, Testimony, Blog, SectionSettings, ContactUs, Service, QuoteRequest
 )
 
 @admin.register(JinnoSetting)
@@ -148,3 +148,26 @@ class ContactUsAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False  # Optional: prevents deletion from admin
+    
+    
+@admin.register(QuoteRequest)
+class QuoteRequestAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'service', 'phone', 'created_at')
+    list_filter = ('service', 'created_at')
+    search_fields = ('first_name', 'last_name', 'service', 'phone', 'message')
+    readonly_fields = ('created_at',)
+
+    fieldsets = (
+        ("Client Information", {
+            'fields': ('first_name', 'last_name', 'phone')
+        }),
+        ("Service Details", {
+            'fields': ('service', 'message')
+        }),
+        ("Metadata", {
+            'fields': ('created_at',),
+            'classes': ('collapse',),
+        }),
+    )
+
+    ordering = ('-created_at',)
