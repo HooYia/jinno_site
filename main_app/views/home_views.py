@@ -6,7 +6,7 @@ from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView, View
 from django.contrib import messages
-from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs, QuoteRequest
+from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs, QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomePageView(TemplateView):
@@ -255,7 +255,9 @@ class AboutView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['testimonies'] = Testimony.objects.all()[:3]  # Limit to 3 for display
-        context['services_section_two'] = ServicesSectionTwo.objects.first()  # For counters
-
+        context["section_settings"] = SectionSettings.objects.first()
+        context["about_story"] = AboutStory.objects.first()
+        context["team_members"] = AboutTeam.objects.all()
+        context["about_stats"] = AboutStats.objects.first()
+        context["partners"] = AboutPartner.objects.all()
         return context

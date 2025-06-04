@@ -5,7 +5,8 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
-    Project, Testimony, Blog, SectionSettings, ContactUs, Service, QuoteRequest
+    Project, Testimony, Blog, SectionSettings, ContactUs, Service, 
+    QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner
 )
 
 
@@ -193,6 +194,60 @@ class QuoteRequestAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
 
 
+
+@admin.register(AboutStory)
+class AboutStoryAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title', 'short_description', 'innovation', 'quality', 'vision', 'mission', 'values')
+    list_filter = ('title',)
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'short_description', 'story_image')
+        }),
+        (_('Core Values'), {
+            'fields': ('innovation', 'quality')
+        }),
+        (_('Mission & Vision'), {
+            'fields': ('mission', 'vision', 'values')
+        }),
+    )
+
+@admin.register(AboutTeam)
+class AboutTeamAdmin(admin.ModelAdmin):
+    list_display = ('name', 'post')
+    search_fields = ('name', 'post', 'short_description')
+    list_filter = ('post',)
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'post', 'short_description', 'image')
+        }),
+    )
+
+@admin.register(AboutStats)
+class AboutStatsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'projects_completed', 'client_satisfaction', 'team_members', 'countries_served')
+    search_fields = ('title', 'description')
+    list_filter = ('projects_completed', 'client_satisfaction')
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description')
+        }),
+        (_('Metrics'), {
+            'fields': ('projects_completed', 'client_satisfaction', 'team_members', 'countries_served')
+        }),
+    )
+
+@admin.register(AboutPartner)
+class AboutPartnerAdmin(admin.ModelAdmin):
+    list_display = ('logo',)
+    search_fields = ('logo',)
+    fieldsets = (
+        (None, {
+            'fields': ('logo',)
+        }),
+    )
+    
+    
 admin.site.site_header = _("JINOO ADMIN")
 admin.site.site_title = _("JINOO ADMIN PORTAL")
 admin.site.index_title = _("WELCOME TO JINOO ADMIN PORTAL")

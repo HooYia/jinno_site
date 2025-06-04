@@ -1,6 +1,7 @@
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 
 class JinnoSetting(models.Model):
     email = models.EmailField(
@@ -488,3 +489,145 @@ class QuoteRequest(models.Model):
 
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name} - {self.service}"
+    
+    
+class AboutStory(models.Model):
+    story_image = models.ImageField(
+        upload_to='about_images/',
+        blank=True,
+        null=True,
+        verbose_name=_("Story Image"),
+        help_text=_("Upload an image representing the company's story (e.g., office or team).")
+    )
+    title = models.CharField(
+        max_length=200,
+        blank=True,
+        verbose_name=_("Title"),
+        help_text=_("Main title for the story section (e.g., 'Building The Future Together').")
+    )
+    short_description = models.TextField(
+        blank=True,
+        verbose_name=_("Short Description"),
+        help_text=_("A brief overview of the company's story.")
+    )
+    innovation = models.TextField(
+        blank=True,
+        verbose_name=_("Innovation"),
+        help_text=_("Description of the company's innovation focus.")
+    )
+    quality = models.TextField(
+        blank=True,
+        verbose_name=_("Quality"),
+        help_text=_("Description of the company's quality standards.")
+    )
+    vision = models.TextField(
+        blank=True,
+        verbose_name=_("Vision"),
+        help_text=_("The company's vision statement.")
+    )
+    mission = models.TextField(
+        blank=True,
+        verbose_name=_("Mission"),
+        help_text=_("The company's mission statement.")
+    )
+    values = models.TextField(
+        blank=True,
+        verbose_name=_("Values"),
+        help_text=_("The company's core values.")
+    )
+
+    class Meta:
+        verbose_name = _("About Story")
+        verbose_name_plural = _("About Stories")
+
+    def __str__(self):
+        return self.title or _("About Story")
+    
+    
+    
+class AboutTeam(models.Model):
+    name = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name=_("Name"),
+        help_text=_("Full name of the team member.")
+    )
+    post = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name=_("Position"),
+        help_text=_("Job title or role (e.g., CEO & Founder).")
+    )
+    short_description = models.TextField(
+        blank=True,
+        verbose_name=_("Short Description"),
+        help_text=_("Brief description of the team member's expertise or role.")
+    )
+    image = models.ImageField(
+        upload_to='team_images/',
+        blank=True,
+        null=True,
+        verbose_name=_("Profile Image"),
+        help_text=_("Upload a profile image for the team member.")
+    )
+
+    class Meta:
+        verbose_name = _("Team Member")
+        verbose_name_plural = _("Team Members")
+
+    def __str__(self):
+        return self.name or _("Team Member")
+    
+    
+
+class AboutStats(models.Model):
+    title = models.CharField(
+        max_length=200,
+        blank=True,
+        verbose_name=_("Title"),
+        help_text=_("Title for the stats section (e.g., 'Our Impact in Numbers').")
+    )
+    description = models.TextField(
+        blank=True,
+        verbose_name=_("Description"),
+        help_text=_("Brief description of the stats section.")
+    )
+    projects_completed = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Projects Completed"),
+        help_text=_("Number of projects completed.")
+    )
+    client_satisfaction = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Client Satisfaction"),
+        help_text=_("Client satisfaction percentage (e.g., 98 for 98%).")
+    )
+    team_members = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Team Members"),
+        help_text=_("Number of team members.")
+    )
+    countries_served = models.PositiveIntegerField(
+        default=0,
+        verbose_name=_("Countries Served"),
+        help_text=_("Number of countries served.")
+    )
+
+    class Meta:
+        verbose_name = _("Stats")
+        verbose_name_plural = _("Stats")
+
+    def __str__(self):
+        return self.title or _("Stats")
+    
+    
+class AboutPartner(models.Model):
+        logo = models.ImageField(max_length=255, blank=True, verbose_name=_("Logo URL"), help_text="URL to the partner's logo image (preferably SVG or PNG with transparent background).")
+
+        class Meta:
+            verbose_name = _("Partner")
+            verbose_name_plural = _("Partners")
+
+        def __str__(self):
+            return _("Partner")
+        
