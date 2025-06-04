@@ -129,12 +129,14 @@ class SectionSettingsAdmin(admin.ModelAdmin):
         'project_hero_section_image__url',
         'service_hero_section_image__url',
         'contact_hero_section_image__url',
+        'about_hero_section_image__url',
     )
     list_filter = (
         'blog_hero_section_image',
         'project_hero_section_image',
         'service_hero_section_image',
         'contact_hero_section_image',
+        'about_hero_section_image',
     )
     fieldsets = (
         (None, {
@@ -142,7 +144,8 @@ class SectionSettingsAdmin(admin.ModelAdmin):
                 'blog_hero_section_image',
                 'project_hero_section_image',
                 'service_hero_section_image',
-                'contact_hero_section_image'
+                'contact_hero_section_image',
+                'about_hero_section_image',
             )
         }),
     )

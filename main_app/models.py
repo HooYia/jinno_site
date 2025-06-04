@@ -417,6 +417,12 @@ class SectionSettings(models.Model):
         blank=True,
         help_text=_("Hero section image for the contact page"),
     )
+    about_hero_section_image = models.ImageField(
+        upload_to='hero_images/about/',
+        null=True,
+        blank=True,
+        help_text=_("Hero section image for the about page"),
+    )
 
     class Meta:
         verbose_name = _("Section Setting")

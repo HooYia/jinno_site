@@ -378,31 +378,3 @@
 </section>
 {% endblock %}
 
-{% block extra_js %}
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/jquery.countup.min.js' %}"></script>
-<script>
-    $(document).ready(function(){
-        $('.counter-wrap').waypoint(function(direction) {
-            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
-                $('.number').each(function(){
-                    var $this = $(this),
-                        count_to = $this.attr('data-number');
-                    $({ countNum: $this.text() }).animate({
-                        countNum: count_to
-                    }, {
-                        duration: 2000,
-                        easing: 'linear',
-                        step: function() {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function() {
-                            $this.text(this.countNum);
-                        }
-                    });
-                });
-            }
-        }, { offset: '100%' });
-    });
-</script>
-{% endblock %}
