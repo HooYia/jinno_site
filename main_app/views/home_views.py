@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, DetailView
 from django.contrib import messages
 from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs, QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -209,7 +209,18 @@ class ProjectView(TemplateView):
         
         context["projects"] = projects
         return context
-    
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+    template_name = "prep/includes/project_detail.html"
+    context_object_name = "project"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
+        return context  
     
 class RequestQuoteView(View):
     def post(self, request):

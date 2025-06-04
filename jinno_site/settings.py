@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     
     'main_app',  # Your main application
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -152,6 +153,29 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+# CKEditor Configuration
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+            ['Link', 'Unlink'],
+            ['Format', 'FontSize'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['Source'],
+        ],
+        'height': 300,
+        'width': '100%',
+        'removePlugins': 'stylesheetparser',
+        'extraPlugins': 'codesnippet',
+        'allowedContent': True,
+        'format_tags': 'p;h1;h2;h3;pre',
+        'fontSize_sizes': '12/12px;14/14px;16/16px;18/18px;24/24px;36/36px',
+    },
+}
 
 
 # Static files (CSS, JavaScript, Images)

@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from ckeditor.fields import RichTextField
 
 class JinnoSetting(models.Model):
     email = models.EmailField(
@@ -250,9 +251,9 @@ class ServicesSectionTwo(models.Model):
         blank=True,
         help_text=_("A brief description for the services section"),
     )
-    description = models.TextField(
-        null=True,
+    description = RichTextField(
         blank=True,
+        null=True,
         help_text=_("Detailed description of the services offered"),
     )
     projects_completed = models.PositiveIntegerField(
@@ -305,9 +306,10 @@ class Project(models.Model):
         blank=True,
         help_text=_("Location where the project was executed"),
     )
-    description = models.TextField(
-        null=True,
+    description = RichTextField(
         blank=True,
+        null=True,
+        verbose_name=_("Description"),
         help_text=_("Detailed description of the project"),
     )
 
@@ -378,9 +380,9 @@ class Blog(models.Model):
         blank=True,
         help_text=_("The name of the blog post author"),
     )
-    description = models.TextField(
-        null=True,
+    description = RichTextField(
         blank=True,
+        null=True,
         help_text=_("The content or description of the blog post"),
     )
 

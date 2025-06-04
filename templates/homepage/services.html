@@ -8,7 +8,29 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info_list for languages as languages_info %}
 
+<style>
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust to match flaticon size */
+    height: 50px;
+    margin: 0 auto; /* Center if not using flex */
+}
 
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+    max-width: 40px; /* Prevent oversized images */
+    max-height: 40px;
+}
+
+.icon .flaticon-architect::before {
+    font-size: 40px; /* Ensure flaticon matches image size */
+    line-height: 50px; /* Center vertically */
+}
+</style>
 
 <section class="ftco-section bg-half-light">
     <div class="container">
@@ -24,7 +46,16 @@
                     <div class="services-wrap ftco-animate">
                         <div class="img" style="background-image: url('{% if service.image %}{{ service.image.url }}{% else %}{% static 'images/jinoo_bookkeeping_1.jpg' %}{% endif %}');"></div>
                         <div class="text">
-                            <div class="icon"><span>{% if service.icon %}<img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}">{% else %}<span class="flaticon-architect"></span>{% endif %}</span></div>
+                            {% comment %} <div class="icon"><span>{% if service.icon %}<img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}">{% else %}<span class="flaticon-architect"></span>{% endif %}</span></div> {% endcomment %}
+                            <div class="icon">
+                                <span>
+                                    {% if service.icon %}
+                                        <img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}" class="service-icon">
+                                    {% else %}
+                                        <span class="flaticon-architect"></span>
+                                    {% endif %}
+                                </span>
+                            </div>
                             <h2>{{ service.title|default:"Bookkeeping" }}</h2>
                             <p>{{ service.short_description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" }}</p>
                             <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal{{ forloop.counter }}">{% trans 'Read more' %}</a>
