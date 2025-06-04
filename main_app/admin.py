@@ -90,15 +90,28 @@ class ServicesSectionAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'location')
-    search_fields = ('title', 'category', 'location', 'description')
+    list_display = ('title', 'category', 'location', 'slug')
+    search_fields = ('title', 'category', 'location', 'description', 'slug')
     list_filter = ('category', 'location')
+    prepopulated_fields = {'slug': ('title',)}
     fieldsets = (
         (None, {
-            'fields': ('title', 'category', 'location', 'description', 'image')
+            'fields': ('title', 'slug', 'category', 'location', 'description', 'image')
         }),
     )
 
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author_name', 'date', 'slug')
+    search_fields = ('title', 'author_name', 'description', 'slug')
+    list_filter = ('date', 'author_name')
+    date_hierarchy = 'date'
+    prepopulated_fields = {'slug': ('title',)}
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'slug', 'author_name', 'date', 'description', 'image')
+        }),
+    )
 @admin.register(Testimony)
 class TestimonyAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'post')
@@ -107,18 +120,6 @@ class TestimonyAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': ('full_name', 'post', 'description', 'image')
-        }),
-    )
-
-@admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author_name', 'date')
-    search_fields = ('title', 'author_name', 'description')
-    list_filter = ('date', 'author_name')
-    date_hierarchy = 'date'
-    fieldsets = (
-        (None, {
-            'fields': ('title', 'author_name', 'date', 'description', 'image')
         }),
     )
 

@@ -71,19 +71,19 @@
             {% for blog in blogs %}
                 <div class="col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="{% url 'main_app:blog_detail' blog.id %}" class="block-20" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');">
+                        <a href="{% url 'main_app:blog_detail' blog.slug %}" class="block-20" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');">
                         </a>
                         <div class="text d-block">
                             <div class="meta">
                                 <p>
-                                    <a href="{% url 'main_app:blog_detail' blog.id %}"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
-                                    <a href="{% url 'main_app:blog_detail' blog.id %}"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
-                                    <a href="{% url 'main_app:blog_detail' blog.id %}" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.slug %}"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.slug %}"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.slug %}" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="{% url 'main_app:blog_detail' blog.id %}">{{ blog.title|default:"Best for any industrial & business solution" }}</a></h3>
+                            <h3 class="heading"><a href="{% url 'main_app:blog_detail' blog.slug %}">{{ blog.title|default:"Best for any industrial & business solution" }}</a></h3>
                             <p>{{ blog.description|striptags|truncatewords:20|default:"Far far away, behind the word mountains, far from the countries Vokalia..." }}</p>
-                            <p><a href="{% url 'main_app:blog_detail' blog.id %}" class="btn btn-secondary py-2 px-3">{% trans 'Read more' %}</a></p>
+                            <p><a href="{% url 'main_app:blog_detail' blog.slug %}" class="btn btn-secondary py-2 px-3">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
                 </div>

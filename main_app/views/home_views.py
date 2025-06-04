@@ -191,6 +191,8 @@ class BlogDetailView(DetailView):
     model = Blog
     template_name = "prep/includes/blog_detail.html"
     context_object_name = "blog"
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -226,12 +228,14 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = "prep/includes/project_detail.html"
     context_object_name = "project"
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["site"] = settings.SITE
         context["section_settings"] = SectionSettings.objects.first()
-        return context  
+        return context 
     
 class RequestQuoteView(View):
     def post(self, request):

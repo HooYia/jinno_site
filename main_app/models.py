@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
 
 class JinnoSetting(models.Model):
     email = models.EmailField(
@@ -312,6 +313,13 @@ class Project(models.Model):
         verbose_name=_("Description"),
         help_text=_("Detailed description of the project"),
     )
+    slug = models.SlugField(
+        max_length=250,
+        unique=True,
+        null=True,
+        blank=True,
+        help_text=_("Unique slug for the project URL"),
+    )
 
     class Meta:
         verbose_name = _("Project")
@@ -319,6 +327,21 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return self.title or "Project"
+
+    def save(self, *args, **kwargs):
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+            # Ensure uniqueness
+            original_slug = self.slug
+            counter = 1
+            while Project.objects.filter(slug=self.slug).exclude(id=self.id).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('main_app:project_detail', kwargs={'slug': self.slug})
     
     
     
@@ -385,6 +408,13 @@ class Blog(models.Model):
         null=True,
         help_text=_("The content or description of the blog post"),
     )
+    slug = models.SlugField(
+        max_length=250,
+        unique=True,
+        null=True,
+        blank=True,
+        help_text=_("Unique slug for the blog post URL"),
+    )
 
     class Meta:
         verbose_name = _("Blog")
@@ -392,7 +422,21 @@ class Blog(models.Model):
 
     def __str__(self) -> str:
         return self.title or "Blog Post"
-    
+
+    def save(self, *args, **kwargs):
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+            # Ensure uniqueness
+            original_slug = self.slug
+            counter = 1
+            while Blog.objects.filter(slug=self.slug).exclude(id=self.id).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('main_app:blog_detail', kwargs={'slug': self.slug})
     
 
 class SectionSettings(models.Model):

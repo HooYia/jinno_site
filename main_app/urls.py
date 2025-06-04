@@ -11,8 +11,8 @@ urlpatterns = [
     path("projects/", ProjectView.as_view(), name="projects"),
     path("request-quote/", RequestQuoteView.as_view(), name="request_quote"),
     path("about/", AboutView.as_view(), name="about"),
-    path('projects/<int:pk>/', ProjectDetailView.as_view(), name='project_detail'),
-    path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
+    path('projects/<slug:slug>/', ProjectDetailView.as_view(), name='project_detail'),
+    path('blog/<slug:slug>/', BlogDetailView.as_view(), name='blog_detail')
 
 
 
