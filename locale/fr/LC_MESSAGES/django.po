@@ -1,0 +1,1297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-04 15:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: jinno_site/settings.py:142 jinno_site/settings.py:143
+msgid "Jinoo Inc website"
+msgstr "Site web de Jinoo Inc"
+
+#: jinno_site/settings.py:163 templates/includes/_menu.html:26
+msgid "English"
+msgstr "Anglais"
+
+#: jinno_site/settings.py:164 templates/includes/_menu.html:35
+msgid "French"
+msgstr "Français"
+
+#: main_app/admin.py:25
+msgid "Contact Information"
+msgstr "Informations de contact"
+
+#: main_app/admin.py:28
+msgid "Social Media"
+msgstr "Médias sociaux"
+
+#: main_app/admin.py:49
+msgid "Main Hero Content"
+msgstr "Contenu principal de la section héros"
+
+#: main_app/admin.py:52
+msgid "Card 1"
+msgstr "Carte 1"
+
+#: main_app/admin.py:55
+msgid "Card 2"
+msgstr "Carte 2"
+
+#: main_app/admin.py:58
+msgid "Card 3"
+msgstr "Carte 3"
+
+#: main_app/admin.py:61
+msgid "Welcome Section"
+msgstr "Section de bienvenue"
+
+#: main_app/admin.py:64
+msgid "Service Section"
+msgstr "Section des services"
+
+#: main_app/admin.py:208
+msgid "Core Values"
+msgstr "Valeurs fondamentales"
+
+#: main_app/admin.py:211
+msgid "Mission & Vision"
+msgstr "Mission et vision"
+
+#: main_app/admin.py:236
+msgid "Metrics"
+msgstr "Métriques"
+
+#: main_app/admin.py:252
+msgid "JINOO ADMIN"
+msgstr "Administration Jinoo"
+
+#: main_app/admin.py:253
+msgid "JINOO ADMIN PORTAL"
+msgstr "Portail d'administration Jinoo"
+
+#: main_app/admin.py:254
+msgid "WELCOME TO JINOO ADMIN PORTAL"
+msgstr "Bienvenue sur le portail d'administration Jinoo"
+
+#: main_app/models.py:13
+msgid "The contact email address for the company"
+msgstr "L'adresse e-mail de contact de l'entreprise"
+
+#: main_app/models.py:19
+msgid "URL to the company's Facebook page"
+msgstr "URL de la page Facebook de l'entreprise"
+
+#: main_app/models.py:25
+msgid "URL to the company's X profile"
+msgstr "URL du profil X de l'entreprise"
+
+#: main_app/models.py:31
+msgid "URL to the company's Instagram profile"
+msgstr "URL du profil Instagram de l'entreprise"
+
+#: main_app/models.py:37
+msgid "URL to the company's official website"
+msgstr "URL du site web officiel de l'entreprise"
+
+#: main_app/models.py:43
+msgid "The official name of the company"
+msgstr "Le nom officiel de l'entreprise"
+
+#: main_app/models.py:49
+msgid "The company's logo image"
+msgstr "L'image du logo de l'entreprise"
+
+#: main_app/models.py:55
+msgid "The company's slogan or tagline"
+msgstr "Le slogan ou la devise de l'entreprise"
+
+#: main_app/models.py:61
+msgid "The company's contact phone number"
+msgstr "Le numéro de téléphone de contact de l'entreprise"
+
+#: main_app/models.py:67
+msgid "The physical address or location of the company"
+msgstr "L'adresse physique ou l'emplacement de l'entreprise"
+
+#: main_app/models.py:73
+msgid "URL for the Google Maps embed iframe"
+msgstr "URL pour l'iframe intégré de Google Maps"
+
+#: main_app/models.py:79
+msgid "Only one JinnoSetting instance can exist."
+msgstr "Une seule instance de JinnoSetting peut exister."
+
+#: main_app/models.py:87
+msgid "Jinno Setting"
+msgstr "Paramètre Jinoo"
+
+#: main_app/models.py:88
+msgid "Jinno Settings"
+msgstr "Paramètres Jinoo"
+
+#: main_app/models.py:99
+msgid "The main title of the hero section"
+msgstr "Le titre principal de la section héros"
+
+#: main_app/models.py:104
+msgid "A brief description for the hero section"
+msgstr "Une brève description pour la section héros"
+
+#: main_app/models.py:110
+msgid "Background image for the hero section"
+msgstr "Image de fond pour la section héros"
+
+#: main_app/models.py:116
+msgid "Title for the first card in the hero section"
+msgstr "Titre de la première carte dans la section héros"
+
+#: main_app/models.py:121
+msgid "Description for the first card"
+msgstr "Description de la première carte"
+
+#: main_app/models.py:127
+msgid "Title for the second card in the hero section"
+msgstr "Titre de la deuxième carte dans la section héros"
+
+#: main_app/models.py:132
+msgid "Description for the second card"
+msgstr "Description de la deuxième carte"
+
+#: main_app/models.py:138
+msgid "Title for the third card in the hero section"
+msgstr "Titre de la troisième carte dans la section héros"
+
+#: main_app/models.py:143
+msgid "Description for the third card"
+msgstr "Description de la troisième carte"
+
+#: main_app/models.py:149
+msgid "Image for the welcome section"
+msgstr "Image pour la section de bienvenue"
+
+#: main_app/models.py:155
+msgid "Video file for the welcome section"
+msgstr "Fichier vidéo pour la section de bienvenue"
+
+#: main_app/models.py:161
+msgid "Title for the welcome section"
+msgstr "Titre pour la section de bienvenue"
+
+#: main_app/models.py:167
+msgid "Subtitle for the welcome section"
+msgstr "Sous-titre pour la section de bienvenue"
+
+#: main_app/models.py:172
+msgid "Detailed description for the welcome section"
+msgstr "Description détaillée pour la section de bienvenue"
+
+#: main_app/models.py:178
+msgid "Short description for the welcome video"
+msgstr "Brève description pour la vidéo de bienvenue"
+
+#: main_app/models.py:185
+msgid "service title"
+msgstr "Titre du service"
+
+#: main_app/models.py:192
+msgid "Short description for the service section"
+msgstr "Brève description pour la section des services"
+
+#: main_app/models.py:196
+msgid "Hero Section"
+msgstr "Section héros"
+
+#: main_app/models.py:197
+msgid "Hero Sections"
+msgstr "Sections héros"
+
+#: main_app/models.py:209 main_app/models.py:248
+msgid "The main title of the services section"
+msgstr "Le titre principal de la section des services"
+
+#: main_app/models.py:214 main_app/models.py:253
+msgid "A brief description for the services section"
+msgstr "Une brève description pour la section des services"
+
+#: main_app/models.py:219 main_app/models.py:258
+msgid "Detailed description of the services offered"
+msgstr "Description détaillée des services proposés"
+
+#: main_app/models.py:225
+msgid "Image representing the service"
+msgstr "Image représentant le service"
+
+#: main_app/models.py:231
+msgid "Icon for the service"
+msgstr "Icône pour le service"
+
+#: main_app/models.py:235
+msgid "Services Section"
+msgstr "Section des services"
+
+#: main_app/models.py:236
+msgid "Services Sections"
+msgstr "Sections des services"
+
+#: main_app/models.py:263
+msgid "Number of projects completed"
+msgstr "Nombre de projets terminés"
+
+#: main_app/models.py:268
+msgid "Number of satisfied customers"
+msgstr "Nombre de clients satisfaits"
+
+#: main_app/models.py:274
+msgid "Image for the service card"
+msgstr "Image pour la carte de service"
+
+#: main_app/models.py:278
+msgid "Services Section Two"
+msgstr "Deuxième section des services"
+
+#: main_app/models.py:279
+msgid "Services Sections Two"
+msgstr "Deuxièmes sections des services"
+
+#: main_app/models.py:290
+msgid "Image representing the project"
+msgstr "Image représentant le projet"
+
+#: main_app/models.py:296
+msgid "Category or type of the project"
+msgstr "Catégorie ou type du projet"
+
+#: main_app/models.py:302
+msgid "Title of the project"
+msgstr "Titre du projet"
+
+#: main_app/models.py:308
+msgid "Location where the project was executed"
+msgstr "Lieu où le projet a été réalisé"
+
+#: main_app/models.py:313 main_app/models.py:638
+msgid "Description"
+msgstr "Description"
+
+#: main_app/models.py:314
+msgid "Detailed description of the project"
+msgstr "Description détaillée du projet"
+
+#: main_app/models.py:321
+msgid "Unique slug for the project URL"
+msgstr "Slug unique pour l'URL du projet"
+
+#: main_app/models.py:325 templates/includes/_footer.html:25
+msgid "Project"
+msgstr "Projet"
+
+#: main_app/models.py:326 templates/includes/_menu.html:17
+#: templates/prep/includes/project_detail.html:50
+#: templates/prep/project.html:14 templates/prep/project.html:15
+msgid "Projects"
+msgstr "Projets"
+
+#: main_app/models.py:353
+msgid "Full name of the person providing the testimony"
+msgstr "Nom complet de la personne fournissant le témoignage"
+
+#: main_app/models.py:358
+msgid "The testimonial content or description"
+msgstr "Contenu ou description du témoignage"
+
+#: main_app/models.py:364
+msgid "Image of the person providing the testimony"
+msgstr "Image de la personne fournissant le témoignage"
+
+#: main_app/models.py:370
+msgid "Job title or position of the person providing the testimony"
+msgstr "Titre ou poste de la personne fournissant le témoignage"
+
+#: main_app/models.py:374
+msgid "Testimony"
+msgstr "Témoignage"
+
+#: main_app/models.py:375
+msgid "Testimonies"
+msgstr "Témoignages"
+
+#: main_app/models.py:387
+msgid "The title of the blog post"
+msgstr "Titre de l'article de blog"
+
+#: main_app/models.py:392
+msgid "The publication date and time of the blog post"
+msgstr "Date et heure de publication de l'article de blog"
+
+#: main_app/models.py:398
+msgid "Featured image for the blog post"
+msgstr "Image vedette pour l'article de blog"
+
+#: main_app/models.py:404
+msgid "The name of the blog post author"
+msgstr "Nom de l'auteur de l'article de blog"
+
+#: main_app/models.py:409
+msgid "The content or description of the blog post"
+msgstr "Contenu ou description de l'article de blog"
+
+#: main_app/models.py:416
+msgid "Unique slug for the blog post URL"
+msgstr "Slug unique pour l'URL de l'article de blog"
+
+#: main_app/models.py:420 templates/includes/_menu.html:18
+#: templates/prep/blog.html:13 templates/prep/blog.html:14
+#: templates/prep/includes/blog_detail.html:51
+msgid "Blog"
+msgstr "Blog"
+
+#: main_app/models.py:421
+msgid "Blogs"
+msgstr "Blogs"
+
+#: main_app/models.py:447
+msgid "Hero section image for the blog page"
+msgstr "Image de la section héros pour la page de blog"
+
+#: main_app/models.py:453
+msgid "Hero section image for the project page"
+msgstr "Image de la section héros pour la page des projets"
+
+#: main_app/models.py:459
+msgid "Hero section image for the service page"
+msgstr "Image de la section héros pour la page des services"
+
+#: main_app/models.py:465
+msgid "Hero section image for the contact page"
+msgstr "Image de la section héros pour la page de contact"
+
+#: main_app/models.py:471
+msgid "Hero section image for the about page"
+msgstr "Image de la section héros pour la page à propos"
+
+#: main_app/models.py:475
+msgid "Section Setting"
+msgstr "Paramètre de section"
+
+#: main_app/models.py:476
+msgid "Section Settings"
+msgstr "Paramètres de section"
+
+#: main_app/models.py:513
+msgid "The name of the service"
+msgstr "Nom du service"
+
+#: main_app/models.py:517
+msgid "Service"
+msgstr "Service"
+
+#: main_app/models.py:518 templates/includes/_footer.html:27
+#: templates/includes/_footer.html:43 templates/includes/_menu.html:16
+#: templates/prep/services.html:12 templates/prep/services.html:13
+msgid "Services"
+msgstr "Services"
+
+#: main_app/models.py:533
+msgid "Quote Request"
+msgstr "Demande de devis"
+
+#: main_app/models.py:534
+msgid "Quote Requests"
+msgstr "Demandes de devis"
+
+#: main_app/models.py:545
+msgid "Story Image"
+msgstr "Image de l'histoire"
+
+#: main_app/models.py:546
+msgid ""
+"Upload an image representing the company's story (e.g., office or team)."
+msgstr ""
+"Téléchargez une image représentant l'histoire de l'entreprise (par exemple, "
+"bureau ou équipe)."
+
+#: main_app/models.py:551 main_app/models.py:633
+msgid "Title"
+msgstr "Titre"
+
+#: main_app/models.py:552
+msgid ""
+"Main title for the story section (e.g., 'Building The Future Together')."
+msgstr ""
+"Titre principal de la section histoire (par exemple, « Construire l'avenir "
+"ensemble »)."
+
+#: main_app/models.py:556 main_app/models.py:609
+msgid "Short Description"
+msgstr "Brève description"
+
+#: main_app/models.py:557
+msgid "A brief overview of the company's story."
+msgstr "Un bref aperçu de l'histoire de l'entreprise."
+
+#: main_app/models.py:561 templates/prep/about.html:101
+msgid "Innovation"
+msgstr "Innovation"
+
+#: main_app/models.py:562
+msgid "Description of the company's innovation focus."
+msgstr "Description de l'accent mis par l'entreprise sur l'innovation."
+
+#: main_app/models.py:566 templates/prep/about.html:112
+msgid "Quality"
+msgstr "Qualité"
+
+#: main_app/models.py:567
+msgid "Description of the company's quality standards."
+msgstr "Description des normes de qualité de l'entreprise."
+
+#: main_app/models.py:571
+msgid "Vision"
+msgstr "Vision"
+
+#: main_app/models.py:572
+msgid "The company's vision statement."
+msgstr "La déclaration de vision de l'entreprise."
+
+#: main_app/models.py:576
+msgid "Mission"
+msgstr "Mission"
+
+#: main_app/models.py:577
+msgid "The company's mission statement."
+msgstr "La déclaration de mission de l'entreprise."
+
+#: main_app/models.py:581
+msgid "Values"
+msgstr "Valeurs"
+
+#: main_app/models.py:582
+msgid "The company's core values."
+msgstr "Les valeurs fondamentales de l'entreprise."
+
+#: main_app/models.py:586 main_app/models.py:590
+msgid "About Story"
+msgstr "À propos de l'histoire"
+
+#: main_app/models.py:587
+msgid "About Stories"
+msgstr "À propos des histoires"
+
+#: main_app/models.py:598
+msgid "Name"
+msgstr "Nom"
+
+#: main_app/models.py:599
+msgid "Full name of the team member."
+msgstr "Nom complet du membre de l'équipe."
+
+#: main_app/models.py:604
+msgid "Position"
+msgstr "Poste"
+
+#: main_app/models.py:605
+msgid "Job title or role (e.g., CEO & Founder)."
+msgstr "Titre ou rôle professionnel (par exemple, PDG et Fondateur)."
+
+#: main_app/models.py:610
+msgid "Brief description of the team member's expertise or role."
+msgstr "Brève description de l'expertise ou du rôle du membre de l'équipe."
+
+#: main_app/models.py:616
+msgid "Profile Image"
+msgstr "Image de profil"
+
+#: main_app/models.py:617
+msgid "Upload a profile image for the team member."
+msgstr "Téléchargez une image de profil pour le membre de l'équipe."
+
+#: main_app/models.py:621 main_app/models.py:625 templates/prep/about.html:180
+#: templates/prep/about.html:188
+msgid "Team Member"
+msgstr "Membre de l'équipe"
+
+#: main_app/models.py:622 main_app/models.py:653 templates/prep/about.html:335
+msgid "Team Members"
+msgstr "Membres de l'équipe"
+
+#: main_app/models.py:634
+msgid "Title for the stats section (e.g., 'Our Impact in Numbers')."
+msgstr ""
+"Titre de la section des statistiques (par exemple, « Notre impact en "
+"chiffres »)."
+
+#: main_app/models.py:639
+msgid "Brief description of the stats section."
+msgstr "Brève description de la section des statistiques."
+
+#: main_app/models.py:643 templates/prep/about.html:319
+msgid "Projects Completed"
+msgstr "Projets terminés"
+
+#: main_app/models.py:644
+msgid "Number of projects completed."
+msgstr "Nombre de projets terminés."
+
+#: main_app/models.py:648 templates/prep/about.html:327
+msgid "Client Satisfaction"
+msgstr "Satisfaction des clients"
+
+#: main_app/models.py:649
+msgid "Client satisfaction percentage (e.g., 98 for 98%)."
+msgstr "Pourcentage de satisfaction des clients (par exemple, 98 pour 98 %)."
+
+#: main_app/models.py:654
+msgid "Number of team members."
+msgstr "Nombre de membres de l'équipe."
+
+#: main_app/models.py:658 templates/prep/about.html:343
+msgid "Countries Served"
+msgstr "Pays desservis"
+
+#: main_app/models.py:659
+msgid "Number of countries served."
+msgstr "Nombre de pays desservis."
+
+#: main_app/models.py:663 main_app/models.py:664 main_app/models.py:667
+msgid "Stats"
+msgstr "Statistiques"
+
+#: main_app/models.py:671
+msgid "Logo URL"
+msgstr "URL du logo"
+
+#: main_app/models.py:674 main_app/models.py:678
+msgid "Partner"
+msgstr "Partenaire"
+
+#: main_app/models.py:675
+msgid "Partners"
+msgstr "Partenaires"
+
+#: main_app/views/home_views.py:101
+msgid "Your message has been sent successfully."
+msgstr "Votre message a été envoyé avec succès."
+
+#: main_app/views/home_views.py:104
+msgid "An error occurred while sending your message. Please try again."
+msgstr ""
+"Une erreur s'est produite lors de l'envoi de votre message. Veuillez "
+"réessayer."
+
+#: main_app/views/home_views.py:202
+msgid "First Name is required."
+msgstr "Le prénom est requis."
+
+#: main_app/views/home_views.py:204
+msgid "Last Name is required."
+msgstr "Le nom de famille est requis."
+
+#: main_app/views/home_views.py:206
+msgid "Phone is required."
+msgstr "Le numéro de téléphone est requis."
+
+#: main_app/views/home_views.py:208
+msgid "Service is required."
+msgstr "Le service est requis."
+
+#: main_app/views/home_views.py:223
+msgid "Your quote request has been sent successfully."
+msgstr "Votre demande de devis a été envoyée avec succès."
+
+#: main_app/views/home_views.py:225
+msgid "An error occurred while sending your quote request. Please try again."
+msgstr ""
+"Une erreur s'est produite lors de l'envoi de votre demande de devis. "
+"Veuillez réessayer."
+
+#: templates/homepage/about.html:23
+#, python-format
+msgid "Welcome to %(company_name)s"
+msgstr "Bienvenue chez %(company_name)s"
+
+#: templates/homepage/about.html:24
+#, python-format
+msgid ""
+"%(hero_section.welcome_title|default:company_name)s A Specialized services "
+"provider"
+msgstr ""
+"%(hero_section.welcome_title|default:company_name)s Un fournisseur de "
+"services spécialisés"
+
+#: templates/homepage/about.html:27
+msgid ""
+"We're in this business since 2022 and We provide the best personal and "
+"business services"
+msgstr ""
+"Nous sommes dans ce secteur depuis 2022 et nous offrons les meilleurs "
+"services personnels et professionnels."
+
+#: templates/homepage/hero.html:15 templates/homepage/services.html:33
+#: templates/prep/services.html:23
+msgid "Our Services"
+msgstr "Nos services"
+
+#: templates/homepage/hero.html:15 templates/homepage/intro.html:16
+#: templates/includes/_footer.html:139
+msgid "Request A Quote"
+msgstr "Demander un devis"
+
+#: templates/homepage/latest_blog.html:10 templates/prep/blog.html:24
+msgid "Our Blog"
+msgstr "Notre blog"
+
+#: templates/homepage/latest_blog.html:11 templates/prep/blog.html:25
+msgid "Latest Blog Updates"
+msgstr "Dernières mises à jour du blog"
+
+#: templates/homepage/latest_blog.html:29
+#: templates/homepage/latest_blog.html:47
+#: templates/homepage/latest_blog.html:64
+#: templates/homepage/latest_blog.html:81 templates/homepage/services.html:54
+#: templates/homepage/services.html:66 templates/homepage/services.html:77
+#: templates/homepage/services.html:88 templates/prep/blog.html:86
+#: templates/prep/blog.html:105 templates/prep/blog.html:123
+#: templates/prep/blog.html:141 templates/prep/services.html:84
+#: templates/prep/services.html:96 templates/prep/services.html:107
+#: templates/prep/services.html:118 templates/prep/services.html:129
+#: templates/prep/services.html:140 templates/prep/services.html:151
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: templates/homepage/latest_blog.html:42
+#: templates/homepage/latest_blog.html:59
+#: templates/homepage/latest_blog.html:76 templates/prep/blog.html:99
+#: templates/prep/blog.html:117 templates/prep/blog.html:135
+msgid "Admin"
+msgstr "Administrateur"
+
+#: templates/homepage/latest_blog.html:46
+#: templates/homepage/latest_blog.html:63
+#: templates/homepage/latest_blog.html:80
+#: templates/homepage/latest_blog.html:115
+#: templates/homepage/latest_blog.html:133
+#: templates/homepage/latest_blog.html:151 templates/prep/blog.html:103
+#: templates/prep/blog.html:121 templates/prep/blog.html:139
+#: templates/prep/blog.html:196 templates/prep/blog.html:214
+#: templates/prep/blog.html:232
+msgid "Best for any industrial & business solution"
+msgstr "Idéal pour toute solution industrielle et commerciale"
+
+#: templates/homepage/latest_blog.html:105
+#: templates/homepage/latest_blog.html:124
+#: templates/homepage/latest_blog.html:142
+#: templates/homepage/latest_blog.html:160 templates/homepage/project.html:139
+#: templates/homepage/project.html:157 templates/homepage/project.html:175
+#: templates/homepage/project.html:193 templates/homepage/project.html:211
+#: templates/homepage/project.html:229 templates/homepage/services.html:150
+#: templates/homepage/services.html:169 templates/homepage/services.html:187
+#: templates/homepage/services.html:205 templates/prep/blog.html:205
+#: templates/prep/blog.html:223 templates/prep/blog.html:241
+#: templates/prep/project.html:184 templates/prep/project.html:202
+#: templates/prep/project.html:220 templates/prep/services.html:216
+#: templates/prep/services.html:235 templates/prep/services.html:253
+#: templates/prep/services.html:271 templates/prep/services.html:289
+#: templates/prep/services.html:307 templates/prep/services.html:325
+msgid "Close"
+msgstr "Fermer"
+
+#: templates/homepage/latest_blog.html:121
+#: templates/homepage/latest_blog.html:139
+#: templates/homepage/latest_blog.html:157 templates/homepage/project.html:136
+#: templates/homepage/project.html:154 templates/homepage/project.html:172
+#: templates/homepage/project.html:190 templates/homepage/project.html:208
+#: templates/homepage/project.html:226 templates/homepage/services.html:166
+#: templates/homepage/services.html:184 templates/homepage/services.html:202
+#: templates/prep/blog.html:202 templates/prep/blog.html:220
+#: templates/prep/blog.html:238 templates/prep/project.html:181
+#: templates/prep/project.html:199 templates/prep/project.html:217
+#: templates/prep/services.html:232 templates/prep/services.html:250
+#: templates/prep/services.html:268 templates/prep/services.html:286
+#: templates/prep/services.html:304 templates/prep/services.html:322
+msgid ""
+"Far far away, behind the word mountains, far from the countries Vokalia and "
+"Consonantia, there live the blind texts."
+msgstr ""
+"Loin, très loin, derrière les montagnes de mots, loin des pays Vokalia et "
+"Consonantia, vivent les textes aveugles."
+
+#: templates/homepage/project.html:9
+msgid "Our Global Work Industries"
+msgstr "Nos industries de travail mondiales"
+
+#: templates/homepage/project.html:10
+msgid "Latest Projects"
+msgstr "Derniers projets"
+
+#: templates/homepage/project.html:34 templates/homepage/services.html:86
+#: templates/homepage/services.html:196 templates/includes/_footer.html:50
+#: templates/includes/_footer.html:123 templates/prep/services.html:116
+#: templates/prep/services.html:262
+msgid "Taxation"
+msgstr "Fiscalité"
+
+#: templates/homepage/project.html:35 templates/homepage/project.html:47
+#: templates/homepage/project.html:59 templates/homepage/project.html:71
+#: templates/homepage/project.html:83 templates/homepage/project.html:95
+#: templates/homepage/project.html:130 templates/homepage/project.html:148
+#: templates/homepage/project.html:166 templates/homepage/project.html:184
+#: templates/homepage/project.html:202 templates/homepage/project.html:220
+#: templates/prep/project.html:95 templates/prep/project.html:107
+#: templates/prep/project.html:119 templates/prep/project.html:175
+#: templates/prep/project.html:193 templates/prep/project.html:211
+msgid "Building A Condominium"
+msgstr "Construire un condominium"
+
+#: templates/homepage/project.html:36 templates/homepage/project.html:48
+#: templates/homepage/project.html:84
+msgid "Montreal, Quebec, Canada"
+msgstr "Montréal, Québec, Canada"
+
+#: templates/homepage/project.html:46
+msgid "Policy"
+msgstr "Politique"
+
+#: templates/homepage/project.html:58 templates/homepage/project.html:82
+#: templates/homepage/services.html:75 templates/homepage/services.html:178
+#: templates/includes/_footer.html:48 templates/includes/_footer.html:121
+#: templates/prep/project.html:94 templates/prep/project.html:106
+#: templates/prep/project.html:118 templates/prep/services.html:105
+#: templates/prep/services.html:244
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#: templates/homepage/project.html:60 templates/homepage/project.html:72
+#: templates/prep/project.html:96 templates/prep/project.html:108
+#: templates/prep/project.html:120
+msgid "Sherbrooke, Quebec, Canada"
+msgstr "Sherbrooke, Québec, Canada"
+
+#: templates/homepage/project.html:70
+msgid "Strategic plan"
+msgstr "Plan stratégique"
+
+#: templates/homepage/project.html:94 templates/homepage/services.html:64
+#: templates/homepage/services.html:160 templates/includes/_footer.html:49
+#: templates/includes/_footer.html:122 templates/prep/services.html:94
+#: templates/prep/services.html:226
+msgid "Bookkeeping"
+msgstr "Tenue de livres"
+
+#: templates/homepage/project.html:96
+msgid "Trois riviere, Quebec, Canada"
+msgstr "Trois-Rivières, Québec, Canada"
+
+#: templates/homepage/project.html:242
+msgid "Read Testimonials"
+msgstr "Lire les témoignages"
+
+#: templates/homepage/project.html:243
+msgid "It's always a joy to hear that the work we do has positively reviews"
+msgstr ""
+"C'est toujours un plaisir d'entendre que notre travail reçoit des critiques "
+"positives"
+
+#: templates/homepage/project.html:272 templates/homepage/project.html:286
+#: templates/homepage/project.html:300 templates/homepage/project.html:314
+#: templates/homepage/project.html:328
+msgid ""
+"Far far away, behind the word mountains, far from the countries Vokalia and "
+"Consonantia, there live the blind texts. Separated they live in "
+"Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+msgstr ""
+"Loin, très loin, derrière les montagnes de mots, loin des pays Vokalia et "
+"Consonantia, vivent les textes aveugles. Séparés, ils vivent à "
+"Bookmarksgrove, juste à la côte de la Sémantique, un grand océan linguistique"
+
+#: templates/homepage/project.html:273 templates/homepage/project.html:287
+#: templates/homepage/project.html:301 templates/homepage/project.html:315
+#: templates/homepage/project.html:329
+msgid "Jeff Freshman"
+msgstr "Jeff Freshman"
+
+#: templates/homepage/project.html:274 templates/homepage/project.html:288
+#: templates/homepage/project.html:302 templates/homepage/project.html:316
+#: templates/homepage/project.html:330
+msgid "Guests"
+msgstr "Invités"
+
+#: templates/homepage/services.html:34 templates/prep/services.html:24
+msgid "We Offer Services"
+msgstr "Nous offrons des services"
+
+#: templates/homepage/services.html:65 templates/homepage/services.html:76
+#: templates/homepage/services.html:87 templates/prep/services.html:95
+#: templates/prep/services.html:106 templates/prep/services.html:117
+#: templates/prep/services.html:128 templates/prep/services.html:139
+#: templates/prep/services.html:150
+msgid ""
+"Far far away, behind the word mountains, far from the countries Vokalia and "
+"Consonantia"
+msgstr ""
+"Loin, très loin, derrière les montagnes de mots, loin des pays Vokalia et "
+"Consonantia"
+
+#: templates/homepage/services.html:103
+#, python-format
+msgid "%(services_two.title|default:company_name)s A Services Company"
+msgstr "%(services_two.title|default:company_name)s Une entreprise de services"
+
+#: templates/homepage/services.html:116
+msgid "Project Completed"
+msgstr "Projet terminé"
+
+#: templates/homepage/services.html:125
+msgid "Happy Customers"
+msgstr "Clients satisfaits"
+
+#: templates/includes/_footer.html:10 templates/includes/_menu.html:15
+msgid "About"
+msgstr "À propos"
+
+#: templates/includes/_footer.html:22
+msgid "Links"
+msgstr "Liens"
+
+#: templates/includes/_footer.html:26 templates/prep/about.html:5
+#: templates/prep/about.html:72 templates/prep/about.html:74
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: templates/includes/_footer.html:28
+msgid "Blog Posts"
+msgstr "Articles de blog"
+
+#: templates/includes/_footer.html:29
+msgid "Industries"
+msgstr "Industries"
+
+#: templates/includes/_footer.html:32 templates/includes/_menu.html:19
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/includes/_footer.html:33
+msgid "Help"
+msgstr "Aide"
+
+#: templates/includes/_footer.html:34
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/includes/_footer.html:35
+msgid "Terms of Use"
+msgstr "Conditions d'utilisation"
+
+#: templates/includes/_footer.html:51 templates/includes/_footer.html:124
+#: templates/prep/services.html:138 templates/prep/services.html:298
+msgid "Payroll"
+msgstr "Paie"
+
+#: templates/includes/_footer.html:52 templates/includes/_footer.html:125
+msgid "Management"
+msgstr "Gestion"
+
+#: templates/includes/_footer.html:53 templates/includes/_footer.html:126
+msgid "Research and study"
+msgstr "Recherche et étude"
+
+#: templates/includes/_footer.html:61
+msgid "Have a Questions?"
+msgstr "Vous avez des questions ?"
+
+#: templates/includes/_footer.html:79
+msgid "All rights reserved"
+msgstr "Tous droits réservés"
+
+#: templates/includes/_footer.html:99
+msgid "Request Quote"
+msgstr "Demander un devis"
+
+#: templates/includes/_footer.html:102
+msgid "First Name"
+msgstr "Prénom"
+
+#: templates/includes/_footer.html:105
+msgid "Last Name"
+msgstr "Nom de famille"
+
+#: templates/includes/_footer.html:108 templates/prep/contact.html:84
+msgid "Phone"
+msgstr "Téléphone"
+
+#: templates/includes/_footer.html:117
+msgid "Select Your Services"
+msgstr "Sélectionnez vos services"
+
+#: templates/includes/_footer.html:127
+msgid "Our Digital platform"
+msgstr "Notre plateforme numérique"
+
+#: templates/includes/_footer.html:136 templates/prep/contact.html:57
+msgid "Message"
+msgstr "Message"
+
+#: templates/includes/_header.html:27 templates/includes/_menu.html:40
+msgid "Inquire Now"
+msgstr "Renseignez-vous maintenant"
+
+#: templates/includes/_header.html:49
+msgid "Free Call"
+msgstr "Appel gratuit"
+
+#: templates/includes/_header.html:50
+msgid "Call Us Now 24/7 Customer Support"
+msgstr "Appelez-nous maintenant, support client 24/7"
+
+#: templates/includes/_header.html:59
+msgid "Our Location"
+msgstr "Notre emplacement"
+
+#: templates/includes/_menu.html:10
+msgid "Menu"
+msgstr "Menu"
+
+#: templates/includes/_menu.html:14 templates/prep/about.html:71
+#: templates/prep/blog.html:13 templates/prep/contact.html:12
+#: templates/prep/includes/blog_detail.html:50
+#: templates/prep/includes/project_detail.html:49
+#: templates/prep/project.html:14 templates/prep/services.html:12
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/includes/_menu.html:27
+msgid "English Flag"
+msgstr "Drapeau anglais"
+
+#: templates/includes/_menu.html:36
+msgid "French Flag"
+msgstr "Drapeau français"
+
+#: templates/prep/about.html:86
+msgid "Our Office"
+msgstr "Notre bureau"
+
+#: templates/prep/about.html:90
+msgid "Our Story"
+msgstr "Notre histoire"
+
+#: templates/prep/about.html:91
+msgid "Building The Future Together"
+msgstr "Construire l'avenir ensemble"
+
+#: templates/prep/about.html:92
+msgid ""
+"Founded in 2010, we've grown from a small startup to an industry leader with "
+"international recognition."
+msgstr ""
+"Fondée en 2010, nous sommes passés d'une petite startup à un leader de "
+"l'industrie avec une reconnaissance internationale."
+
+#: templates/prep/about.html:93
+msgid ""
+"Our journey began with a simple idea: to create innovative solutions that "
+"make a difference. Today, we serve clients across 15 countries with a team "
+"of passionate professionals."
+msgstr ""
+"Notre parcours a commencé avec une idée simple : créer des solutions "
+"innovantes qui font la différence. Aujourd'hui, nous servons des clients "
+"dans 15 pays avec une équipe de professionnels passionnés."
+
+#: templates/prep/about.html:102
+msgid "Cutting-edge solutions tailored to your needs"
+msgstr "Solutions de pointe adaptées à vos besoins"
+
+#: templates/prep/about.html:113
+msgid "Uncompromising standards in all we do"
+msgstr "Normes sans compromis dans tout ce que nous faisons"
+
+#: templates/prep/about.html:133
+msgid "Our Mission"
+msgstr "Notre mission"
+
+#: templates/prep/about.html:134
+msgid ""
+"To empower businesses through innovative technology solutions that drive "
+"growth, efficiency, and competitive advantage."
+msgstr ""
+"Habiliter les entreprises grâce à des solutions technologiques innovantes "
+"qui favorisent la croissance, l'efficacité et l'avantage concurrentiel."
+
+#: templates/prep/about.html:144
+msgid "Our Vision"
+msgstr "Notre vision"
+
+#: templates/prep/about.html:145
+msgid ""
+"To be the global leader in transformative business solutions, recognized for "
+"our innovation, integrity, and impact."
+msgstr ""
+"Être le leader mondial des solutions commerciales transformatrices, reconnu "
+"pour notre innovation, notre intégrité et notre impact."
+
+#: templates/prep/about.html:155
+msgid "Our Values"
+msgstr "Nos valeurs"
+
+#: templates/prep/about.html:156
+msgid ""
+"Integrity, Excellence, Innovation, Collaboration, and Customer Focus guide "
+"everything we do."
+msgstr ""
+"L'intégrité, l'excellence, l'innovation, la collaboration et l'orientation "
+"client guident tout ce que nous faisons."
+
+#: templates/prep/about.html:169
+msgid "Our Experts"
+msgstr "Nos experts"
+
+#: templates/prep/about.html:170
+msgid "Meet The Team"
+msgstr "Rencontrez l'équipe"
+
+#: templates/prep/about.html:171
+msgid ""
+"Our talented professionals bring diverse skills and experience to deliver "
+"exceptional results."
+msgstr ""
+"Nos professionnels talentueux apportent des compétences et une expérience "
+"variées pour offrir des résultats exceptionnels."
+
+#: templates/prep/about.html:189
+msgid "Role"
+msgstr "Rôle"
+
+#: templates/prep/about.html:190
+msgid "No description available."
+msgstr "Aucune description disponible."
+
+#: templates/prep/about.html:200 templates/prep/about.html:208
+msgid "John Smith"
+msgstr "John Smith"
+
+#: templates/prep/about.html:209
+msgid "CEO & Founder"
+msgstr "PDG et Fondateur"
+
+#: templates/prep/about.html:210
+msgid ""
+"Visionary leader with 15+ years of industry experience driving strategic "
+"growth."
+msgstr ""
+"Leader visionnaire avec plus de 15 ans d'expérience dans l'industrie, "
+"stimulant la croissance stratégique."
+
+#: templates/prep/about.html:217 templates/prep/about.html:225
+msgid "Jane Wilson"
+msgstr "Jane Wilson"
+
+#: templates/prep/about.html:226
+msgid "CTO"
+msgstr "Directrice de la technologie"
+
+#: templates/prep/about.html:227
+msgid ""
+"Technology innovator specializing in scalable architecture and digital "
+"transformation."
+msgstr ""
+"Innovatrice en technologie spécialisée dans l'architecture évolutive et la "
+"transformation numérique."
+
+#: templates/prep/about.html:234 templates/prep/about.html:242
+msgid "David Anderson"
+msgstr "David Anderson"
+
+#: templates/prep/about.html:243
+msgid "Lead Developer"
+msgstr "Développeur principal"
+
+#: templates/prep/about.html:244
+msgid "Full-stack developer with expertise in modern web technologies."
+msgstr ""
+"Développeur full-stack avec une expertise dans les technologies web modernes."
+
+#: templates/prep/about.html:251 templates/prep/about.html:259
+msgid "Sarah Johnson"
+msgstr "Sarah Johnson"
+
+#: templates/prep/about.html:260
+msgid "Marketing Director"
+msgstr "Directrice du marketing"
+
+#: templates/prep/about.html:261
+msgid "Creative strategist with a passion for brand storytelling."
+msgstr "Stratège créative passionnée par la narration de marque."
+
+#: templates/prep/about.html:268 templates/prep/about.html:276
+msgid "Michael Brown"
+msgstr "Michael Brown"
+
+#: templates/prep/about.html:277
+msgid "UX Designer"
+msgstr "Designer UX"
+
+#: templates/prep/about.html:278
+msgid "User experience expert focused on intuitive interfaces."
+msgstr "Expert en expérience utilisateur axé sur des interfaces intuitives."
+
+#: templates/prep/about.html:285 templates/prep/about.html:293
+msgid "Emily Davis"
+msgstr "Emily Davis"
+
+#: templates/prep/about.html:294
+msgid "Project Manager"
+msgstr "Cheffe de projet"
+
+#: templates/prep/about.html:295
+msgid "Ensures projects are delivered on time and on budget."
+msgstr ""
+"Garantit que les projets sont livrés dans les délais et dans le respect du "
+"budget."
+
+#: templates/prep/about.html:310
+msgid "Our Impact in Numbers"
+msgstr "Notre impact en chiffres"
+
+#: templates/prep/about.html:358
+msgid "Trusted By"
+msgstr "Fait confiance par"
+
+#: templates/prep/about.html:359
+msgid "Our Valued Partners"
+msgstr "Nos partenaires précieux"
+
+#: templates/prep/about.html:367
+msgid "Partner Logo"
+msgstr "Logo du partenaire"
+
+#: templates/prep/about.html:375
+msgid "Microsoft Logo"
+msgstr "Logo Microsoft"
+
+#: templates/prep/about.html:380
+msgid "Google Logo"
+msgstr "Logo Google"
+
+#: templates/prep/about.html:385
+msgid "Amazon Logo"
+msgstr "Logo Amazon"
+
+#: templates/prep/about.html:390
+msgid "WhatsApp Logo"
+msgstr "Logo WhatsApp"
+
+#: templates/prep/about.html:404
+msgid "Ready to start your next project with us?"
+msgstr "Prêt à démarrer votre prochain projet avec nous ?"
+
+#: templates/prep/about.html:405
+msgid ""
+"Let's create something amazing together. Get in touch with our team today."
+msgstr ""
+"Créons quelque chose d'incroyable ensemble. Contactez notre équipe dès "
+"aujourd'hui."
+
+#: templates/prep/about.html:408
+msgid "Contact Us"
+msgstr "Nous contacter"
+
+#: templates/prep/blog.html:37 templates/prep/blog.html:41
+#: templates/prep/blog.html:156 templates/prep/blog.html:160
+#: templates/prep/project.html:38 templates/prep/project.html:42
+#: templates/prep/project.html:135 templates/prep/project.html:139
+#: templates/prep/services.html:36 templates/prep/services.html:40
+#: templates/prep/services.html:166 templates/prep/services.html:170
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/prep/blog.html:57 templates/prep/blog.html:61
+#: templates/prep/blog.html:176 templates/prep/blog.html:180
+#: templates/prep/project.html:58 templates/prep/project.html:62
+#: templates/prep/project.html:155 templates/prep/project.html:159
+#: templates/prep/services.html:56 templates/prep/services.html:60
+#: templates/prep/services.html:186 templates/prep/services.html:190
+msgid "Next"
+msgstr "Suivant"
+
+#: templates/prep/blog.html:104 templates/prep/blog.html:122
+#: templates/prep/blog.html:140
+msgid ""
+"Far far away, behind the word mountains, far from the countries Vokalia..."
+msgstr ""
+"Loin, très loin, derrière les montagnes de mots, loin des pays Vokalia..."
+
+#: templates/prep/contact.html:12 templates/prep/contact.html:13
+#: templates/prep/contact.html:23
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: templates/prep/contact.html:24
+msgid "Message us for more details"
+msgstr "Envoyez-nous un message pour plus de détails"
+
+#: templates/prep/contact.html:36
+msgid "Your Name"
+msgstr "Votre nom"
+
+#: templates/prep/contact.html:44
+msgid "Your Email"
+msgstr "Votre e-mail"
+
+#: templates/prep/contact.html:52
+msgid "Subject"
+msgstr "Objet"
+
+#: templates/prep/contact.html:62
+msgid "Send Message"
+msgstr "Envoyer le message"
+
+#: templates/prep/contact.html:76
+msgid "Address"
+msgstr "Adresse"
+
+#: templates/prep/contact.html:92
+msgid "Email"
+msgstr "E-mail"
+
+#: templates/prep/contact.html:100
+msgid "Website"
+msgstr "Site web"
+
+#: templates/prep/includes/blog_detail.html:81
+msgid "Back to Blog"
+msgstr "Retour au blog"
+
+#: templates/prep/includes/project_detail.html:75
+msgid "Back to Projects"
+msgstr "Retour aux projets"
+
+#: templates/prep/project.html:25
+msgid "Our Projects"
+msgstr "Nos projets"
+
+#: templates/prep/project.html:26
+msgid "Recent Projects"
+msgstr "Projets récents"
+
+#: templates/prep/services.html:127 templates/prep/services.html:280
+msgid "Budgeting"
+msgstr "Budgétisation"
+
+#: templates/prep/services.html:127 templates/prep/services.html:280
+msgid "Variance analysis"
+msgstr "Analyse des écarts"
+
+#: templates/prep/services.html:149 templates/prep/services.html:316
+msgid "Economic Forecasting"
+msgstr "Prévision économique"
