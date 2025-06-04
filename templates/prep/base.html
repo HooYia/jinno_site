@@ -4,7 +4,7 @@
 {% spaceless %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ request.LANGUAGE_CODE }}">
 <head>
 
     {%comment%} 
@@ -12,14 +12,15 @@
     {%endcomment%}
 
 
-    <title>Wilcon - Free Bootstrap 4 Template by Colorlib</title>
+    <title>JINOO</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/jinooca.svg' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/jinooca.svg' %}">
 <link rel="stylesheet" href="{% static 'css/animate.css' %} ">
 
 <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} ">

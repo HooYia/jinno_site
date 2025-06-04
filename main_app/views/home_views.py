@@ -258,7 +258,7 @@ class RequestQuoteView(View):
         if errors:
             for msg in errors.values():
                 messages.error(request, msg)
-            return redirect(request.META.get('HTTP_REFERER', 'main_app:home'))
+            return redirect(request.META.get('HTTP_REFERER', 'home'))
 
         try:
             QuoteRequest.objects.create(
@@ -272,7 +272,7 @@ class RequestQuoteView(View):
         except Exception:
             messages.error(request, _("An error occurred while sending your quote request. Please try again."))
 
-        return redirect(request.META.get('HTTP_REFERER', 'main_app:home'))
+        return redirect(request.META.get('HTTP_REFERER', 'home'))
     
     
     

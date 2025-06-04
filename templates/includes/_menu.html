@@ -1,31 +1,72 @@
+
 {% load static %}
 {% load i18n %}
 {% load l10n %}
-
 {% load widget_tweaks %}
-
-
-{% get_available_languages as languages %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span> Menu
+            <span class="fa fa-bars"></span> {% trans "Menu" %}
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                
-                <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'main_app:home' %}" class="nav-link">{% trans 'Home' %}</a></li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}"><a href="{% url 'home' %}" class="nav-link">{% trans 'Home' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}"><a href="{% url 'main_app:about' %}" class="nav-link">{% trans 'About' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'services' %}active{% endif %}"><a href="{% url 'main_app:services' %}" class="nav-link">{% trans 'Services' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'projects' %}active{% endif %}"><a href="{% url 'main_app:projects' %}" class="nav-link">{% trans 'Projects' %}</a></li>
                 <li class="nav-item {% if request.resolver_match.url_name == 'blog' %}active{% endif %}"><a href="{% url 'main_app:blog' %}" class="nav-link">{% trans 'Blog' %}</a></li>
-
-
-                <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a href="{% url 'main_app:contact' %}" class="nav-link">{% trans 'Contact' %} </a></li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a href="{% url 'main_app:contact' %}" class="nav-link">{% trans 'Contact' %}</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">{% trans 'Inquire Now' %} </a>
+            <div class="language-toggler d-flex align-items-center mr-3">
+                <form action="{% url 'set_language' %}" method="post" class="language-form mx-1">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="en">
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <button type="submit" class="language-button {% if request.LANGUAGE_CODE == 'en' %}active{% endif %}" title="{% trans 'English' %}">
+                        <img class="language-flag" src="{% static 'images/en.png' %}" alt="{% trans 'English Flag' %}">
+                    </button>
+                </form>
+                <span class="text-white">|</span>
+                <form action="{% url 'set_language' %}" method="post" class="language-form mx-1">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="fr">
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <button type="submit" class="language-button {% if request.LANGUAGE_CODE == 'fr' %}active{% endif %}" title="{% trans 'French' %}">
+                        <img class="language-flag" src="{% static 'images/fr.png' %}" alt="{% trans 'French Flag' %}">
+                    </button>
+                </form>
+            </div>
+            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">{% trans 'Inquire Now' %}</a>
         </div>
     </div>
 </nav>
-<!-- END nav -->
+
+<style>
+.language-toggler .language-form {
+    display: inline-block;
+}
+.language-toggler .language-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+.language-toggler .language-button.active {
+    opacity: 1;
+}
+.language-toggler .language-button:hover {
+    opacity: 0.8;
+}
+.language-toggler .language-flag {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.language-toggler span {
+    font-size: 0.875rem;
+    margin: 0 0.5rem;
+}
+</style>
