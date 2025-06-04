@@ -185,7 +185,18 @@ class BlogView(TemplateView):
         
         context["blogs"] = blogs
         return context
-    
+
+
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = "prep/includes/blog_detail.html"
+    context_object_name = "blog"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["site"] = settings.SITE
+        context["section_settings"] = SectionSettings.objects.first()
+        return context
     
     
 class ProjectView(TemplateView):

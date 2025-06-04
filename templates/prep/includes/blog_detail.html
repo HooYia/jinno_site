@@ -1,0 +1,87 @@
+
+{% extends "prep/index.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block extra_css %}
+<style>
+.blog-detail-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+.blog-detail-content {
+    margin-top: 2rem;
+}
+.blog-detail-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.blog-detail-content .meta {
+    font-size: 1rem;
+    color: #6c757d;
+}
+.blog-detail-content .meta a {
+    color: #6c757d;
+}
+.blog-detail-content .meta a:hover {
+    color: #007bff;
+}
+.blog-detail-content .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+.btn-back {
+    margin-top: 2rem;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_1.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs">
+                    <span class="mr-2"><a href="{% url 'main_app:home' %}">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span class="mr-2"><a href="{% url 'main_app:blog' %}">Blog <i class="fa fa-chevron-right"></i></a></span>
+                    <span>{{ blog.title|default:"Blog Post" }}</span>
+                </p>
+                <h1 class="mb-3 bread">{{ blog.title|default:"Blog Details" }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="blog-detail ftco-animate">
+                    {% comment %} {% if blog.image %}
+                        <img src="{{ blog.image.url }}" alt="{{ blog.title|default:'Blog Image' }}" class="blog-detail-img">
+                    {% endif %} {% endcomment %}
+                    <div class="blog-detail-content">
+                        <h2>{{ blog.title|default:"Blog Post" }}</h2>
+                        <div class="meta">
+                            <p>
+                                <a href="#"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
+                                <a href="#"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
+                                <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                            </p>
+                        </div>
+                        <div class="description">
+                            {{ blog.description|safe|default:"No description available." }}
+                        </div>
+                        <a href="{% url 'main_app:blog' %}" class="btn btn-primary btn-back">Back to Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

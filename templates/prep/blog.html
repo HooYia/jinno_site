@@ -1,3 +1,4 @@
+
 {% extends "prep/index.html" %}
 {% load static %}
 {% load i18n %}
@@ -70,19 +71,19 @@
             {% for blog in blogs %}
                 <div class="col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="#" class="block-20" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');" data-toggle="modal" data-target="#blogModal{{ blog.id }}">
+                        <a href="{% url 'main_app:blog_detail' blog.id %}" class="block-20" style="background-image: url('{% if blog.image %}{{ blog.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');">
                         </a>
                         <div class="text d-block">
                             <div class="meta">
                                 <p>
-                                    <a href="#"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
-                                    <a href="#"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
-                                    <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.id %}"><span class="fa fa-calendar mr-2"></span>{% if blog.date %}{{ blog.date|date:"M. d, Y" }}{% else %}Sept. 06, 2020{% endif %}</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.id %}"><span class="fa fa-user mr-2"></span>{{ blog.author_name|default:"Admin" }}</a>
+                                    <a href="{% url 'main_app:blog_detail' blog.id %}" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#">{{ blog.title|default:"Best for any industrial & business solution" }}</a></h3>
-                            <p>{{ blog.description|truncatewords:20|default:"Far far away, behind the word mountains, far from the countries Vokalia..." }}</p>
-                            <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal{{ blog.id }}">{% trans 'Read more' %}</a></p>
+                            <h3 class="heading"><a href="{% url 'main_app:blog_detail' blog.id %}">{{ blog.title|default:"Best for any industrial & business solution" }}</a></h3>
+                            <p>{{ blog.description|striptags|truncatewords:20|default:"Far far away, behind the word mountains, far from the countries Vokalia..." }}</p>
+                            <p><a href="{% url 'main_app:blog_detail' blog.id %}" class="btn btn-secondary py-2 px-3">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
                 </div>
@@ -99,7 +100,7 @@
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal1">Best for any industrial & business solution</a></h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal1">{% trans 'Read more' %}</a></p>
                         </div>
@@ -117,7 +118,7 @@
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal2">Best for any industrial & business solution</a></h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal2">{% trans 'Read more' %}</a></p>
                         </div>
@@ -135,7 +136,7 @@
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#">Best for any industrial & business solution</a></h3>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal3">Best for any industrial & business solution</a></h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal3">{% trans 'Read more' %}</a></p>
                         </div>
@@ -187,80 +188,59 @@
     </div>
 </section>
 
-<!-- Modals for Blog Descriptions -->
-{% for blog in blogs %}
-    <div class="modal fade" id="blogModal{{ blog.id }}" tabindex="-1" role="dialog" aria-labelledby="blogModal{{ blog.id }}Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="blogModal{{ blog.id }}Label">{{ blog.title|default:"Blog Post" }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {{ blog.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+<!-- Modals for Static Fallback Blogs -->
+<div class="modal fade" id="blogModal1" tabindex="-1" role="dialog" aria-labelledby="blogModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal1Label">Best for any industrial & business solution</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-{% empty %}
-    <div class="modal fade" id="blogModal1" tabindex="-1" role="dialog" aria-labelledby="blogModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="blogModal1Label">Best for any industrial & business solution</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="blogModal2" tabindex="-1" role="dialog" aria-labelledby="blogModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal2Label">Best for any industrial & business solution</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="blogModal2" tabindex="-1" role="dialog" aria-labelledby="blogModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="blogModal2Label">Best for any industrial & business solution</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="blogModal3" tabindex="-1" role="dialog" aria-labelledby="blogModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal3Label">Best for any industrial & business solution</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="blogModal3" tabindex="-1" role="dialog" aria-labelledby="blogModal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="blogModal3Label">Best for any industrial & business solution</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endfor %}
+</div>
 {% endblock %}

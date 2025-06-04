@@ -61,9 +61,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="project-detail ftco-animate">
-                    {% if project.image %}
+                    {% comment %} {% if project.image %}
                         <img src="{{ project.image.url }}" alt="{{ project.title|default:'Project Image' }}" class="project-detail-img">
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                     <div class="project-detail-content">
                         <span class="subheading">{{ project.category|default:"Category" }}</span>
                         <h2>{{ project.title|default:"Project Title" }}</h2>
