@@ -3,18 +3,14 @@
 {% load i18n %}
 {% load l10n %}
 
-{% get_available_languages as languages %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info_list for languages as languages_info %}
-
 {% block content %}
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{% if section_settings.service_hero_section_image %}{{ section_settings.service_hero_section_image.url }}{% else %}{% static 'images/jinoo_service_2.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Services</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">{% trans "Home" %} <i class="fa fa-chevron-right"></i></a></span> <span>{% trans "Services" %} <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">{% trans "Services" %}</h1>
             </div>
         </div>
     </div>
@@ -95,9 +91,9 @@
                         <div class="img" style="background-image: url({% static 'images/jinoo_bookkeeping_1.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-architect"></span></div>
-                            <h2>{% trans 'Bookkeeping' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal1">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Bookkeeping" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal1">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -106,9 +102,9 @@
                         <div class="img" style="background-image: url({% static 'images/services-2.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-worker"></span></div>
-                            <h2>{% trans 'Accounting' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal2">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Accounting" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal2">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -117,9 +113,9 @@
                         <div class="img" style="background-image: url({% static 'images/jinoo_tax_1.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-hammer"></span></div>
-                            <h2>{% trans 'Taxation' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal3">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Taxation" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal3">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -128,9 +124,9 @@
                         <div class="img" style="background-image: url({% static 'images/jinoo_budget_1.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-architect"></span></div>
-                            <h2>{% trans 'Budgeting' %} & {% trans 'Variance analysis' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal4">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Budgeting" %} & {% trans "Variance analysis" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal4">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -139,9 +135,9 @@
                         <div class="img" style="background-image: url({% static 'images/services-5.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-worker"></span></div>
-                            <h2>{% trans 'Payroll' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal5">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Payroll" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal5">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -150,9 +146,9 @@
                         <div class="img" style="background-image: url({% static 'images/jinoo_forecasting_1.jpg' %});"></div>
                         <div class="text">
                             <div class="icon"><span class="flaticon-hammer"></span></div>
-                            <h2>{% trans 'Economic Forecasting' %}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal6">{% trans 'Read more' %}</a>
+                            <h2>{% trans "Economic Forecasting" %}</h2>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" %}</p>
+                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal6">{% trans "Read more" %}</a>
                         </div>
                     </div>
                 </div>
@@ -217,119 +213,119 @@
                     {{ service.description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
                 </div>
             </div>
         </div>
     </div>
 {% empty %}
     <div class="modal fade" id="serviceModal1" tabindex="-1" role="dialog" aria-labelledby="serviceModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal1Label">{% trans 'Bookkeeping' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal1Label">{% trans "Bookkeeping" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="serviceModal2" tabindex="-1" role="dialog" aria-labelledby="serviceModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal2Label">{% trans 'Accounting' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="serviceModal2" tabindex="-1" role="dialog" aria-labelledby="serviceModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal2Label">{% trans "Accounting" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="serviceModal3" tabindex="-1" role="dialog" aria-labelledby="serviceModal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal3Label">{% trans 'Taxation' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="serviceModal3" tabindex="-1" role="dialog" aria-labelledby="serviceModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal3Label">{% trans "Taxation" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="serviceModal4" tabindex="-1" role="dialog" aria-labelledby="serviceModal4Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal4Label">{% trans 'Budgeting' %} & {% trans 'Variance analysis' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="serviceModal4" tabindex="-1" role="dialog" aria-labelledby="serviceModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal4Label">{% trans "Budgeting" %} & {% trans "Variance analysis" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="serviceModal5" tabindex="-1" role="dialog" aria-labelledby="serviceModal5Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal5Label">{% trans 'Payroll' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="serviceModal5" tabindex="-1" role="dialog" aria-labelledby="serviceModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal5Label">{% trans "Payroll" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="serviceModal6" tabindex="-1" role="dialog" aria-labelledby="serviceModal6Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModal6Label">{% trans 'Economic Forecasting' %}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+</div>
+<div class="modal fade" id="serviceModal6" tabindex="-1" role="dialog" aria-labelledby="serviceModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModal6Label">{% trans "Economic Forecasting" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
+</div>
 {% endfor %}
 {% endblock %}

@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Blog</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">{% trans "Home" %} <i class="fa fa-chevron-right"></i></a></span> <span>{% trans "Blog" %} <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">{% trans "Blog" %}</h1>
             </div>
         </div>
     </div>
@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-8 text-center heading-section ftco-animate">
-                <span class="subheading">Our Blog</span>
-                <h2 class="mb-4">Latest Blog Updates</h2>
+                <span class="subheading">{% trans "Our Blog" %}</span>
+                <h2 class="mb-4">{% trans "Latest Blog Updates" %}</h2>
             </div>
         </div>
 
@@ -96,12 +96,12 @@
                             <div class="meta">
                                 <p>
                                     <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
-                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>{% trans "Admin" %}</a>
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal1">Best for any industrial & business solution</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal1">{% trans "Best for any industrial & business solution" %}</a></h3>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia..." %}</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal1">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
@@ -114,12 +114,12 @@
                             <div class="meta">
                                 <p>
                                     <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
-                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>{% trans "Admin" %}</a>
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal2">Best for any industrial & business solution</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal2">{% trans "Best for any industrial & business solution" %}</a></h3>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia..." %}</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal2">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
@@ -132,12 +132,12 @@
                             <div class="meta">
                                 <p>
                                     <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 06, 2020</a>
-                                    <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+                                    <a href="#"><span class="fa fa-user mr-2"></span>{% trans "Admin" %}</a>
                                     <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal3">Best for any industrial & business solution</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia...</p>
+                            <h3 class="heading"><a href="#" data-toggle="modal" data-target="#blogModal3">{% trans "Best for any industrial & business solution" %}</a></h3>
+                            <p>{% trans "Far far away, behind the word mountains, far from the countries Vokalia..." %}</p>
                             <p><a href="#" class="btn btn-secondary py-2 px-3" data-toggle="modal" data-target="#blogModal3">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
@@ -193,16 +193,16 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="blogModal1Label">Best for any industrial & business solution</h5>
+                <h5 class="modal-title" id="blogModal1Label">{% trans "Best for any industrial & business solution" %}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
@@ -211,16 +211,16 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="blogModal2Label">Best for any industrial & business solution</h5>
+                <h5 class="modal-title" id="blogModal2Label">{% trans "Best for any industrial & business solution" %}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>
@@ -229,16 +229,16 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="blogModal3Label">Best for any industrial & business solution</h5>
+                <h5 class="modal-title" id="blogModal3Label">{% trans "Best for any industrial & business solution" %}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">
-                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                {% trans "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." %}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
             </div>
         </div>
     </div>

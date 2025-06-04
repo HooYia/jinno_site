@@ -1,13 +1,6 @@
 {% load static %}
 {% load i18n %}
 {% load l10n %}
-<!-- footer start -->
-
-{% get_available_languages as languages %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info_list for languages as languages_info %}
-
-
 
 <section class="hero-wrap js-fullheight" style="background-image: url('{% if hero_section.background_image %}{{ hero_section.background_image.url }}{% else %}{% static 'images/jinoo_bg_2.jpg' %}{% endif %}');" data-stellar-background-ratio="0.1">
     <div class="overlay"></div>
@@ -19,7 +12,7 @@
                     <p class="mb-4">
                         {{ hero_section.short_description|default:"Our services are designed to offer to our customers the best possible experience in terms of satisfaction: quality of service, price, compliance with schedules." }}
                     </p>
-                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Request A Quote</a></p>
+                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">{% trans "Request A Quote" %}</a></p>
                 </div>
             </div>
         </div>

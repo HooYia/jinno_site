@@ -46,8 +46,8 @@
                     <span class="fa fa-map"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Free Call</span> <span>{% if site_settings.phone_number %}{{ site_settings.phone_number }}{% else %}{{ site.contact_number|default:"" }}{% endif %}</span></p>
-                    <p class="con">Call Us Now 24/7 Customer Support</p>
+                    <p class="con"><span>{% trans "Free Call" %}</span> <span>{% if site_settings.phone_number %}{{ site_settings.phone_number }}{% else %}{{ site.contact_number|default:"" }}{% endif %}</span></p>
+                    <p class="con">{% trans "Call Us Now 24/7 Customer Support" %}</p>
                 </div>
             </div>
             {% endif %}
@@ -56,7 +56,7 @@
                 <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="text pl-3 pl-md-3">
-                    <p class="hr"><span>Our Location</span></p>
+                    <p class="hr"><span>{% trans "Our Location" %}</span></p>
                     <p class="con">{% if site_settings.location %}{{ site_settings.location }}{% else %}{{ site.address|default:"" }}{% endif %}</p>
                 </div>
             </div>

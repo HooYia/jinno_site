@@ -3,10 +3,6 @@
 {% load i18n %}
 {% load l10n %}
 
-{% get_available_languages as languages %}
-{% get_current_language as LANGUAGE_CODE %}
-{% get_language_info_list for languages as languages_info %}
-
 {% block content %}
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{% if section_settings.contact_hero_section_image %}{{ section_settings.contact_hero_section_image.url }}{% else %}{% static 'images/bg_2.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>

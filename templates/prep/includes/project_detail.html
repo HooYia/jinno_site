@@ -46,8 +46,8 @@
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
                 <p class="breadcrumbs">
-                    <span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span>
-                    <span class="mr-2"><a href="{% url 'main_app:projects' %}">Projects <i class="fa fa-chevron-right"></i></a></span>
+                    <span class="mr-2"><a href="{% url 'home' %}">{% trans "Home" %} <i class="fa fa-chevron-right"></i></a></span>
+                    <span class="mr-2"><a href="{% url 'main_app:projects' %}">{% trans "Projects" %} <i class="fa fa-chevron-right"></i></a></span>
                     <span>{{ project.title|default:"Project" }}</span>
                 </p>
                 <h1 class="mb-3 bread">{{ project.title|default:"Project Details" }}</h1>
@@ -71,7 +71,7 @@
                         <div class="description">
                             {{ project.description|safe|default:"No description available." }}
                         </div>
-                        <a href="{% url 'main_app:projects' %}" class="btn btn-primary btn-back">Back to Projects</a>
+                        <a href="{% url 'main_app:projects' %}" class="btn btn-primary btn-back">{% trans "Back to Projects" %}</a>
                     </div>
                 </div>
             </div>

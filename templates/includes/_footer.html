@@ -19,7 +19,7 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Links</h2>
+                    <h2 class="ftco-heading-2">{% trans "Links" %}</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-md-4">
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>{% trans 'Project' %}</a></li>
@@ -118,13 +118,13 @@
                                         {% for service in site_settings.services %}
                                             <option value="{{ service }}">{{ service }}</option>
                                         {% empty %}
-                                            <option value="Accounting">Accounting</option>
-                                            <option value="Bookkeeping">Bookkeeping</option>
-                                            <option value="Taxation">Taxation</option>
-                                            <option value="Payroll">Payroll</option>
-                                            <option value="Management">Management</option>
-                                            <option value="Research and study">Research and study</option>
-                                            <option value="Our Digital platform">Our Digital platform</option>
+                                            <option value="Accounting">{% trans "Accounting" %}</option>
+                                            <option value="Bookkeeping">{% trans "Bookkeeping" %}</option>
+                                            <option value="Taxation">{% trans "Taxation" %}</option>
+                                            <option value="Payroll">{% trans "Payroll" %}</option>
+                                            <option value="Management">{% trans "Management" %}</option>
+                                            <option value="Research and study">{% trans "Research and study" %}</option>
+                                            <option value="Our Digital platform">{% trans "Our Digital platform" %}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
