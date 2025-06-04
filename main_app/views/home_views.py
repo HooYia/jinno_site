@@ -1,4 +1,5 @@
 
+import logging
 from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
@@ -8,6 +9,8 @@ from django.views.generic import TemplateView, View, DetailView
 from django.contrib import messages
 from main_app.models import HeroSection, ServicesSection, ServicesSectionTwo, Project, Testimony, Blog, SectionSettings, ContactUs, QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+logger = logging.getLogger(__name__)
 
 class HomePageView(TemplateView):
     template_name = 'prep/index.html'
@@ -99,6 +102,7 @@ class ContactUsView(TemplateView):
             return redirect('main_app:contact')
         except Exception as e:
             messages.error(request, (_("An error occurred while sending your message. Please try again.")))
+            logger.error(f"contact us error: {str(e)}")
             context = self.get_context_data(**kwargs)
             context["errors"] = errors
             context["form_data"] = {
@@ -111,58 +115,6 @@ class ContactUsView(TemplateView):
 
 
 
-def contact_us(request: HttpRequest) -> HttpResponse:
-    """
-    Name: contact_us
-
-    Description: This function help to create a contact us.
-    """
-    if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        subject = request.POST.get("subject")
-        message = request.POST.get("message")
-
-        contact_us = ContactUs.objects.create(
-            name=name,
-            email=email,
-            subject=subject,
-            message=message,
-        )
-
-        contact_us.save()
-
-        return render(request, 'prep/contact.html')
-    return render(request, 'prep/contact.html')
-
-def contact_us_view(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message =  request.POST.get('message')
-        
-        contact_us = ContactUs.objects.create(name=name, email=email, subject=subject, message=message)
-        contact_us.save()
-        
-        messages.success(request, 'Your message has been sent successfully.')
-
-
-        # send email 
-        # subject = " Contact Us "
-        # message = f"Hi,{name} {email}, your message has been sent successfully."
-        # from_email = settings.EMAIL_HOST_USER
-        # to_email = [email]
-        # send_mail(subject, message, from_email, to_email, fail_silently=False)
-        
-        # messages.info(request, 'Your message has been sent successfully.')
-
-        # return redirect('main_app:contact-us')
-        return render(request, 'prep/contact.html')
-    else:
-        return render(request, 'prep/contact.html')
-    
-    
     
 class BlogView(TemplateView):
     template_name = "prep/blog.html"

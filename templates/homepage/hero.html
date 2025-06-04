@@ -12,7 +12,7 @@
                     <p class="mb-4">
                         {{ hero_section.short_description|default:"Our services are designed to offer to our customers the best possible experience in terms of satisfaction: quality of service, price, compliance with schedules." }}
                     </p>
-                    <p><a href="#" class="btn btn-primary">{% trans 'Our Services' %}</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">{% trans "Request A Quote" %}</a></p>
+                    <p><a href="{% url 'main_app:services' %}" class="btn btn-primary">{% trans 'Our Services' %}</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">{% trans "Request A Quote" %}</a></p>
                 </div>
             </div>
         </div>
