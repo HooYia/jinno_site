@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-+wm6=r7$03cp#2&ny*4r+4=3ni_3xqq%yr5(za1#6vf1ydrg@t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'jinno.ca', 'www.jinno.ca']
 
 
 # Application definition
@@ -198,6 +198,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media files (User-uploaded content)
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
