@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from .models import (
     JinnoSetting, HeroSection, ServicesSection, ServicesSectionTwo,
     Project, Testimony, Blog, SectionSettings, ContactUs, Service, 
-    QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner
+    QuoteRequest, AboutStory, AboutTeam, AboutStats, AboutPartner, Theme
 )
 
 
@@ -247,7 +247,41 @@ class AboutPartnerAdmin(admin.ModelAdmin):
             'fields': ('logo',)
         }),
     )
-    
+
+@admin.register(Theme)
+class ThemeAdmin(admin.ModelAdmin):
+    list_display = ['primary_color', 'secondary_color']
+    fields = ['primary_color', 'secondary_color']
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['primary_color'].widget.attrs['type'] = 'color'  # HTML5 color picker
+        form.base_fields['secondary_color'].widget.attrs['type'] = 'color'  # HTML5 color picker
+        return form
+
+    def has_add_permission(self, request):
+        # Prevent adding new instances if one exists
+        return not Theme.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        # Prevent deleting the singleton instance
+        return False
+
+    def get_queryset(self, request):
+        # Ensure the singleton is always available
+        qs = super().get_queryset(request)
+        return qs
+
+    def save_model(self, request, obj, form, change):
+        # Ensure the singleton is saved correctly
+        if not Theme.objects.exists():
+            obj.save()
+        else:
+            # Update the existing instance
+            existing = Theme.objects.first()
+            existing.primary_color = obj.primary_color
+            existing.secondary_color = obj.secondary_color
+            existing.save()
     
 admin.site.site_header = _("JINOO ADMIN")
 admin.site.site_title = _("JINOO ADMIN PORTAL")

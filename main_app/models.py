@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
-
+from django.core.validators import RegexValidator
 class JinnoSetting(models.Model):
     email = models.EmailField(
         max_length=254,
@@ -677,3 +677,37 @@ class AboutPartner(models.Model):
         def __str__(self):
             return _("Partner")
         
+        
+
+class Theme(models.Model):
+    primary_color = models.CharField(
+        max_length=7,
+        default='#040e26',
+        validators=[RegexValidator(r'^#[0-9A-Fa-f]{6}$', 'Enter a valid hex color code.')],
+        help_text='Primary color in hex format (e.g., #040e26)'
+    )
+
+    secondary_color = models.CharField(
+        max_length=7,
+        default='#fc5e28',
+        validators=[RegexValidator(r'^#[0-9A-Fa-f]{6}$', 'Enter a valid hex color code.')],
+        help_text='Secondary color in hex format (e.g., #fc5e28)'
+    )
+
+    def clean(self):
+        # Ensure only one instance exists
+        if Theme.objects.exclude(pk=self.pk).exists() and self.pk is not None:
+            raise ValidationError('Only one Theme instance is allowed.')
+
+    def save(self, *args, **kwargs):
+        # Ensure only one instance is created
+        if not self.pk and Theme.objects.exists():
+            raise ValidationError('Only one Theme instance can exist.')
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Theme with primary color {self.primary_color} and secondary color {self.secondary_color}"
+
+    class Meta:
+        verbose_name = "Theme"
+        verbose_name_plural = "Themes"
