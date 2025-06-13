@@ -1,0 +1,104 @@
+{% extends "prep/index.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block extra_css %}
+<style>
+.service-detail-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+.service-detail-icon {
+    max-height: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.service-detail-content {
+    margin-top: 2rem;
+}
+.service-detail-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.service-detail-content .meta {
+    font-size: 1rem;
+    color: #6c757d;
+}
+.service-detail-content .meta a {
+    color: #6c757d;
+}
+.service-detail-content .meta a:hover {
+    color: #007bff;
+}
+.service-detail-content .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+.btn-back {
+    margin-top: 2rem;
+    background-color: {{ theme.primary_color|default:'#040e26' }};
+    border-color: {{ theme.primary_color|default:'#040e26' }};
+}
+.btn-back:hover {
+    background-color: {{ theme.secondary_color|default:'#fc5e28' }};
+    border-color: {{ theme.secondary_color|default:'#fc5e28' }};
+}
+</style>
+{% endblock %}
+
+{% block content %}
+{% with theme=Theme.objects.first %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{% if service.image %}{{ service.image.url }}{% else %}{% static 'images/image_1.jpg' %}{% endif %}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs">
+                    <span class="mr-2"><a href="{% url 'home' %}">{% trans "Home" %} <i class="fa fa-chevron-right"></i></a></span>
+                    <span class="mr-2"><a href="{% url 'main_app:services' %}">{% trans "Services" %} <i class="fa fa-chevron-right"></i></a></span>
+                    <span>{{ service.title|default:"Service" }}</span>
+                </p>
+                <h1 class="mb-3 bread">{{ service.title|default:"Service Details" }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="service-detail ftco-animate">
+                    {% if service.icon %}
+                        <img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service Icon' }}" class="service-detail-icon">
+                    {% endif %}
+                    {% if service.image %}
+                        <img src="{{ service.image.url }}" alt="{{ service.title|default:'Service Image' }}" class="service-detail-img">
+                    {% endif %}
+                    <div class="service-detail-content">
+                        <h2>{{ service.title|default:"Service" }}</h2>
+                        <div class="meta">
+                            <p>
+                                {% if service.short_description %}
+                                    <span>{{ service.short_description|truncatewords:10 }}</span>
+                                {% else %}
+                                    <span>{% trans "No short description available." %}</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="description">
+                            {{ service.description|safe|default:"No description available." }}
+                        </div>
+                        <a href="{% url 'main_app:services' %}" class="btn btn-primary btn-back">{% trans "Back to Services" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endwith %}
+{% endblock %}

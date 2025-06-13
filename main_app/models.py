@@ -242,12 +242,18 @@ class ServicesSection(models.Model):
         blank=True,
         help_text=_("Image representing the service"),
     )
-    
     icon = models.ImageField(
         upload_to='services_icons/',
         null=True,
         blank=True,
         help_text=_("Icon for the service"),
+    )
+    slug = models.SlugField(
+        max_length=250,
+        unique=True,
+        null=True,
+        blank=True,
+        help_text=_("Unique slug for the service URL"),
     )
 
     class Meta:
@@ -256,6 +262,21 @@ class ServicesSection(models.Model):
 
     def __str__(self) -> str:
         return self.title or "Services Section"
+
+    def save(self, *args, **kwargs):
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+            # Ensure uniqueness
+            original_slug = self.slug
+            counter = 1
+            while ServicesSection.objects.filter(slug=self.slug).exclude(id=self.id).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('main_app:service_detail', kwargs={'slug': self.slug})
     
     
 

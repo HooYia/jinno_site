@@ -1,5 +1,5 @@
 from django.urls import path
-from main_app.views.home_views import BlogDetailView, ProjectDetailView, ServicesView, ContactUsView, BlogView, ProjectView, RequestQuoteView, AboutView
+from main_app.views.home_views import BlogDetailView, ProjectDetailView, ServiceDetailView, ServicesView, ContactUsView, BlogView, ProjectView, RequestQuoteView, AboutView
 from main_app.views.style_view import dynamic_css
 
 app_name = 'main_app'
@@ -13,6 +13,7 @@ urlpatterns = [
     path("about/", AboutView.as_view(), name="about"),
     path('projects/<slug:slug>/', ProjectDetailView.as_view(), name='project_detail'),
     path('blog/<slug:slug>/', BlogDetailView.as_view(), name='blog_detail'),
+    path('service/<slug:slug>/', ServiceDetailView.as_view(), name='service_detail'),
     path('style.css', dynamic_css, name='dynamic_css'),
 
 

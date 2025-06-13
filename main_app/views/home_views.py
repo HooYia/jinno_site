@@ -55,6 +55,20 @@ class ServicesView(TemplateView):
         context["services"] = services
         return context
     
+    
+class ServiceDetailView(DetailView):
+    model = ServicesSection
+    template_name = "prep/includes/service_detail.html"
+    context_object_name = "serviceSection"
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["site"] = settings.SITE
+        context["section_settings"] = ServicesSection.objects.first()
+        return context 
+    
 class ContactUsView(TemplateView):
     template_name = "prep/contact.html"
 

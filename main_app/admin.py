@@ -68,12 +68,15 @@ class HeroSectionAdmin(admin.ModelAdmin):
 
 @admin.register(ServicesSection)
 class ServicesSectionAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    search_fields = ('title', 'short_description', 'description')
-    list_filter = ('title', 'icon')
+    list_display = ('title','slug')
+    search_fields = ('title', 'short_description', 'description', 'slug')
+    
+    list_filter = ('title', 'icon', 'slug')
+    prepopulated_fields = {'slug': ('title',)}
+    
     fieldsets = (
         (None, {
-            'fields': ('title', 'short_description', 'description', 'image', 'icon')
+            'fields': ('title', 'short_description', 'description', 'image', 'icon', 'slug')
         }),
     )
 
