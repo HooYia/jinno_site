@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-04 15:23+0000\n"
+"POT-Creation-Date: 2025-06-13 11:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,27 +61,27 @@ msgstr "Section de bienvenue"
 msgid "Service Section"
 msgstr "Section des services"
 
-#: main_app/admin.py:208
+#: main_app/admin.py:211
 msgid "Core Values"
 msgstr "Valeurs fondamentales"
 
-#: main_app/admin.py:211
+#: main_app/admin.py:214
 msgid "Mission & Vision"
 msgstr "Mission et vision"
 
-#: main_app/admin.py:236
+#: main_app/admin.py:239
 msgid "Metrics"
 msgstr "Métriques"
 
-#: main_app/admin.py:252
+#: main_app/admin.py:289
 msgid "JINOO ADMIN"
 msgstr "Administration Jinoo"
 
-#: main_app/admin.py:253
+#: main_app/admin.py:290
 msgid "JINOO ADMIN PORTAL"
 msgstr "Portail d'administration Jinoo"
 
-#: main_app/admin.py:254
+#: main_app/admin.py:291
 msgid "WELCOME TO JINOO ADMIN PORTAL"
 msgstr "Bienvenue sur le portail d'administration Jinoo"
 
@@ -161,460 +161,518 @@ msgstr "Titre de la première carte dans la section héros"
 msgid "Description for the first card"
 msgstr "Description de la première carte"
 
-#: main_app/models.py:127
+#: main_app/models.py:127 main_app/models.py:309 main_app/models.py:315
+
+msgid "Image for the first card in the hero section"
+msgstr "Image de la première carte dans la section héros"
+
+#: main_app/models.py:133
 msgid "Title for the second card in the hero section"
 msgstr "Titre de la deuxième carte dans la section héros"
 
-#: main_app/models.py:132
+#: main_app/models.py:138
 msgid "Description for the second card"
 msgstr "Description de la deuxième carte"
+#: main_app/models.py:144
+msgid "Image for the second card in the hero section"
+msgstr "Image de la deuxième carte dans la section héros"
 
-#: main_app/models.py:138
+#: main_app/models.py:150
 msgid "Title for the third card in the hero section"
 msgstr "Titre de la troisième carte dans la section héros"
 
-#: main_app/models.py:143
+#: main_app/models.py:156
+msgid "Image for the third card in the hero section"
+msgstr "Image de la troisième carte dans la section héros"
+
+#: main_app/models.py:161
 msgid "Description for the third card"
 msgstr "Description de la troisième carte"
 
-#: main_app/models.py:149
+#: main_app/models.py:167
 msgid "Image for the welcome section"
 msgstr "Image pour la section de bienvenue"
 
-#: main_app/models.py:155
+#: main_app/models.py:173
 msgid "Video file for the welcome section"
 msgstr "Fichier vidéo pour la section de bienvenue"
 
-#: main_app/models.py:161
+#: main_app/models.py:179
 msgid "Title for the welcome section"
 msgstr "Titre pour la section de bienvenue"
 
-#: main_app/models.py:167
+#: main_app/models.py:185
 msgid "Subtitle for the welcome section"
 msgstr "Sous-titre pour la section de bienvenue"
 
-#: main_app/models.py:172
+#: main_app/models.py:190
 msgid "Detailed description for the welcome section"
 msgstr "Description détaillée pour la section de bienvenue"
 
-#: main_app/models.py:178
+#: main_app/models.py:196
 msgid "Short description for the welcome video"
 msgstr "Brève description pour la vidéo de bienvenue"
 
-#: main_app/models.py:185
+#: main_app/models.py:203
 msgid "service title"
 msgstr "Titre du service"
 
-#: main_app/models.py:192
+#: main_app/models.py:210
 msgid "Short description for the service section"
 msgstr "Brève description pour la section des services"
 
-#: main_app/models.py:196
+#: main_app/models.py:214
 msgid "Hero Section"
 msgstr "Section héros"
 
-#: main_app/models.py:197
+#: main_app/models.py:215
 msgid "Hero Sections"
 msgstr "Sections héros"
 
-#: main_app/models.py:209 main_app/models.py:248
+#: main_app/models.py:227 main_app/models.py:288
 msgid "The main title of the services section"
 msgstr "Le titre principal de la section des services"
 
-#: main_app/models.py:214 main_app/models.py:253
+#: main_app/models.py:232 main_app/models.py:293
 msgid "A brief description for the services section"
 msgstr "Une brève description pour la section des services"
 
-#: main_app/models.py:219 main_app/models.py:258
+#: main_app/models.py:237 main_app/models.py:298
 msgid "Detailed description of the services offered"
 msgstr "Description détaillée des services proposés"
 
-#: main_app/models.py:225
+#: main_app/models.py:243
 msgid "Image representing the service"
 msgstr "Image représentant le service"
 
-#: main_app/models.py:231
+#: main_app/models.py:249
 msgid "Icon for the service"
 msgstr "Icône pour le service"
 
-#: main_app/models.py:235
+#: main_app/models.py:256
+
+msgid "Unique slug for the service URL"
+msgstr "Slug unique pour l'URL du service"
+
+#: main_app/models.py:260
 msgid "Services Section"
 msgstr "Section des services"
 
-#: main_app/models.py:236
+#: main_app/models.py:261
 msgid "Services Sections"
 msgstr "Sections des services"
 
-#: main_app/models.py:263
+#: main_app/models.py:303
 msgid "Number of projects completed"
 msgstr "Nombre de projets terminés"
 
-#: main_app/models.py:268
+#: main_app/models.py:320
 msgid "Number of satisfied customers"
 msgstr "Nombre de clients satisfaits"
 
-#: main_app/models.py:274
+#: main_app/models.py:326
 msgid "Image for the service card"
 msgstr "Image pour la carte de service"
 
-#: main_app/models.py:278
+#: main_app/models.py:330
 msgid "Services Section Two"
 msgstr "Deuxième section des services"
 
-#: main_app/models.py:279
+#: main_app/models.py:331
 msgid "Services Sections Two"
 msgstr "Deuxièmes sections des services"
 
-#: main_app/models.py:290
+#: main_app/models.py:342
 msgid "Image representing the project"
 msgstr "Image représentant le projet"
 
-#: main_app/models.py:296
+#: main_app/models.py:348
 msgid "Category or type of the project"
 msgstr "Catégorie ou type du projet"
 
-#: main_app/models.py:302
+#: main_app/models.py:354
 msgid "Title of the project"
 msgstr "Titre du projet"
 
-#: main_app/models.py:308
+#: main_app/models.py:360
 msgid "Location where the project was executed"
 msgstr "Lieu où le projet a été réalisé"
 
-#: main_app/models.py:313 main_app/models.py:638
+#: main_app/models.py:365 main_app/models.py:694
 msgid "Description"
 msgstr "Description"
 
-#: main_app/models.py:314
+#: main_app/models.py:366
 msgid "Detailed description of the project"
 msgstr "Description détaillée du projet"
 
-#: main_app/models.py:321
+#: main_app/models.py:373
 msgid "Unique slug for the project URL"
 msgstr "Slug unique pour l'URL du projet"
 
-#: main_app/models.py:325 templates/includes/_footer.html:25
+#: main_app/models.py:377
+msgid "Indicates whether the project is completed"
+msgstr "Indique si le projet est terminé"
+
+#: main_app/models.py:381 templates/includes/_footer.html:25
 msgid "Project"
 msgstr "Projet"
 
-#: main_app/models.py:326 templates/includes/_menu.html:17
+#: main_app/models.py:382 templates/includes/_menu.html:17
 #: templates/prep/includes/project_detail.html:50
 #: templates/prep/project.html:14 templates/prep/project.html:15
 msgid "Projects"
 msgstr "Projets"
 
-#: main_app/models.py:353
+#: main_app/models.py:409
 msgid "Full name of the person providing the testimony"
 msgstr "Nom complet de la personne fournissant le témoignage"
 
-#: main_app/models.py:358
+#: main_app/models.py:414
 msgid "The testimonial content or description"
 msgstr "Contenu ou description du témoignage"
 
-#: main_app/models.py:364
+#: main_app/models.py:420
 msgid "Image of the person providing the testimony"
 msgstr "Image de la personne fournissant le témoignage"
 
-#: main_app/models.py:370
+#: main_app/models.py:426
 msgid "Job title or position of the person providing the testimony"
 msgstr "Titre ou poste de la personne fournissant le témoignage"
 
-#: main_app/models.py:374
+#: main_app/models.py:430
 msgid "Testimony"
 msgstr "Témoignage"
 
-#: main_app/models.py:375
+#: main_app/models.py:431
 msgid "Testimonies"
 msgstr "Témoignages"
 
-#: main_app/models.py:387
+#: main_app/models.py:443
 msgid "The title of the blog post"
 msgstr "Titre de l'article de blog"
 
-#: main_app/models.py:392
+#: main_app/models.py:448
 msgid "The publication date and time of the blog post"
 msgstr "Date et heure de publication de l'article de blog"
 
-#: main_app/models.py:398
+#: main_app/models.py:454
 msgid "Featured image for the blog post"
 msgstr "Image vedette pour l'article de blog"
 
-#: main_app/models.py:404
+#: main_app/models.py:460
 msgid "The name of the blog post author"
 msgstr "Nom de l'auteur de l'article de blog"
 
-#: main_app/models.py:409
+#: main_app/models.py:465
 msgid "The content or description of the blog post"
 msgstr "Contenu ou description de l'article de blog"
 
-#: main_app/models.py:416
+#: main_app/models.py:472
 msgid "Unique slug for the blog post URL"
 msgstr "Slug unique pour l'URL de l'article de blog"
 
-#: main_app/models.py:420 templates/includes/_menu.html:18
+#: main_app/models.py:476 templates/includes/_menu.html:18
 #: templates/prep/blog.html:13 templates/prep/blog.html:14
 #: templates/prep/includes/blog_detail.html:51
 msgid "Blog"
 msgstr "Blog"
 
-#: main_app/models.py:421
+#: main_app/models.py:477
 msgid "Blogs"
 msgstr "Blogs"
 
-#: main_app/models.py:447
+#: main_app/models.py:503
 msgid "Hero section image for the blog page"
 msgstr "Image de la section héros pour la page de blog"
 
-#: main_app/models.py:453
+#: main_app/models.py:509
 msgid "Hero section image for the project page"
 msgstr "Image de la section héros pour la page des projets"
 
-#: main_app/models.py:459
+#: main_app/models.py:515
 msgid "Hero section image for the service page"
 msgstr "Image de la section héros pour la page des services"
 
-#: main_app/models.py:465
+#: main_app/models.py:521
 msgid "Hero section image for the contact page"
 msgstr "Image de la section héros pour la page de contact"
 
-#: main_app/models.py:471
+#: main_app/models.py:527
 msgid "Hero section image for the about page"
 msgstr "Image de la section héros pour la page à propos"
 
-#: main_app/models.py:475
+#: main_app/models.py:531
 msgid "Section Setting"
 msgstr "Paramètre de section"
 
-#: main_app/models.py:476
+#: main_app/models.py:532
 msgid "Section Settings"
 msgstr "Paramètres de section"
 
-#: main_app/models.py:513
+#: main_app/models.py:569
 msgid "The name of the service"
 msgstr "Nom du service"
 
-#: main_app/models.py:517
+#: main_app/models.py:573
 msgid "Service"
 msgstr "Service"
 
-#: main_app/models.py:518 templates/includes/_footer.html:27
+#: main_app/models.py:574 templates/includes/_footer.html:27
 #: templates/includes/_footer.html:43 templates/includes/_menu.html:16
+#: templates/prep/includes/service_detail.html:62
 #: templates/prep/services.html:12 templates/prep/services.html:13
 msgid "Services"
 msgstr "Services"
 
-#: main_app/models.py:533
+#: main_app/models.py:589
 msgid "Quote Request"
 msgstr "Demande de devis"
 
-#: main_app/models.py:534
+#: main_app/models.py:590
 msgid "Quote Requests"
 msgstr "Demandes de devis"
 
-#: main_app/models.py:545
+#: main_app/models.py:601
 msgid "Story Image"
 msgstr "Image de l'histoire"
 
-#: main_app/models.py:546
+#: main_app/models.py:602
 msgid ""
 "Upload an image representing the company's story (e.g., office or team)."
 msgstr ""
 "Téléchargez une image représentant l'histoire de l'entreprise (par exemple, "
 "bureau ou équipe)."
 
-#: main_app/models.py:551 main_app/models.py:633
+#: main_app/models.py:607 main_app/models.py:689
 msgid "Title"
 msgstr "Titre"
 
-#: main_app/models.py:552
+#: main_app/models.py:608
 msgid ""
 "Main title for the story section (e.g., 'Building The Future Together')."
 msgstr ""
 "Titre principal de la section histoire (par exemple, « Construire l'avenir "
 "ensemble »)."
 
-#: main_app/models.py:556 main_app/models.py:609
+#: main_app/models.py:612 main_app/models.py:665
 msgid "Short Description"
 msgstr "Brève description"
 
-#: main_app/models.py:557
+#: main_app/models.py:613
 msgid "A brief overview of the company's story."
 msgstr "Un bref aperçu de l'histoire de l'entreprise."
 
-#: main_app/models.py:561 templates/prep/about.html:101
+#: main_app/models.py:617 templates/prep/about.html:101
 msgid "Innovation"
 msgstr "Innovation"
 
-#: main_app/models.py:562
+#: main_app/models.py:618
 msgid "Description of the company's innovation focus."
 msgstr "Description de l'accent mis par l'entreprise sur l'innovation."
 
-#: main_app/models.py:566 templates/prep/about.html:112
+#: main_app/models.py:622 templates/prep/about.html:112
 msgid "Quality"
 msgstr "Qualité"
 
-#: main_app/models.py:567
+#: main_app/models.py:623
 msgid "Description of the company's quality standards."
 msgstr "Description des normes de qualité de l'entreprise."
 
-#: main_app/models.py:571
+#: main_app/models.py:627
 msgid "Vision"
 msgstr "Vision"
 
-#: main_app/models.py:572
+#: main_app/models.py:628
 msgid "The company's vision statement."
 msgstr "La déclaration de vision de l'entreprise."
 
-#: main_app/models.py:576
+#: main_app/models.py:632
 msgid "Mission"
 msgstr "Mission"
 
-#: main_app/models.py:577
+#: main_app/models.py:633
 msgid "The company's mission statement."
 msgstr "La déclaration de mission de l'entreprise."
 
-#: main_app/models.py:581
+#: main_app/models.py:637
 msgid "Values"
 msgstr "Valeurs"
 
-#: main_app/models.py:582
+#: main_app/models.py:638
 msgid "The company's core values."
 msgstr "Les valeurs fondamentales de l'entreprise."
 
-#: main_app/models.py:586 main_app/models.py:590
+#: main_app/models.py:642 main_app/models.py:646
 msgid "About Story"
 msgstr "À propos de l'histoire"
 
-#: main_app/models.py:587
+#: main_app/models.py:643
 msgid "About Stories"
 msgstr "À propos des histoires"
 
-#: main_app/models.py:598
+#: main_app/models.py:654
 msgid "Name"
 msgstr "Nom"
 
-#: main_app/models.py:599
+#: main_app/models.py:655
 msgid "Full name of the team member."
 msgstr "Nom complet du membre de l'équipe."
 
-#: main_app/models.py:604
+#: main_app/models.py:660
 msgid "Position"
 msgstr "Poste"
 
-#: main_app/models.py:605
+#: main_app/models.py:661
 msgid "Job title or role (e.g., CEO & Founder)."
 msgstr "Titre ou rôle professionnel (par exemple, PDG et Fondateur)."
 
-#: main_app/models.py:610
+#: main_app/models.py:666
 msgid "Brief description of the team member's expertise or role."
 msgstr "Brève description de l'expertise ou du rôle du membre de l'équipe."
 
-#: main_app/models.py:616
+#: main_app/models.py:672
 msgid "Profile Image"
 msgstr "Image de profil"
 
-#: main_app/models.py:617
+#: main_app/models.py:673
 msgid "Upload a profile image for the team member."
 msgstr "Téléchargez une image de profil pour le membre de l'équipe."
 
-#: main_app/models.py:621 main_app/models.py:625 templates/prep/about.html:180
+#: main_app/models.py:677 main_app/models.py:681 templates/prep/about.html:180
 #: templates/prep/about.html:188
 msgid "Team Member"
 msgstr "Membre de l'équipe"
 
-#: main_app/models.py:622 main_app/models.py:653 templates/prep/about.html:335
+#: main_app/models.py:678 main_app/models.py:709 templates/prep/about.html:335
 msgid "Team Members"
 msgstr "Membres de l'équipe"
 
-#: main_app/models.py:634
+#: main_app/models.py:690
 msgid "Title for the stats section (e.g., 'Our Impact in Numbers')."
 msgstr ""
 "Titre de la section des statistiques (par exemple, « Notre impact en "
 "chiffres »)."
 
-#: main_app/models.py:639
+#: main_app/models.py:695
 msgid "Brief description of the stats section."
 msgstr "Brève description de la section des statistiques."
 
-#: main_app/models.py:643 templates/prep/about.html:319
+#: main_app/models.py:699 templates/prep/about.html:319
 msgid "Projects Completed"
 msgstr "Projets terminés"
 
-#: main_app/models.py:644
+#: main_app/models.py:700
 msgid "Number of projects completed."
 msgstr "Nombre de projets terminés."
 
-#: main_app/models.py:648 templates/prep/about.html:327
+#: main_app/models.py:704 templates/prep/about.html:327
 msgid "Client Satisfaction"
 msgstr "Satisfaction des clients"
 
-#: main_app/models.py:649
+#: main_app/models.py:705
 msgid "Client satisfaction percentage (e.g., 98 for 98%)."
 msgstr "Pourcentage de satisfaction des clients (par exemple, 98 pour 98 %)."
 
-#: main_app/models.py:654
+#: main_app/models.py:710
 msgid "Number of team members."
 msgstr "Nombre de membres de l'équipe."
 
-#: main_app/models.py:658 templates/prep/about.html:343
+#: main_app/models.py:714 templates/prep/about.html:343
 msgid "Countries Served"
 msgstr "Pays desservis"
 
-#: main_app/models.py:659
+#: main_app/models.py:715
 msgid "Number of countries served."
 msgstr "Nombre de pays desservis."
 
-#: main_app/models.py:663 main_app/models.py:664 main_app/models.py:667
+#: main_app/models.py:719 main_app/models.py:720 main_app/models.py:723
 msgid "Stats"
 msgstr "Statistiques"
 
-#: main_app/models.py:671
+#: main_app/models.py:727
 msgid "Logo URL"
 msgstr "URL du logo"
 
-#: main_app/models.py:674 main_app/models.py:678
+#: main_app/models.py:730 main_app/models.py:734
 msgid "Partner"
 msgstr "Partenaire"
 
-#: main_app/models.py:675
+#: main_app/models.py:731
 msgid "Partners"
 msgstr "Partenaires"
 
-#: main_app/views/home_views.py:101
+#: main_app/views/home_views.py:118
 msgid "Your message has been sent successfully."
 msgstr "Votre message a été envoyé avec succès."
 
-#: main_app/views/home_views.py:104
+#: main_app/views/home_views.py:121
 msgid "An error occurred while sending your message. Please try again."
 msgstr ""
 "Une erreur s'est produite lors de l'envoi de votre message. Veuillez "
 "réessayer."
 
-#: main_app/views/home_views.py:202
+#: main_app/views/home_views.py:219
 msgid "First Name is required."
 msgstr "Le prénom est requis."
 
-#: main_app/views/home_views.py:204
+#: main_app/views/home_views.py:221
 msgid "Last Name is required."
 msgstr "Le nom de famille est requis."
 
-#: main_app/views/home_views.py:206
+#: main_app/views/home_views.py:223
 msgid "Phone is required."
 msgstr "Le numéro de téléphone est requis."
 
-#: main_app/views/home_views.py:208
+#: main_app/views/home_views.py:225
 msgid "Service is required."
 msgstr "Le service est requis."
 
-#: main_app/views/home_views.py:223
+#: main_app/views/home_views.py:240
 msgid "Your quote request has been sent successfully."
 msgstr "Votre demande de devis a été envoyée avec succès."
 
-#: main_app/views/home_views.py:225
+#: main_app/views/home_views.py:242
 msgid "An error occurred while sending your quote request. Please try again."
 msgstr ""
 "Une erreur s'est produite lors de l'envoi de votre demande de devis. "
 "Veuillez réessayer."
+
+#: templates/400.html:53
+msgid "Bad Request"
+msgstr "Mauvaise requête"
+
+#: templates/400.html:54
+msgid "Your request could not be processed due to invalid data. Please check and try again."
+msgstr "Votre requête n'a pas pu être traitée en raison de données invalides. Veuillez vérifier et réessayer."
+
+#: templates/400.html:55 templates/403.html:55 templates/404.html:55 templates/500.html:55
+msgid "Back to Home"
+msgstr "Retour à l'accueil"
+
+#: templates/403.html:53
+msgid "Forbidden"
+msgstr "Interdit"
+
+#: templates/403.html:54
+msgid "You don't have permission to access this page. Please contact us if you believe this is an error."
+msgstr "Vous n'avez pas la permission d'accéder à cette page. Veuillez nous contacter si vous pensez qu'il s'agit d'une erreur."
+
+#: templates/404.html:53
+msgid "Page Not Found"
+msgstr "Page non trouvée"
+
+#: templates/404.html:54
+msgid "Sorry, the page you are looking for does not exist. It might have been moved or deleted."
+msgstr "Désolé, la page que vous recherchez n'existe pas. Elle a peut-être été déplacée ou supprimée."
+
+#: templates/500.html:53
+msgid "Server Error"
+msgstr "Erreur de serveur"
+
+#: templates/500.html:54
+msgid "Something went wrong on our end. We're working to fix it. Please try again later."
+msgstr "Quelque chose s'est mal passé de notre côté. Nous travaillons pour le réparer. Veuillez réessayer plus tard."
 
 #: templates/homepage/about.html:23
 #, python-format
@@ -630,7 +688,7 @@ msgstr ""
 "%(hero_section.welcome_title|default:company_name)s Un fournisseur de "
 "services spécialisés"
 
-#: templates/homepage/about.html:27
+#: templates/homepage/about.html:26
 msgid ""
 "We're in this business since 2022 and We provide the best personal and "
 "business services"
@@ -663,10 +721,10 @@ msgstr "Dernières mises à jour du blog"
 #: templates/homepage/services.html:66 templates/homepage/services.html:77
 #: templates/homepage/services.html:88 templates/prep/blog.html:86
 #: templates/prep/blog.html:105 templates/prep/blog.html:123
-#: templates/prep/blog.html:141 templates/prep/services.html:84
-#: templates/prep/services.html:96 templates/prep/services.html:107
-#: templates/prep/services.html:118 templates/prep/services.html:129
-#: templates/prep/services.html:140 templates/prep/services.html:151
+#: templates/prep/blog.html:141 templates/prep/services.html:92
+#: templates/prep/services.html:104 templates/prep/services.html:115
+#: templates/prep/services.html:126 templates/prep/services.html:137
+#: templates/prep/services.html:148 templates/prep/services.html:159
 msgid "Read more"
 msgstr "Lire la suite"
 
@@ -674,6 +732,7 @@ msgstr "Lire la suite"
 #: templates/homepage/latest_blog.html:59
 #: templates/homepage/latest_blog.html:76 templates/prep/blog.html:99
 #: templates/prep/blog.html:117 templates/prep/blog.html:135
+#: templates/prep/services.html:79
 msgid "Admin"
 msgstr "Administrateur"
 
@@ -695,15 +754,15 @@ msgstr "Idéal pour toute solution industrielle et commerciale"
 #: templates/homepage/latest_blog.html:160 templates/homepage/project.html:139
 #: templates/homepage/project.html:157 templates/homepage/project.html:175
 #: templates/homepage/project.html:193 templates/homepage/project.html:211
-#: templates/homepage/project.html:229 templates/homepage/services.html:150
-#: templates/homepage/services.html:169 templates/homepage/services.html:187
-#: templates/homepage/services.html:205 templates/prep/blog.html:205
+#: templates/homepage/project.html:229 templates/homepage/services.html:163
+#: templates/homepage/services.html:182 templates/homepage/services.html:200
+#: templates/homepage/services.html:218 templates/prep/blog.html:205
 #: templates/prep/blog.html:223 templates/prep/blog.html:241
 #: templates/prep/project.html:184 templates/prep/project.html:202
-#: templates/prep/project.html:220 templates/prep/services.html:216
-#: templates/prep/services.html:235 templates/prep/services.html:253
-#: templates/prep/services.html:271 templates/prep/services.html:289
-#: templates/prep/services.html:307 templates/prep/services.html:325
+#: templates/prep/project.html:220 templates/prep/services.html:224
+#: templates/prep/services.html:243 templates/prep/services.html:261
+#: templates/prep/services.html:279 templates/prep/services.html:297
+#: templates/prep/services.html:315 templates/prep/services.html:333
 msgid "Close"
 msgstr "Fermer"
 
@@ -712,14 +771,14 @@ msgstr "Fermer"
 #: templates/homepage/latest_blog.html:157 templates/homepage/project.html:136
 #: templates/homepage/project.html:154 templates/homepage/project.html:172
 #: templates/homepage/project.html:190 templates/homepage/project.html:208
-#: templates/homepage/project.html:226 templates/homepage/services.html:166
-#: templates/homepage/services.html:184 templates/homepage/services.html:202
+#: templates/homepage/project.html:226 templates/homepage/services.html:179
+#: templates/homepage/services.html:197 templates/homepage/services.html:215
 #: templates/prep/blog.html:202 templates/prep/blog.html:220
 #: templates/prep/blog.html:238 templates/prep/project.html:181
 #: templates/prep/project.html:199 templates/prep/project.html:217
-#: templates/prep/services.html:232 templates/prep/services.html:250
-#: templates/prep/services.html:268 templates/prep/services.html:286
-#: templates/prep/services.html:304 templates/prep/services.html:322
+#: templates/prep/services.html:240 templates/prep/services.html:258
+#: templates/prep/services.html:276 templates/prep/services.html:294
+#: templates/prep/services.html:312 templates/prep/services.html:330
 msgid ""
 "Far far away, behind the word mountains, far from the countries Vokalia and "
 "Consonantia, there live the blind texts."
@@ -736,9 +795,9 @@ msgid "Latest Projects"
 msgstr "Derniers projets"
 
 #: templates/homepage/project.html:34 templates/homepage/services.html:86
-#: templates/homepage/services.html:196 templates/includes/_footer.html:50
-#: templates/includes/_footer.html:123 templates/prep/services.html:116
-#: templates/prep/services.html:262
+#: templates/homepage/services.html:209 templates/includes/_footer.html:50
+#: templates/includes/_footer.html:123 templates/prep/services.html:124
+#: templates/prep/services.html:270
 msgid "Taxation"
 msgstr "Fiscalité"
 
@@ -764,11 +823,11 @@ msgid "Policy"
 msgstr "Politique"
 
 #: templates/homepage/project.html:58 templates/homepage/project.html:82
-#: templates/homepage/services.html:75 templates/homepage/services.html:178
+#: templates/homepage/services.html:75 templates/homepage/services.html:191
 #: templates/includes/_footer.html:48 templates/includes/_footer.html:121
 #: templates/prep/project.html:94 templates/prep/project.html:106
-#: templates/prep/project.html:118 templates/prep/services.html:105
-#: templates/prep/services.html:244
+#: templates/prep/project.html:118 templates/prep/services.html:113
+#: templates/prep/services.html:252
 msgid "Accounting"
 msgstr "Comptabilité"
 
@@ -783,9 +842,9 @@ msgid "Strategic plan"
 msgstr "Plan stratégique"
 
 #: templates/homepage/project.html:94 templates/homepage/services.html:64
-#: templates/homepage/services.html:160 templates/includes/_footer.html:49
-#: templates/includes/_footer.html:122 templates/prep/services.html:94
-#: templates/prep/services.html:226
+#: templates/homepage/services.html:173 templates/includes/_footer.html:49
+#: templates/includes/_footer.html:122 templates/prep/services.html:102
+#: templates/prep/services.html:234
 msgid "Bookkeeping"
 msgstr "Tenue de livres"
 
@@ -832,10 +891,10 @@ msgid "We Offer Services"
 msgstr "Nous offrons des services"
 
 #: templates/homepage/services.html:65 templates/homepage/services.html:76
-#: templates/homepage/services.html:87 templates/prep/services.html:95
-#: templates/prep/services.html:106 templates/prep/services.html:117
-#: templates/prep/services.html:128 templates/prep/services.html:139
-#: templates/prep/services.html:150
+#: templates/homepage/services.html:87 templates/prep/services.html:103
+#: templates/prep/services.html:114 templates/prep/services.html:125
+#: templates/prep/services.html:136 templates/prep/services.html:147
+#: templates/prep/services.html:158
 msgid ""
 "Far far away, behind the word mountains, far from the countries Vokalia and "
 "Consonantia"
@@ -848,11 +907,11 @@ msgstr ""
 msgid "%(services_two.title|default:company_name)s A Services Company"
 msgstr "%(services_two.title|default:company_name)s Une entreprise de services"
 
-#: templates/homepage/services.html:116
+#: templates/homepage/services.html:123
 msgid "Project Completed"
 msgstr "Projet terminé"
 
-#: templates/homepage/services.html:125
+#: templates/homepage/services.html:138
 msgid "Happy Customers"
 msgstr "Clients satisfaits"
 
@@ -894,7 +953,7 @@ msgid "Terms of Use"
 msgstr "Conditions d'utilisation"
 
 #: templates/includes/_footer.html:51 templates/includes/_footer.html:124
-#: templates/prep/services.html:138 templates/prep/services.html:298
+#: templates/prep/services.html:146 templates/prep/services.html:306
 msgid "Payroll"
 msgstr "Paie"
 
@@ -966,6 +1025,7 @@ msgstr "Menu"
 #: templates/prep/blog.html:13 templates/prep/contact.html:12
 #: templates/prep/includes/blog_detail.html:50
 #: templates/prep/includes/project_detail.html:49
+#: templates/prep/includes/service_detail.html:61
 #: templates/prep/project.html:14 templates/prep/services.html:12
 msgid "Home"
 msgstr "Accueil"
@@ -1211,7 +1271,7 @@ msgstr "Nous contacter"
 #: templates/prep/project.html:38 templates/prep/project.html:42
 #: templates/prep/project.html:135 templates/prep/project.html:139
 #: templates/prep/services.html:36 templates/prep/services.html:40
-#: templates/prep/services.html:166 templates/prep/services.html:170
+#: templates/prep/services.html:174 templates/prep/services.html:178
 msgid "Previous"
 msgstr "Précédent"
 
@@ -1220,7 +1280,7 @@ msgstr "Précédent"
 #: templates/prep/project.html:58 templates/prep/project.html:62
 #: templates/prep/project.html:155 templates/prep/project.html:159
 #: templates/prep/services.html:56 templates/prep/services.html:60
-#: templates/prep/services.html:186 templates/prep/services.html:190
+#: templates/prep/services.html:194 templates/prep/services.html:198
 msgid "Next"
 msgstr "Suivant"
 
@@ -1276,6 +1336,16 @@ msgstr "Retour au blog"
 msgid "Back to Projects"
 msgstr "Retour aux projets"
 
+#: templates/prep/includes/service_detail.html:89
+
+msgid "No short description available."
+msgstr "Aucune description disponible."
+
+#: templates/prep/includes/service_detail.html:96
+
+msgid "Back to Services"
+msgstr "Retour aux Services"
+
 #: templates/prep/project.html:25
 msgid "Our Projects"
 msgstr "Nos projets"
@@ -1284,14 +1354,18 @@ msgstr "Nos projets"
 msgid "Recent Projects"
 msgstr "Projets récents"
 
-#: templates/prep/services.html:127 templates/prep/services.html:280
+#: templates/prep/services.html:78
+msgid "Sept. 06, 2020"
+msgstr "Sept. 06, 2020"
+
+#: templates/prep/services.html:135 templates/prep/services.html:288
 msgid "Budgeting"
 msgstr "Budgétisation"
 
-#: templates/prep/services.html:127 templates/prep/services.html:280
+#: templates/prep/services.html:135 templates/prep/services.html:288
 msgid "Variance analysis"
 msgstr "Analyse des écarts"
 
-#: templates/prep/services.html:149 templates/prep/services.html:316
+#: templates/prep/services.html:157 templates/prep/services.html:324
 msgid "Economic Forecasting"
 msgstr "Prévision économique"

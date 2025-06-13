@@ -59,7 +59,7 @@ class ServicesView(TemplateView):
 class ServiceDetailView(DetailView):
     model = ServicesSection
     template_name = "prep/includes/service_detail.html"
-    context_object_name = "serviceSection"
+    context_object_name = "service"
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
 
