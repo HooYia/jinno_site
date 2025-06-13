@@ -210,6 +210,8 @@ class RequestQuoteView(View):
     def post(self, request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
+        email = request.POST.get("email")
+        
         phone = request.POST.get('phone')
         service = request.POST.get('service')
         message = request.POST.get('message')
@@ -223,7 +225,8 @@ class RequestQuoteView(View):
             errors['phone'] = _("Phone is required.")
         if not service:
             errors['service'] = _("Service is required.")
-
+        if not email:
+            errors['email'] = _("email is required.")
         if errors:
             for msg in errors.values():
                 messages.error(request, msg)
@@ -236,6 +239,7 @@ class RequestQuoteView(View):
                 phone=phone,
                 service=service,
                 message=message,
+                email=email,
             )
             messages.success(request, _("Your quote request has been sent successfully."))
         except Exception:

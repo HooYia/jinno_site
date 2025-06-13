@@ -581,6 +581,7 @@ class QuoteRequest(models.Model):
     first_name = models.CharField(max_length=100, null=False, blank=False)
     last_name = models.CharField(max_length=100, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
+    email = models.CharField(max_length=255, null=True, blank=True)
     service = models.CharField(max_length=100, null=False, blank=False)
     message = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

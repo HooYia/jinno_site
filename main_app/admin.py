@@ -179,13 +179,13 @@ class ContactUsAdmin(admin.ModelAdmin):
 
 @admin.register(QuoteRequest)
 class QuoteRequestAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'service', 'phone', 'created_at')
-    list_filter = ('service', 'created_at')
-    search_fields = ('first_name', 'last_name', 'service', 'phone', 'message')
+    list_display = ('first_name', 'last_name', 'email', 'service', 'phone', 'created_at')
+    list_filter = ('service', 'created_at', 'email')
+    search_fields = ('first_name', 'last_name', 'service', 'phone', 'message', 'email')
     readonly_fields = ('created_at',)
     fieldsets = (
         ("Client Information", {
-            'fields': ('first_name', 'last_name', 'phone')
+            'fields': ('first_name', 'last_name', 'phone', 'email')
         }),
         ("Service Details", {
             'fields': ('service', 'message')
