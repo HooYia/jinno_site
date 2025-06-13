@@ -315,7 +315,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number display-3" data-number="{% if about_stats.projects_completed > 0 %}{{ about_stats.projects_completed }}{% else %}250{% endif %}">0</strong>
+                                <strong class="number display-3" data-number="{{ completed_projects_count }}">0</strong>
                                 <span class="d-block">{% trans "Projects Completed" %}</span>
                             </div>
                         </div>

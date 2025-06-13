@@ -23,7 +23,8 @@ class HomePageView(TemplateView):
         context["projects"] = Project.objects.all().order_by('-id')[:6]
         context["testimonies"] = Testimony.objects.all().order_by('-id')[:5]
         context["blogs"] = Blog.objects.all().order_by('-id')[:3]
-
+        completed_projects_count = Project.objects.filter(completed=True).count()
+        context["completed_projects_count"] = completed_projects_count
         context["site"] = settings.SITE
         return context
     
@@ -37,6 +38,8 @@ class ServicesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["site"] = settings.SITE
         context["section_settings"] = SectionSettings.objects.first()
+        # cont the number of projects with completed True
+        context["completed_projects_count"] = Project.objects.filter(completed=True).count()
 
         # Fetch all services and paginate
         services_list = ServicesSection.objects.all().order_by('-id')
@@ -238,4 +241,6 @@ class AboutView(TemplateView):
         context["team_members"] = AboutTeam.objects.all()
         context["about_stats"] = AboutStats.objects.first()
         context["partners"] = AboutPartner.objects.all()
+        completed_projects_count = Project.objects.filter(completed=True).count()
+        context["completed_projects_count"] = completed_projects_count
         return context

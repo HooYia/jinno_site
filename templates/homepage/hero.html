@@ -25,7 +25,14 @@
         <div class="row no-gutters d-flex">
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer-1"></span></div>
+                    {% comment %} <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer-1"></span></div> {% endcomment %}
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        {% if hero_section.card1_image %}
+                            <img src="{{ hero_section.card1_image.url }}" alt="Card 1 Image" class="flaticon-engineer-1">
+                        {% else %}
+                            <span class="flaticon-engineer-1"></span>
+                        {% endif %}
+                    </div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">{{ hero_section.card1_title|default:"Quality" }}</h3>
                         <p>
@@ -36,7 +43,14 @@
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-worker-1"></span></div>
+                    {% comment %} <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-worker-1"></span></div> {% endcomment %}
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        {% if hero_section.card2_image %}
+                            <img src="{{ hero_section.card2_image.url }}" alt="Card 1 Image" class="flaticon-worker-1">
+                        {% else %}
+                            <span class="flaticon-worker-1"></span>
+                        {% endif %}
+                    </div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">{{ hero_section.card2_title|default:"Professional Liability" }}</h3>
                         <p>
@@ -47,7 +61,14 @@
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer"></span></div>
+                    {% comment %} <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer"></span></div> {% endcomment %}
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        {% if hero_section.card3_image %}
+                            <img src="{{ hero_section.card3_image.url }}" alt="Card 1 Image" class="flaticon-engineer">
+                        {% else %}
+                            <span class="flaticon-engineer"></span>
+                        {% endif %}
+                    </div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">{{ hero_section.card3_title|default:"Dedicated To Our Clients" }}</h3>
                         <p>

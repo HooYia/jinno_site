@@ -120,6 +120,12 @@ class HeroSection(models.Model):
         blank=True,
         help_text=_("Description for the first card"),
     )
+    card1_image = models.ImageField(
+        upload_to='hero_cards/',
+        null=True,
+        blank=True,
+        help_text=_("Image for the first card in the hero section")
+    )
     card2_title = models.CharField(
         max_length=100,
         null=True,
@@ -131,11 +137,23 @@ class HeroSection(models.Model):
         blank=True,
         help_text=_("Description for the second card"),
     )
+    card2_image = models.ImageField(
+        upload_to='hero_cards/',
+        null=True,
+        blank=True,
+        help_text=_("Image for the second card in the hero section")
+    )
     card3_title = models.CharField(
         max_length=100,
         null=True,
         blank=True,
         help_text=_("Title for the third card in the hero section"),
+    )
+    card3_image = models.ImageField(
+        upload_to='hero_cards/',
+        null=True,
+        blank=True,
+        help_text=_("Image for the third card in the hero section")
     )
     card3_description = models.TextField(
         null=True,
@@ -224,6 +242,7 @@ class ServicesSection(models.Model):
         blank=True,
         help_text=_("Image representing the service"),
     )
+    
     icon = models.ImageField(
         upload_to='services_icons/',
         null=True,
@@ -261,6 +280,18 @@ class ServicesSectionTwo(models.Model):
         null=True,
         blank=True,
         help_text=_("Number of projects completed"),
+    )
+    icon_image1 = models.ImageField(
+        upload_to='services_images/',
+        null=True,
+        blank=True,
+        help_text=_("Image for the first card in the hero section")
+    )
+    icon_image2 = models.ImageField(
+        upload_to='services_images/',
+        null=True,
+        blank=True,
+        help_text=_("Image for the first card in the hero section")
     )
     happy_customers = models.PositiveIntegerField(
         null=True,
@@ -319,6 +350,10 @@ class Project(models.Model):
         null=True,
         blank=True,
         help_text=_("Unique slug for the project URL"),
+    )
+    completed = models.BooleanField(
+        default=False,
+        help_text=_("Indicates whether the project is completed"),
     )
 
     class Meta:

@@ -50,13 +50,13 @@ class HeroSectionAdmin(admin.ModelAdmin):
             'fields': ('title', 'short_description', 'background_image')
         }),
         (_('Card 1'), {
-            'fields': ('card1_title', 'card1_description')
+            'fields': ('card1_title', 'card1_description', 'card1_image')
         }),
         (_('Card 2'), {
-            'fields': ('card2_title', 'card2_description')
+            'fields': ('card2_title', 'card2_description', 'card2_image')
         }),
         (_('Card 3'), {
-            'fields': ('card3_title', 'card3_description')
+            'fields': ('card3_title', 'card3_description', 'card3_image')
         }),
         (_('Welcome Section'), {
             'fields': ('welcome_title', 'welcome_subtitle', 'welcome_description', 'welcome_image', 'welcome_video', 'welcome_video_short_description')
@@ -84,19 +84,19 @@ class ServicesSectionAdmin(admin.ModelAdmin):
     list_filter = ('projects_completed', 'happy_customers')
     fieldsets = (
         (None, {
-            'fields': ('title', 'short_description', 'description', 'projects_completed', 'happy_customers', 'card_image')
+            'fields': ('title', 'short_description', 'description', 'projects_completed', 'happy_customers', 'card_image', 'icon_image1', 'icon_image2')
         }),
     )
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'location', 'slug')
-    search_fields = ('title', 'category', 'location', 'description', 'slug')
-    list_filter = ('category', 'location')
+    list_display = ('title', 'category', 'location', 'slug', 'completed')
+    search_fields = ('title', 'category', 'location', 'description', 'slug', 'completed')
+    list_filter = ('category', 'location', 'completed')
     prepopulated_fields = {'slug': ('title',)}
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'category', 'location', 'description', 'image')
+            'fields': ('title', 'slug', 'category', 'location', 'description', 'image', 'completed')
         }),
     )
 
