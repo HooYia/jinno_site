@@ -1,0 +1,62 @@
+{% extends "prep/index.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block extra_css %}
+<style>
+.error-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+.error-content h1 {
+    font-size: 10rem;
+    font-weight: bold;
+    color: {{ theme.primary_color|default:'#040e26' }};
+    opacity: 0.9;
+}
+.error-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.error-content p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+.btn-home {
+    background-color: {{ theme.primary_color|default:'#040e26' }};
+    border-color: {{ theme.primary_color|default:'#040e26' }};
+    color: #fff;
+    padding: 0.75rem 2rem;
+}
+.btn-home:hover {
+    background-color: {{ theme.secondary_color|default:'#fc5e28' }};
+    border-color: {{ theme.secondary_color|default:'#fc5e28' }};
+    color: #fff;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+{% with theme=Theme.objects.first %}
+<section class="error-wrap ftco-animate">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 text-center">
+                <div class="error-content">
+                    <h1>400</h1>
+                    <h2>{% trans "Bad Request" %}</h2>
+                    <p>{% trans "Your request could not be processed due to invalid data. Please check and try again." %}</p>
+                    <a href="/" class="btn btn-home">{% trans "Back to Home" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endwith %}
+{% endblock %}
