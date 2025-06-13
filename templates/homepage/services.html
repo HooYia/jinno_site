@@ -36,22 +36,28 @@
         </div>
         <div class="row">
             {% for service in services %}
-                <div class="col-md-4">
-                    <div class="services-wrap ftco-animate">
-                        <div class="img" style="background-image: url('{% if service.image %}{{ service.image.url }}{% else %}{% static 'images/jinoo_bookkeeping_1.jpg' %}{% endif %}');"></div>
-                        <div class="text">
-                            <div class="icon">
-                                <span>
-                                    {% if service.icon %}
-                                        <img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}" class="service-icon">
-                                    {% else %}
-                                        <span class="flaticon-architect"></span>
-                                    {% endif %}
-                                </span>
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="{{ service.get_absolute_url }}" class="block-20" style="background-image: url('{% if service.image %}{{ service.image.url }}{% else %}{% static 'images/image_'|add:forloop.counter|add:'.jpg' %}{% endif %}');">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    <a href="{{ service.get_absolute_url }}"><span class="fa fa-calendar mr-2"></span>{% trans "Sept. 06, 2020" %}</a>
+                                    <a href="{{ service.get_absolute_url }}"><span class="fa fa-user mr-2"></span>{% trans "Admin" %}</a>
+                                    <a href="{{ service.get_absolute_url }}" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+                                </p>
                             </div>
-                            <h2>{{ service.title|default:"Bookkeeping" }}</h2>
-                            <p>{{ service.short_description|default:"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia" }}</p>
-                            <a href="#" class="btn-custom" data-toggle="modal" data-target="#serviceModal{{ forloop.counter }}">{% trans "Read more" %}</a>
+                            <div class="icon">
+                                {% if service.icon %}
+                                    <img src="{{ service.icon.url }}" alt="{{ service.title|default:'Service' }}" class="img-fluid" style="max-height: 50px;">
+                                {% else %}
+                                    <span class="flaticon-hammer"></span>
+                                {% endif %}
+                            </div>
+                            <h3 class="heading"><a href="{{ service.get_absolute_url }}">{{ service.title|default:"Service" }}</a></h3>
+                            <p>{{ service.short_description|striptags|truncatewords:20|default:"Far far away, behind the word mountains, far from the countries Vokalia..." }}</p>
+                            <p><a href="{{ service.get_absolute_url }}" class="btn btn-secondary py-2 px-3">{% trans 'Read more' %}</a></p>
                         </div>
                     </div>
                 </div>

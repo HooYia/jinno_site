@@ -14,13 +14,15 @@
             {% for project in projects %}
                 <div class="col-md-4">
                     <div class="project">
-                        <a href="#" class="img d-flex align-items-center" style="background-image: url('{% if project.image %}{{ project.image.url }}{% else %}{% static 'images/project-1.jpg' %}{% endif %}');" data-toggle="modal" data-target="#projectModal{{ forloop.counter }}">
+                        <a href="{% url 'main_app:project_detail' project.slug %}" class="img d-flex align-items-center" style="background-image: url('{% if project.image %}{{ project.image.url }}{% else %}{% static 'images/project-'|add:forloop.counter|add:'.jpg' %}{% endif %}');">
                             <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
                         </a>
                         <div class="text">
-                            <span class="subheading">{{ project.category|default:"Taxation" }}</span>
-                            <h3>{{ project.title|default:"Building A Condominium" }}</h3>
-                            <p><span class="fa fa-map-marker mr-1"></span> {{ project.location|default:"Montreal, Quebec, Canada" }}</p>
+                            <a href="{% url 'main_app:project_detail' project.slug %}" class="text-link">
+                                <span class="subheading">{{ project.category|default:"Accounting" }}</span>
+                                <h3>{{ project.title|default:"Building A Condominium" }}</h3>
+                                <p><span class="fa fa-map-marker mr-1"></span>{{ project.location|default:"Sherbrooke, Quebec, Canada" }}</p>
+                            </a>
                         </div>
                     </div>
                 </div>
